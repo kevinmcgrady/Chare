@@ -1,0 +1,61 @@
+@import '@styles/spacing.scss';
+
+.top {
+  &-xs {
+    margin-top: $spacing-extra-small;
+  }
+  &-sm {
+    margin-top: $spacing-small;
+  }
+  &-md {
+    margin-top: $spacing-md;
+  }
+  &-lg {
+    margin-top: $spacing-large;
+  }
+}
+
+.right {
+  &-xs {
+    margin-right: $spacing-extra-small;
+  }
+  &-sm {
+    margin-right: $spacing-small;
+  }
+  &-md {
+    margin-right: $spacing-md;
+  }
+  &-lg {
+    margin-right: $spacing-large;
+  }
+}
+
+.bottom {
+  &-xs {
+    margin-bottom: $spacing-extra-small;
+  }
+  &-sm {
+    margin-bottom: $spacing-small;
+  }
+  &-md {
+    margin-bottom: $spacing-md;
+  }
+  &-lg {
+    margin-bottom: $spacing-large;
+  }
+}
+
+.left {
+  &-xs {
+    margin-left: $spacing-extra-small;
+  }
+  &-sm {
+    margin-left: $spacing-small;
+  }
+  &-md {
+    margin-left: $spacing-md;
+  }
+  &-lg {
+    margin-left: $spacing-large;
+  }
+}

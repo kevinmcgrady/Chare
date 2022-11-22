@@ -1,0 +1,21 @@
+@import '@styles/colors.scss';
+@import '@styles/spacing.scss';
+
+.card {
+  background-color: $color-gray;
+  border-radius: $spacing-extra-small;
+  height: fit-content;
+}
+
+.bottom {
+  padding: $spacing-extra-small;
+}
+
+.author {
+  display: flex;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+}

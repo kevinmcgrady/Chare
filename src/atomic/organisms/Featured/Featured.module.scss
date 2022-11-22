@@ -1,0 +1,15 @@
+@import '@styles/gradients.scss';
+
+.container {
+  position: relative;
+  height: 640px;
+}
+
+.overlay {
+  position: absolute;
+  background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}

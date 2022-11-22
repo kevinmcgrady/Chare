@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  ul {
+    display: flex;
+  }
+
+  li {
+    list-style: none;
+  }
+}

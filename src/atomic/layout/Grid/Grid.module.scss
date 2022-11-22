@@ -1,0 +1,21 @@
+@import '@styles/spacing.scss';
+
+.grid {
+  display: grid;
+  gap: $spacing-extra-small;
+}
+
+.col {
+  &-1 {
+    grid-template-columns: 1fr;
+  }
+  &-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,33 @@
+@import '@styles/colors.scss';
+@import '@styles/spacing.scss';
+@import '@styles/fonts.scss';
+
+.button {
+  font-weight: $font-weight-work-sans-bold;
+  color: $color-white;
+  padding: $spacing-extra-small $spacing-md;
+  border: none;
+  cursor: pointer;
+  border-radius: $spacing-extra-small;
+  font-size: $font-size-default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.icon {
+  margin-right: 0.75rem;
+}
+
+.primary {
+  background-color: $color-primary;
+}
+
+.secondary {
+  background-color: transparent;
+  border: 2px solid $color-primary;
+}

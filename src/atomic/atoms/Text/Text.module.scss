@@ -1,0 +1,64 @@
+@import '@styles/fonts.scss';
+
+.h1 {
+  font-size: $font-size-h1;
+  line-height: 73.7px;
+}
+
+.h2 {
+  font-size: $font-size-h2;
+  line-height: 56.1px;
+}
+
+.h3 {
+  font-size: $font-size-h3;
+  line-height: 45.6px;
+}
+
+.h4 {
+  font-size: $font-size-h4;
+  line-height: 39.2px;
+}
+
+.h5 {
+  font-size: $font-size-h5;
+  line-height: 35.2px;
+}
+
+.body {
+  font-size: $font-size-body;
+  font-weight: $font-weight-normal;
+  line-height: 22.4px;
+}
+
+.caption {
+  font-size: $font-size-caption;
+  font-weight: $font-weight-normal;
+  line-height: 13.2px;
+}
+
+.subTitle {
+  font-size: $font-size-h5;
+  line-height: 35.2px;
+  font-weight: $font-weight-normal;
+}
+
+.primaryBold {
+  font-weight: $font-weight-work-sans-bold;
+}
+
+.secondaryBold {
+  font-weight: $font-weight-space-mono-bold;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}

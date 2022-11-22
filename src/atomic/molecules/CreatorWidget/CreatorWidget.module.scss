@@ -1,0 +1,24 @@
+@import '@styles/spacing.scss';
+@import '@styles/colors.scss';
+
+.creatorWidget {
+  position: relative;
+  background-color: $color-gray;
+  border-radius: $spacing-extra-small;
+  padding: $spacing-extra-small;
+  text-align: center;
+}
+
+.pin {
+  border-radius: 100%;
+  background-color: $color-black;
+  position: absolute;
+  color: $color-light-gray;
+  width: 30px;
+  height: 30px;
+  top: $spacing-extra-small;
+  left: $spacing-extra-small;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
