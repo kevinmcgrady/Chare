@@ -1,0 +1,11 @@
+@import '@styles/colors.scss';
+@import '@styles/spacing.scss';
+
+.creator {
+  background-color: $color-gray;
+  border-radius: $spacing-extra-small;
+  display: flex;
+  padding: $spacing-extra-small;
+  width: fit-content;
+  align-items: center;
+}
