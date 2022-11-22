@@ -31,7 +31,7 @@ jobs:
           command: npm run lint
       - run:
           name: Build
-          command: npm build
+          command: npm run build
 
 workflows:
   # Below is the definition of your workflow.
