@@ -1,8 +1,8 @@
+import RocketIcon from '@assets/icons/RocketLaunch.svg';
 import cn from 'classnames';
 import Image from 'next/image';
 import React, { ReactNode } from 'react';
 
-import RocketIcon from '@assets/icons/RocketLaunch.svg';
 import styles from './Button.module.scss';
 
 type ButtonVariant = 'primary' | 'secondary';

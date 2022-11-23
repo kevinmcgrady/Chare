@@ -1,6 +1,7 @@
+import { Container, Grid, Spacing,Text } from '@atomic';
 import React from 'react';
+
 import styles from './Footer.module.scss';
-import { Container, Text, Grid, Spacing } from '@atomic';
 
 export const Footer: React.FC = () => {
   return (

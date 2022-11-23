@@ -1,4 +1,4 @@
-import { Container, Header, Footer } from '@atomic';
+import { Container, Footer,Header } from '@atomic';
 import Head from 'next/head';
 import React, { ReactNode } from 'react';
 

@@ -1,6 +1,6 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import StorybookImage from '@assets/images/Spaceship.png';
+import { ComponentMeta,ComponentStory } from '@storybook/react';
+import React from 'react';
 
 import { Image } from './Image.component';
 
