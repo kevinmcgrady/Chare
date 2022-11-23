@@ -1,0 +1,8 @@
+@import '@styles/colors.scss';
+@import '@styles/spacing.scss';
+
+.infoCard {
+  background-color: $color-gray;
+  border-radius: $spacing-extra-small;
+  padding: $spacing-md;
+}

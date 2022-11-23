@@ -39,7 +39,7 @@ export const Text: React.FC<TextProps> = ({
           className={cn(
             styles.h1,
             styles[align],
-            getFont(isSecondaryFont),
+            styles[getFont(isSecondaryFont)],
             styles[getFontWeight(isSecondaryFont)],
           )}
         >
@@ -52,7 +52,7 @@ export const Text: React.FC<TextProps> = ({
           className={cn(
             styles.h2,
             styles[align],
-            getFont(isSecondaryFont),
+            styles[getFont(isSecondaryFont)],
             styles[getFontWeight(isSecondaryFont)],
           )}
         >
@@ -65,7 +65,7 @@ export const Text: React.FC<TextProps> = ({
           className={cn(
             styles.subTitle,
             styles[align],
-            getFont(isSecondaryFont),
+            styles[getFont(isSecondaryFont)],
           )}
         >
           {children}
@@ -77,7 +77,7 @@ export const Text: React.FC<TextProps> = ({
           className={cn(
             styles.h3,
             styles[align],
-            getFont(isSecondaryFont),
+            styles[getFont(isSecondaryFont)],
             styles[getFontWeight(isSecondaryFont)],
           )}
         >
@@ -90,7 +90,7 @@ export const Text: React.FC<TextProps> = ({
           className={cn(
             styles.h4,
             styles[align],
-            getFont(isSecondaryFont),
+            styles[getFont(isSecondaryFont)],
             styles[getFontWeight(isSecondaryFont)],
           )}
         >
@@ -103,7 +103,7 @@ export const Text: React.FC<TextProps> = ({
           className={cn(
             styles.h5,
             styles[align],
-            getFont(isSecondaryFont),
+            styles[getFont(isSecondaryFont)],
             styles[getFontWeight(isSecondaryFont)],
           )}
         >
@@ -112,7 +112,13 @@ export const Text: React.FC<TextProps> = ({
       );
     case 'body':
       return (
-        <p className={cn(styles.body, styles[align], getFont(isSecondaryFont))}>
+        <p
+          className={cn(
+            styles.body,
+            styles[align],
+            styles[getFont(isSecondaryFont)],
+          )}
+        >
           {children}
         </p>
       );
@@ -122,7 +128,7 @@ export const Text: React.FC<TextProps> = ({
           className={cn(
             styles.caption,
             styles[align],
-            getFont(isSecondaryFont),
+            styles[getFont(isSecondaryFont)],
           )}
         >
           {children}

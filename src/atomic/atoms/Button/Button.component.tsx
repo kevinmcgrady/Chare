@@ -1,9 +1,8 @@
-import { workSans } from '@styles/fonts';
 import cn from 'classnames';
 import Image from 'next/image';
 import React, { ReactNode } from 'react';
 
-import RocketIcon from '../../../../public/assets/icons/RocketLaunch.svg';
+import RocketIcon from '@assets/icons/RocketLaunch.svg';
 import styles from './Button.module.scss';
 
 type ButtonVariant = 'primary' | 'secondary';
@@ -18,7 +17,7 @@ export const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
 }) => {
   return (
-    <button className={cn(styles[variant], styles.button, workSans.className)}>
+    <button className={cn(styles[variant], styles.button)}>
       <Image
         className={styles.icon}
         width={20}
