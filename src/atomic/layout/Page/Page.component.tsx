@@ -1,4 +1,4 @@
-import { Container, Header } from '@atomic';
+import { Container, Header, Footer } from '@atomic';
 import Head from 'next/head';
 import React, { ReactNode } from 'react';
 
@@ -24,6 +24,7 @@ export const Page: React.FC<PageProps> = ({
         <Header />
       </Container>
       {children}
+      <Footer />
     </div>
   );
 };

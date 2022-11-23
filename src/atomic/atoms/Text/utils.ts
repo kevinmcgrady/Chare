@@ -1,7 +1,5 @@
-import { spaceMono } from '@styles/fonts';
-
 export const getFont = (isSecondaryFont: boolean) => {
-  return isSecondaryFont ? spaceMono.className : '';
+  return isSecondaryFont ? 'secondaryFont' : '';
 };
 
 export const getFontWeight = (isSecondaryFont: boolean) => {
