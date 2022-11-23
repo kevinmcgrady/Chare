@@ -1,6 +1,6 @@
 import '@styles/globals.scss';
 
-import { workSans, spaceMono } from '@styles/fonts';
+import { spaceMono,workSans } from '@styles/fonts';
 import type { AppProps } from 'next/app';
 import React from 'react';
 
