@@ -1,5 +1,5 @@
 import StorybookImage from '@assets/images/Spaceship.png';
-import { ComponentMeta,ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
 import { Image } from './Image.component';
@@ -9,7 +9,9 @@ export default {
   component: Image,
 } as ComponentMeta<typeof Image>;
 
-const Template: ComponentStory<typeof Image> = (args) => <Image {...args} />;
+const Template: ComponentStory<typeof Image> = (args) => (
+  <Image {...args} alt={args.alt} />
+);
 
 export const Default = Template.bind({});
 

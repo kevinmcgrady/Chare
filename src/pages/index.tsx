@@ -6,7 +6,7 @@ import {
   collections,
   creators,
   popularNFTs,
-} from '../atomic/templates/Homepage/data';
+} from '../atomic/Templates/Homepage/data';
 
 export default function Home() {
   return (

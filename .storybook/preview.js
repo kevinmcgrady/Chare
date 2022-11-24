@@ -16,5 +16,10 @@ const OriginalNextImage = NextImage.default;
 
 Object.defineProperty(NextImage, 'default', {
   configurable: true,
-  value: (props) => <OriginalNextImage {...props} unoptimized />,
+  value: (props) =>
+    props.fill ? (
+      <OriginalNextImage {...props} unoptimized />
+    ) : (
+      <img {...props} />
+    ),
 });
