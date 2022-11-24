@@ -1,5 +1,7 @@
+import CreateCollection from '@assets/images/CreateCollection.svg';
+import SetUpWallet from '@assets/images/SetUpWallet.svg';
+import StartEarning from '@assets/images/StartEarning.svg';
 import {
-  Button,
   Card,
   CardProps,
   CategoryWidget,
@@ -10,14 +12,12 @@ import {
   CreatorWidget,
   CreatorWidgetProps,
   Featured,
-  Grid,
   Hero,
+  InfoCard,
+  SectionWithTitleAndDescription,
   Spacing,
-  Text,
 } from '@atomic';
 import React from 'react';
-
-import styles from './Homepage.module.scss';
 
 type HomepageTemplateProps = {
   collections: CollectionProps[];
@@ -36,83 +36,77 @@ export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
     <>
       <Container>
         <Hero />
-        <Spacing top='lg' bottom='lg'>
-          <section>
-            <Text variant='h3'>Trending Collection</Text>
-            <Spacing bottom='md'>
-              <Text variant='subTitle'>
-                Checkout our weekly updated trending collection.
-              </Text>
-            </Spacing>
-            <Grid noOfColumns={3}>
-              {collections.map((collection, index) => (
-                <Collection {...collection} key={index} />
-              ))}
-            </Grid>
-          </section>
-        </Spacing>
+        <SectionWithTitleAndDescription
+          title='Trending Collection'
+          description='Checkout our weekly updated trending collection.'
+          noOfColumns={3}
+        >
+          {collections.map((collection, index) => (
+            <Collection {...collection} key={index} />
+          ))}
+        </SectionWithTitleAndDescription>
 
-        <Spacing top='lg' bottom='lg'>
-          <section>
-            <div className={styles.header}>
-              <div>
-                <Text variant='h3'>Top creators</Text>
-                <Spacing bottom='md'>
-                  <Text variant='subTitle'>
-                    Checkout Top Rated Creators on the NFT Marketplace
-                  </Text>
-                </Spacing>
-              </div>
-              <div>
-                <Button variant='secondary'>View Rankings</Button>
-              </div>
-            </div>
-            <Grid noOfColumns={4}>
-              {creators.map((creator, index) => (
-                <CreatorWidget {...creator} key={index} index={index + 1} />
-              ))}
-            </Grid>
-          </section>
-        </Spacing>
+        <SectionWithTitleAndDescription
+          title='Top creators'
+          description='Checkout Top Rated Creators on the NFT Marketplace'
+          noOfColumns={4}
+          cta={{ text: 'View Rankings' }}
+        >
+          {creators.map((creator, index) => (
+            <CreatorWidget {...creator} key={index} index={index + 1} />
+          ))}
+        </SectionWithTitleAndDescription>
 
-        <Spacing top='lg' bottom='lg'>
-          <section>
-            <Spacing bottom='md'>
-              <Text variant='h3'>Browse Categories</Text>
-            </Spacing>
-            <Grid noOfColumns={4}>
-              {categories.map((category, index) => (
-                <CategoryWidget {...category} key={index} />
-              ))}
-            </Grid>
-          </section>
-        </Spacing>
-
-        <Spacing top='lg' bottom='lg'>
-          <section>
-            <div className={styles.header}>
-              <div>
-                <Text variant='h3'>Discover More NFTs</Text>
-                <Spacing bottom='md'>
-                  <Text variant='subTitle'>Explore new trending NFTs</Text>
-                </Spacing>
-              </div>
-              <div>
-                <Button variant='secondary'>See All</Button>
-              </div>
-            </div>
-            <Grid noOfColumns={3}>
-              {popularNFTs.map((item) => (
-                <Card {...item} author={item.author} key={item.title} />
-              ))}
-            </Grid>
-          </section>
-        </Spacing>
+        <SectionWithTitleAndDescription
+          title='Browse Categories'
+          noOfColumns={4}
+        >
+          {categories.map((category, index) => (
+            <CategoryWidget {...category} key={index} />
+          ))}
+        </SectionWithTitleAndDescription>
+        <SectionWithTitleAndDescription
+          title='Discover More NFTs'
+          description='Explore new trending NFTs'
+          noOfColumns={3}
+          cta={{ text: 'See All' }}
+        >
+          {popularNFTs.map((item) => (
+            <Card {...item} author={item.author} key={item.title} />
+          ))}
+        </SectionWithTitleAndDescription>
       </Container>
 
       <Spacing bottom='lg' top='lg'>
         <Featured />
       </Spacing>
+
+      <Container>
+        <SectionWithTitleAndDescription
+          title='How it works'
+          description='Find out how to get started'
+          noOfColumns={3}
+        >
+          <InfoCard
+            image={{ src: SetUpWallet, alt: 'Setup Wallet' }}
+            title='Setup Your wallet'
+            description='Set up your wallet of choice. Connect it to the Animarket by
+                  clicking the wallet icon in the top right corner.'
+          />
+          <InfoCard
+            image={{ src: CreateCollection, alt: 'Create Collection' }}
+            title='Create Collection'
+            description='Upload your work and setup your collection. Add a description,
+                social links and floor price.'
+          />
+          <InfoCard
+            image={{ src: StartEarning, alt: 'Start Earning' }}
+            title='Start Earning'
+            description='Choose between auctions and fixed-price listings. Start
+                earning by selling your NFTs or trading others.'
+          />
+        </SectionWithTitleAndDescription>
+      </Container>
     </>
   );
 };

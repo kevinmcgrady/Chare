@@ -1,0 +1,11 @@
+@import '@styles/spacing.scss';
+
+.timer {
+  background-color: rgba(59, 59, 59, 0.5);
+  border-radius: $spacing-extra-small;
+  padding: $spacing-small;
+}
+
+.time {
+  display: flex;
+}
