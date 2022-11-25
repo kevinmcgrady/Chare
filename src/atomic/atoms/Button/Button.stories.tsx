@@ -1,4 +1,4 @@
-import { ComponentMeta,ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
 import { Button } from './Button.component';
@@ -22,4 +22,20 @@ export const Secondary = Template.bind({});
 
 Secondary.args = {
   variant: 'secondary',
+};
+
+export const Tertiary = Template.bind({});
+
+Tertiary.args = {
+  variant: 'tertiary',
+};
+
+export const WithIcon = Template.bind({});
+
+WithIcon.args = {
+  variant: 'primary',
+  icon: {
+    type: 'rocket',
+    color: 'primary',
+  },
 };

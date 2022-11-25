@@ -23,7 +23,9 @@ export const Hero: React.FC = () => {
           {!isMobile && (
             <>
               <Spacing top='sm' bottom='md'>
-                <Button>Get Started</Button>
+                <Button icon={{ type: 'rocket', color: 'primary' }}>
+                  Get Started
+                </Button>
               </Spacing>
               <Stats />
             </>

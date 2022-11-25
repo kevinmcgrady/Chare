@@ -22,11 +22,26 @@ export const Featured: React.FC = () => {
               <Spacing bottom='xs'>
                 <Text variant='h2'>Magic Mushrooms</Text>
               </Spacing>
-              {!isMobile && <Button>See NFT</Button>}
+              {!isMobile && (
+                <Button
+                  icon={{ type: 'eye', color: 'secondary' }}
+                  variant='tertiary'
+                >
+                  See NFT
+                </Button>
+              )}
             </div>
             <Timer />
             <Spacing bottom='xs' />
-            {isMobile && <Button isFullWidth>See NFT</Button>}
+            {isMobile && (
+              <Button
+                variant='tertiary'
+                icon={{ type: 'eye', color: 'secondary' }}
+                isFullWidth
+              >
+                See NFT
+              </Button>
+            )}
           </div>
         </Container>
       </div>

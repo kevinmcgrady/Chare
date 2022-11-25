@@ -1,4 +1,4 @@
-import { Container, Grid, Spacing, Text } from '@atomic';
+import { Container, Grid, Link,Spacing, Text } from '@atomic';
 import React from 'react';
 
 import styles from './Footer.module.scss';
@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <Container>
-        <Grid noOfColumns={3} noOfMobileCols={1}>
+        <Grid noOfColumns={3} noOfMobileCols={1} className={styles.grid}>
           <div>
             <Text variant='h5' font='spaceMono'>
               Chare
@@ -24,13 +24,13 @@ export const Footer: React.FC = () => {
               Explore
             </Text>
             <Spacing top='xs'>
-              <Text>Marketplace</Text>
+              <Link href='/'>Marketplace</Link>
             </Spacing>
             <Spacing top='xs'>
-              <Text>Rankings</Text>
+              <Link href='/'>Rankings</Link>
             </Spacing>
             <Spacing top='xs'>
-              <Text>Connect a wallet</Text>
+              <Link href='/'>Connect a wallet</Link>
             </Spacing>
           </div>
           <div>
