@@ -4,7 +4,8 @@
     "paths": {
       "@styles/*": ["src/styles/*"],
       "@atomic": ["src/atomic/index"],
-      "@assets/*": ["public/assets/*"]
+      "@assets/*": ["public/assets/*"],
+      "@hooks/*": ["src/hooks/index"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

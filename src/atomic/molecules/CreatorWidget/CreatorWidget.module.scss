@@ -1,5 +1,6 @@
 @import '@styles/spacing.scss';
 @import '@styles/colors.scss';
+@import '@styles/breakpoints.scss';
 
 .creatorWidget {
   position: relative;
@@ -7,6 +8,13 @@
   border-radius: $spacing-extra-small;
   padding: $spacing-extra-small;
   text-align: center;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    gap: $spacing-extra-small;
+    text-align: left;
+  }
 }
 
 .pin {
