@@ -5,3 +5,7 @@
   background-color: $color-gray;
   padding: $spacing-md 0;
 }
+
+.grid {
+  column-gap: $spacing-large;
+}

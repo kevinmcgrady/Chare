@@ -38,7 +38,12 @@ export const SectionWithTitleAndDescription: React.FC<SectionWithTitleAndDescrip
             </div>
             {cta && !isMobile && (
               <div>
-                <Button variant='secondary'>{cta?.text}</Button>
+                <Button
+                  icon={{ type: 'eye', color: 'secondary' }}
+                  variant='secondary'
+                >
+                  {cta?.text}
+                </Button>
               </div>
             )}
           </div>
