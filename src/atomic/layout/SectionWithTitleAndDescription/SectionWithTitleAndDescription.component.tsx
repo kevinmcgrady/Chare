@@ -1,5 +1,5 @@
 import { Button, Grid, Spacing, Text } from '@atomic';
-import { useMediaQuery } from '@hooks/useMediaQuery';
+import { useMediaQuery } from '@hooks';
 import React, { ReactElement } from 'react';
 
 import styles from './SectionWithTitleAndDescription.module.scss';
@@ -56,7 +56,11 @@ export const SectionWithTitleAndDescription: React.FC<SectionWithTitleAndDescrip
           </Grid>
           {cta && isMobile && (
             <Spacing top='xs'>
-              <Button variant='secondary' isFullWidth>
+              <Button
+                icon={{ type: 'eye', color: 'secondary' }}
+                variant='secondary'
+                isFullWidth
+              >
                 {cta?.text}
               </Button>
             </Spacing>

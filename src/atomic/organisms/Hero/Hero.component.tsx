@@ -1,7 +1,7 @@
 import Avatar from '@assets/images/Avatar.svg';
 import SpaceWalking from '@assets/images/spaceWalking.png';
 import { Button, Card, Spacing, Stats, Text } from '@atomic';
-import { useMediaQuery } from '@hooks/useMediaQuery';
+import { useMediaQuery } from '@hooks';
 import React from 'react';
 
 import styles from './Hero.module.scss';

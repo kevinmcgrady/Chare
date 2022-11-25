@@ -1,8 +1,9 @@
 import React, { ReactElement } from 'react';
 import { AiOutlineEye } from 'react-icons/ai';
+import { HiOutlineUserCircle } from 'react-icons/hi';
 import { VscRocket } from 'react-icons/vsc';
 
-type IconType = 'rocket' | 'eye';
+type IconType = 'rocket' | 'eye' | 'user';
 type IconColor = 'primary' | 'secondary';
 
 export enum Color {
@@ -23,6 +24,7 @@ const iconElement = (
   return {
     rocket: <VscRocket size={20} color={color} className={className} />,
     eye: <AiOutlineEye size={20} color={color} className={className} />,
+    user: <HiOutlineUserCircle size={20} color={color} className={className} />,
   };
 };
 
