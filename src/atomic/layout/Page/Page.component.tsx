@@ -1,7 +1,10 @@
 import { Container, Footer, Header } from '@atomic';
-import { useMediaQuery } from '@hooks/useMediaQuery';
+import { useMediaQuery } from '@hooks';
+import cn from 'classnames';
 import Head from 'next/head';
 import React, { ReactNode } from 'react';
+
+import styles from './Page.module.scss';
 
 type PageProps = {
   children: ReactNode;
@@ -14,7 +17,7 @@ export const Page: React.FC<PageProps> = ({
   title,
   description = 'NFT',
 }) => {
-  const { isMobile } = useMediaQuery();
+  const { isTablet } = useMediaQuery();
 
   return (
     <div>
@@ -23,7 +26,11 @@ export const Page: React.FC<PageProps> = ({
         <meta name='description' content={description} />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Container>{!isMobile && <Header />}</Container>
+      <div className={cn(isTablet && styles.stickyContainer)}>
+        <Container>
+          <Header />
+        </Container>
+      </div>
       {children}
       <Footer />
     </div>

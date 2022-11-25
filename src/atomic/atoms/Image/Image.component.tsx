@@ -12,6 +12,7 @@ export type ImageProps = {
   isPriority?: boolean;
   isBlurred?: boolean;
   className?: string;
+  fill?: boolean;
 };
 
 export const Image: React.FC<ImageProps> = ({
@@ -22,6 +23,7 @@ export const Image: React.FC<ImageProps> = ({
   isPriority = false,
   isBlurred = false,
   className,
+  fill,
 }) => {
   return (
     <NextImage
@@ -35,6 +37,7 @@ export const Image: React.FC<ImageProps> = ({
       height={height}
       width={width}
       priority={isPriority}
+      fill={fill}
     />
   );
 };

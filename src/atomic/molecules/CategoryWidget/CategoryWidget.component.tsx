@@ -1,4 +1,4 @@
-import { Image, ImageProps,Text } from '@atomic';
+import { Image, ImageProps, Text } from '@atomic';
 import React from 'react';
 
 import styles from './CategoryWidget.module.scss';

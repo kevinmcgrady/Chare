@@ -5,7 +5,7 @@ import {
   SectionWithTitleAndDescription,
   Spacing,
 } from '@atomic';
-import { useMediaQuery } from '@hooks/useMediaQuery';
+import { useMediaQuery } from '@hooks';
 import React, { ReactElement } from 'react';
 
 type HomepageTemplateProps = {

@@ -1,6 +1,6 @@
 import MushroomImage from '@assets/images/mushroom.png';
 import { Button, Container, CreatorPin, Spacing, Text, Timer } from '@atomic';
-import { useMediaQuery } from '@hooks/useMediaQuery';
+import { useMediaQuery } from '@hooks';
 import Image from 'next/image';
 import React from 'react';
 
