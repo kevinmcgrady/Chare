@@ -1,0 +1,8 @@
+@import '@styles/colors.scss';
+
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  background-color: $color-black;
+  z-index: 6000;
+}
