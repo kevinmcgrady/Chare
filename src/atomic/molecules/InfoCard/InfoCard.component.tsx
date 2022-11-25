@@ -1,4 +1,4 @@
-import { Image, Spacing,Text } from '@atomic';
+import { Image, Spacing, Text } from '@atomic';
 import { StaticImageData } from 'next/image';
 import React from 'react';
 
@@ -21,12 +21,13 @@ export const InfoCard: React.FC<InfoCardProps> = ({
   return (
     <div className={styles.infoCard}>
       <Image src={image.src} alt={image.alt} />
-      <Spacing bottom='xs'>
+      <div>
         <Text variant='h5' align='center'>
           {title}
         </Text>
-      </Spacing>
-      <Text align='center'>{description}</Text>
+        <Spacing bottom='xs' />
+        <Text align='center'>{description}</Text>
+      </div>
     </div>
   );
 };

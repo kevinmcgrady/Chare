@@ -1,11 +1,22 @@
 @import '@styles/spacing.scss';
+@import '@styles/breakpoints.scss';
 
 .timer {
   background-color: rgba(59, 59, 59, 0.5);
   border-radius: $spacing-extra-small;
   padding: $spacing-small;
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .time {
   display: flex;
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: fit-content;
+  }
 }

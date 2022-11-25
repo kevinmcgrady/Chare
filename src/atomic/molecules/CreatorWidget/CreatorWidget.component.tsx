@@ -1,4 +1,4 @@
-import { Image, ImageProps,Text } from '@atomic';
+import { Image, ImageProps, Text } from '@atomic';
 import React from 'react';
 
 import styles from './CreatorWidget.module.scss';
@@ -19,10 +19,12 @@ export const CreatorWidget: React.FC<CreatorWidgetProps> = ({
   return (
     <div className={styles.creatorWidget}>
       <Image src={image.src} alt={image.alt} width={120} height={120} />
-      <Text variant='h5' align='center'>
-        {authorName}
-      </Text>
-      <Text align='center'>Total Sales: {totalSavings}</Text>
+      <div>
+        <Text variant='h5' align='center'>
+          {authorName}
+        </Text>
+        <Text align='center'>Total Sales: {totalSavings}</Text>
+      </div>
       <div className={styles.pin}>
         <Text>{index}</Text>
       </div>

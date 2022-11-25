@@ -1,20 +1,33 @@
-import { Button,Grid, Spacing, Text } from '@atomic';
-import React, { ReactNode } from 'react';
+import { Button, Grid, Spacing, Text } from '@atomic';
+import { useMediaQuery } from '@hooks/useMediaQuery';
+import React, { ReactElement } from 'react';
 
 import styles from './SectionWithTitleAndDescription.module.scss';
 
 type SectionWithTitleAndDescriptionProps = {
-  children: ReactNode;
   title: string;
   description?: string;
+  data: ReactElement[];
   noOfColumns: number;
   cta?: { text: string };
+  noOfTabletCols?: number;
+  noOfMobileCols?: number;
 };
 
 export const SectionWithTitleAndDescription: React.FC<SectionWithTitleAndDescriptionProps> =
-  ({ children, title, description, noOfColumns, cta }) => {
+  ({
+    title,
+    description,
+    noOfColumns,
+    cta,
+    noOfTabletCols,
+    noOfMobileCols,
+    data,
+  }) => {
+    const { isMobile } = useMediaQuery();
+
     return (
-      <Spacing top='lg' bottom='lg'>
+      <Spacing top={isMobile ? 'sm' : 'lg'} bottom={isMobile ? 'sm' : 'lg'}>
         <section>
           <div className={styles.header}>
             <div>
@@ -23,14 +36,26 @@ export const SectionWithTitleAndDescription: React.FC<SectionWithTitleAndDescrip
                 {description && <Text variant='subTitle'>{description}</Text>}
               </Spacing>
             </div>
-            {cta && (
+            {cta && !isMobile && (
               <div>
                 <Button variant='secondary'>{cta?.text}</Button>
               </div>
             )}
           </div>
-
-          <Grid noOfColumns={noOfColumns}>{children}</Grid>
+          <Grid
+            noOfTabletColumns={noOfTabletCols}
+            noOfColumns={noOfColumns}
+            noOfMobileCols={noOfMobileCols}
+          >
+            {data}
+          </Grid>
+          {cta && isMobile && (
+            <Spacing top='xs'>
+              <Button variant='secondary' isFullWidth>
+                {cta?.text}
+              </Button>
+            </Spacing>
+          )}
         </section>
       </Spacing>
     );

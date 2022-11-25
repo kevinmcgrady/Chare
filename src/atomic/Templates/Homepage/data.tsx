@@ -58,8 +58,8 @@ export const collections: CollectionProps[] = [
   {
     mainImage: { src: MushroomImage, alt: 'mushroom' },
     additionalImages: [
-      { src: MushroomTwoImage, alt: 'mushroom' },
-      { src: MushroomThreeImage, alt: 'mushroom' },
+      { src: MushroomTwoImage, alt: 'small mushroom' },
+      { src: MushroomThreeImage, alt: 'large mushroom' },
     ],
     stat: '1020+',
     title: 'Magic Mushrooms',
@@ -71,8 +71,8 @@ export const collections: CollectionProps[] = [
   {
     mainImage: { src: RobotImage, alt: 'robot' },
     additionalImages: [
-      { src: RobotTwoImage, alt: 'robot' },
-      { src: RobotThreeImage, alt: 'robot' },
+      { src: RobotTwoImage, alt: 'small robot' },
+      { src: RobotThreeImage, alt: 'large robot' },
     ],
     stat: '1020+',
     title: 'Disco Machines',

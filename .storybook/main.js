@@ -21,6 +21,7 @@ module.exports = {
       '@atomic': path.resolve(__dirname, '../src/atomic'),
       '@styles': path.resolve(__dirname, '../src/styles'),
       '@assets': path.resolve(__dirname, '../public/assets'),
+      '@hooks': path.resolve(__dirname, '../src/hooks'),
     };
 
     return config;

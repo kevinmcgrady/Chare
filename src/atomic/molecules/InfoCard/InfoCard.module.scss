@@ -1,8 +1,16 @@
 @import '@styles/colors.scss';
 @import '@styles/spacing.scss';
+@import '@styles/breakpoints.scss';
 
 .infoCard {
   background-color: $color-gray;
   border-radius: $spacing-extra-small;
   padding: $spacing-md;
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: $spacing-extra-small;
+    align-items: center;
+  }
 }

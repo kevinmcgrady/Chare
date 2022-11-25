@@ -10,14 +10,22 @@ type ButtonVariant = 'primary' | 'secondary';
 type ButtonProps = {
   children: ReactNode;
   variant?: ButtonVariant;
+  isFullWidth?: boolean;
 };
 
 export const Button: React.FC<ButtonProps> = ({
   children,
   variant = 'primary',
+  isFullWidth = false,
 }) => {
   return (
-    <button className={cn(styles[variant], styles.button)}>
+    <button
+      className={cn(
+        styles[variant],
+        styles.button,
+        isFullWidth && styles.isFullWidth,
+      )}
+    >
       <Image
         className={styles.icon}
         width={20}
