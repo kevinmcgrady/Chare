@@ -1,6 +1,16 @@
+@import '@styles/breakpoints.scss';
+
 .container {
   margin: 0 auto;
   max-width: 75%;
   height: inherit;
   height: 100%;
+
+  @include tablet {
+    max-width: 90%;
+  }
+
+  @media (max-width: 1280px) {
+    max-width: 90%;
+  }
 }

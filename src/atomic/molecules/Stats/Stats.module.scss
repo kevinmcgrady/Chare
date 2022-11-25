@@ -1,4 +1,10 @@
+@import '@styles/breakpoints.scss';
+
 .stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
+  @include mobile {
+    justify-items: center;
+  }
 }

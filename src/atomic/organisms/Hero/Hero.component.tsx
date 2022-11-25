@@ -1,13 +1,16 @@
 import Avatar from '@assets/images/Avatar.svg';
 import SpaceWalking from '@assets/images/spaceWalking.png';
-import { Button, Card, Spacing, Stats,Text } from '@atomic';
+import { Button, Card, Spacing, Stats, Text } from '@atomic';
+import { useMediaQuery } from '@hooks/useMediaQuery';
 import React from 'react';
 
 import styles from './Hero.module.scss';
 
 export const Hero: React.FC = () => {
+  const { isMobile } = useMediaQuery();
+
   return (
-    <Spacing top='lg' bottom='lg'>
+    <Spacing top={isMobile ? 'sm' : 'lg'} bottom={isMobile ? 'sm' : 'lg'}>
       <section className={styles.hero}>
         <div>
           <Spacing bottom='sm'>
@@ -17,10 +20,14 @@ export const Hero: React.FC = () => {
             NFT marketplace UI created with Anima for Figma. Collect, buy and
             sell art from more than 20k NFT artists.
           </Text>
-          <Spacing top='sm' bottom='md'>
-            <Button>Get Started</Button>
-          </Spacing>
-          <Stats />
+          {!isMobile && (
+            <>
+              <Spacing top='sm' bottom='md'>
+                <Button>Get Started</Button>
+              </Spacing>
+              <Stats />
+            </>
+          )}
         </div>
         <Card
           author={{ image: Avatar, name: 'animakid' }}
@@ -28,6 +35,12 @@ export const Hero: React.FC = () => {
           title='Space Walking'
           isImagePriority
         />
+        {isMobile && (
+          <>
+            <Button isFullWidth>Get Started</Button>
+            <Stats />
+          </>
+        )}
       </section>
     </Spacing>
   );

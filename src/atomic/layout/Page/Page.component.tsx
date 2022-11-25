@@ -1,4 +1,5 @@
-import { Container, Footer,Header } from '@atomic';
+import { Container, Footer, Header } from '@atomic';
+import { useMediaQuery } from '@hooks/useMediaQuery';
 import Head from 'next/head';
 import React, { ReactNode } from 'react';
 
@@ -13,6 +14,8 @@ export const Page: React.FC<PageProps> = ({
   title,
   description = 'NFT',
 }) => {
+  const { isMobile } = useMediaQuery();
+
   return (
     <div>
       <Head>
@@ -20,9 +23,7 @@ export const Page: React.FC<PageProps> = ({
         <meta name='description' content={description} />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Container>
-        <Header />
-      </Container>
+      <Container>{!isMobile && <Header />}</Container>
       {children}
       <Footer />
     </div>
