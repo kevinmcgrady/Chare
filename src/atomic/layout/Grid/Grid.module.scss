@@ -19,6 +19,9 @@
   &-4 {
     grid-template-columns: repeat(4, 1fr);
   }
+  &-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 .col-tablet {
@@ -42,6 +45,11 @@
       grid-template-columns: repeat(4, 1fr);
     }
   }
+  &-5 {
+    @include tablet {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
 }
 
 .col-mobile {
@@ -63,6 +71,11 @@
   &-4 {
     @include mobile {
       grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  &-5 {
+    @include mobile {
+      grid-template-columns: repeat(5, 1fr);
     }
   }
 }

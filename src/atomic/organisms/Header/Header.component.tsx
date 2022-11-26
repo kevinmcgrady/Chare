@@ -5,7 +5,11 @@ import React, { useState } from 'react';
 
 import styles from './Header.module.scss';
 
-export const Header: React.FC = () => {
+type HeaderProps = {
+  activeLink?: string;
+};
+
+export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
   const { isTablet } = useMediaQuery();
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -18,16 +22,31 @@ export const Header: React.FC = () => {
               <ul className={styles.navList}>
                 <Spacing right='sm'>
                   <li>
-                    <Link href={urls.marketplace}>Marketplace</Link>
+                    <Link
+                      isActive={activeLink === urls.marketplace}
+                      href={urls.marketplace}
+                    >
+                      Marketplace
+                    </Link>
                   </li>
                 </Spacing>
                 <Spacing right='sm'>
                   <li>
-                    <Link href={urls.rankings}>Rankings</Link>
+                    <Link
+                      isActive={activeLink === urls.rankings}
+                      href={urls.rankings}
+                    >
+                      Rankings
+                    </Link>
                   </li>
                 </Spacing>
                 <li>
-                  <Link href={urls.connectWallet}>Connect a wallet</Link>
+                  <Link
+                    isActive={activeLink === urls.connectWallet}
+                    href={urls.connectWallet}
+                  >
+                    Connect a wallet
+                  </Link>
                 </li>
               </ul>
             </Spacing>
