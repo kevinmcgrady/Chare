@@ -1,0 +1,23 @@
+@import '@styles/colors.scss';
+@import '@styles/spacing.scss';
+@import '@styles/breakpoints.scss';
+
+.header {
+  border: 1px solid $color-gray;
+  border-radius: $spacing-extra-small;
+  padding: $spacing-extra-small;
+}
+
+.grid {
+  display: grid;
+  gap: $spacing-extra-small;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+
+  @include tablet {
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+}

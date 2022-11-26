@@ -16,12 +16,15 @@ type TextVariant =
 
 type Align = 'left' | 'center' | 'right';
 type Font = 'spaceMono' | 'workSans';
+type Color = 'default' | 'gray' | 'green' | 'black';
 
 type TextProps = {
   variant?: TextVariant;
   children: ReactNode;
   align?: Align;
   font?: Font;
+  className?: string;
+  color?: Color;
 };
 
 export const Text: React.FC<TextProps> = ({
@@ -29,6 +32,8 @@ export const Text: React.FC<TextProps> = ({
   variant = 'body',
   align = 'left',
   font = 'primary',
+  className,
+  color = 'default',
 }) => {
   const isSecondaryFont = font === 'spaceMono';
 
@@ -41,6 +46,8 @@ export const Text: React.FC<TextProps> = ({
             styles[align],
             styles[getFont(isSecondaryFont)],
             styles[getFontWeight(isSecondaryFont)],
+            styles[color],
+            className,
           )}
         >
           {children}
@@ -54,6 +61,8 @@ export const Text: React.FC<TextProps> = ({
             styles[align],
             styles[getFont(isSecondaryFont)],
             styles[getFontWeight(isSecondaryFont)],
+            className,
+            styles[color],
           )}
         >
           {children}
@@ -66,6 +75,8 @@ export const Text: React.FC<TextProps> = ({
             styles.subTitle,
             styles[align],
             styles[getFont(isSecondaryFont)],
+            className,
+            styles[color],
           )}
         >
           {children}
@@ -79,6 +90,8 @@ export const Text: React.FC<TextProps> = ({
             styles[align],
             styles[getFont(isSecondaryFont)],
             styles[getFontWeight(isSecondaryFont)],
+            className,
+            styles[color],
           )}
         >
           {children}
@@ -92,6 +105,8 @@ export const Text: React.FC<TextProps> = ({
             styles[align],
             styles[getFont(isSecondaryFont)],
             styles[getFontWeight(isSecondaryFont)],
+            className,
+            styles[color],
           )}
         >
           {children}
@@ -105,6 +120,8 @@ export const Text: React.FC<TextProps> = ({
             styles[align],
             styles[getFont(isSecondaryFont)],
             styles[getFontWeight(isSecondaryFont)],
+            className,
+            styles[color],
           )}
         >
           {children}
@@ -117,6 +134,8 @@ export const Text: React.FC<TextProps> = ({
             styles.body,
             styles[align],
             styles[getFont(isSecondaryFont)],
+            className,
+            styles[color],
           )}
         >
           {children}
@@ -129,6 +148,8 @@ export const Text: React.FC<TextProps> = ({
             styles.caption,
             styles[align],
             styles[getFont(isSecondaryFont)],
+            className,
+            styles[color],
           )}
         >
           {children}

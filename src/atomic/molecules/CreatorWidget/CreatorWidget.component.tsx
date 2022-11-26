@@ -23,10 +23,12 @@ export const CreatorWidget: React.FC<CreatorWidgetProps> = ({
         <Text variant='h5' align='center'>
           {authorName}
         </Text>
-        <Text align='center'>Total Sales: {totalSavings}</Text>
+        <Text align='center' color='gray'>
+          Total Sales: {totalSavings}
+        </Text>
       </div>
       <div className={styles.pin}>
-        <Text>{index}</Text>
+        <Text color='gray'>{index}</Text>
       </div>
     </div>
   );

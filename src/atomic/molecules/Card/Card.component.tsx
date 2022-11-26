@@ -1,4 +1,4 @@
-import { Image,Spacing, Text } from '@atomic';
+import { Image, Spacing, Text } from '@atomic';
 import { StaticImageData } from 'next/image';
 import React from 'react';
 
@@ -44,16 +44,20 @@ export const Card: React.FC<CardProps> = ({
           <Spacing top='xs'>
             <div className={styles.price}>
               <div>
-                <Text variant='caption' font='spaceMono'>
+                <Text variant='caption' font='spaceMono' color='gray'>
                   Price
                 </Text>
-                <Text font='spaceMono'>{price}</Text>
+                <Spacing top='xs'>
+                  <Text font='spaceMono'>{price}</Text>
+                </Spacing>
               </div>
               <div>
-                <Text variant='caption' font='spaceMono'>
+                <Text variant='caption' font='spaceMono' color='gray'>
                   Highest Bid
                 </Text>
-                <Text font='spaceMono'>{highestBid}</Text>
+                <Spacing top='xs'>
+                  <Text font='spaceMono'>{highestBid}</Text>
+                </Spacing>
               </div>
             </div>
           </Spacing>

@@ -1,0 +1,10 @@
+@import '@styles/spacing.scss';
+@import '@styles/colors.scss';
+
+.isActive {
+  border-bottom: 2px solid $color-gray;
+}
+
+.heading {
+  cursor: pointer;
+}
