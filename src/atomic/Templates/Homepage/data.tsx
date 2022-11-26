@@ -199,20 +199,20 @@ export const popularNFTs: CardProps[] = [
     title: 'Space Walking',
     author: { image: Avatar1, name: 'robotica' },
     price: '1.63 ETH',
-    highestBid: '0.33 wETH',
+    highestBid: '0.33 ETH',
   },
   {
     image: Sky,
     title: 'Wonder Sky',
     author: { image: Avatar2, name: 'DigiLab' },
     price: '1.63 ETH',
-    highestBid: '0.33 wETH',
+    highestBid: '0.33 ETH',
   },
   {
     image: SpaceWoman,
     title: 'Peaceful Life',
     author: { image: Avatar3, name: 'GravityOne' },
     price: '1.63 ETH',
-    highestBid: '0.33 wETH',
+    highestBid: '0.33 ETH',
   },
 ];

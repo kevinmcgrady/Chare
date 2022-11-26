@@ -1,0 +1,19 @@
+@import '@styles/colors.scss';
+@import '@styles/spacing.scss';
+@import '@styles/fonts.scss';
+
+.searchBar {
+  border: 1px solid $color-gray;
+  padding: $spacing-extra-small;
+  border-radius: $spacing-extra-small;
+  display: flex;
+
+  & input {
+    background-color: transparent;
+    border: none;
+    font-size: $font-size-default;
+    outline: none;
+    color: $color-white;
+    flex: 1;
+  }
+}

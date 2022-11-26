@@ -1,5 +1,6 @@
 @import '@styles/fonts.scss';
 @import '@styles/breakpoints.scss';
+@import '@styles/colors.scss';
 
 .h1 {
   font-size: $font-size-h1;
@@ -84,4 +85,20 @@
 
 .right {
   text-align: right;
+}
+
+.default {
+  color: $color-white;
+}
+
+.gray {
+  color: $color-light-gray;
+}
+
+.green {
+  color: $color-green;
+}
+
+.black {
+  color: $color-black;
 }
