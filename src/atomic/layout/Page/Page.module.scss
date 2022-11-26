@@ -6,3 +6,14 @@
   background-color: $color-black;
   z-index: 6000;
 }
+
+.pageFullHeight {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.grow {
+  flex: 1;
+  display: flex;
+}

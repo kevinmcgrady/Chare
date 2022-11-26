@@ -1,7 +1,7 @@
 import { Container, Page, RankingTable, Spacing, TabBar, Text } from '@atomic';
 import React from 'react';
 
-export default function Home() {
+export default function Rankings() {
   return (
     <Page title='Rankings'>
       <Spacing top='md' bottom='md'>
