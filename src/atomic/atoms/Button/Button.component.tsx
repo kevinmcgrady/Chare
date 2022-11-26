@@ -4,7 +4,7 @@ import React, { ReactNode } from 'react';
 
 import styles from './Button.module.scss';
 
-type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
+type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'wallet';
 
 type ButtonProps = {
   children: ReactNode;

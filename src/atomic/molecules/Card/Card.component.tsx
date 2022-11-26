@@ -23,7 +23,7 @@ export const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div className={styles.card}>
-      <Image src={image} alt={title} isPriority={isImagePriority} />
+      <Image src={image} alt={title} priority={isImagePriority} />
       <div className={styles.bottom}>
         <Spacing bottom='xs'>
           <Text variant='h5'>{title}</Text>
@@ -35,7 +35,7 @@ export const Card: React.FC<CardProps> = ({
               alt={author.name}
               width={24}
               height={24}
-              isPriority={isImagePriority}
+              priority={isImagePriority}
             />
           </Spacing>
           <Text>{author.name}</Text>

@@ -13,7 +13,7 @@ import React from 'react';
 
 import { collections, popularNFTs } from '../atomic/Templates/Homepage/data';
 
-export default function Home() {
+export default function Marketplace() {
   return (
     <Page title='Marketplace'>
       <Spacing top='md' bottom='md'>

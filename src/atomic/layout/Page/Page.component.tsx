@@ -11,29 +11,36 @@ type PageProps = {
   children: ReactNode;
   title?: string;
   description?: string;
+  isFullHeight?: boolean;
+  hideHeader?: boolean;
 };
 
 export const Page: React.FC<PageProps> = ({
   children,
   title,
   description = 'NFT',
+  isFullHeight = false,
+  hideHeader = false,
 }) => {
   const { isTablet } = useMediaQuery();
   const { pathname } = useRouter();
 
   return (
-    <div>
+    <div className={cn(isFullHeight && styles.pageFullHeight)}>
       <Head>
         <title>{title ? `Chare - ${title}` : 'Chare'}</title>
         <meta name='description' content={description} />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className={cn(isTablet && styles.stickyContainer)}>
-        <Container>
-          <Header activeLink={pathname} />
-        </Container>
-      </div>
-      {children}
+      {!hideHeader && (
+        <div className={cn(isTablet && styles.stickyContainer)}>
+          <Container>
+            <Header activeLink={pathname} />
+          </Container>
+        </div>
+      )}
+
+      <div className={cn(isFullHeight && styles.grow)}>{children}</div>
       <Footer />
     </div>
   );

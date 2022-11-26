@@ -1,43 +1,24 @@
 import cn from 'classnames';
-import { default as NextImage, StaticImageData } from 'next/image';
+import { default as NextImage, ImageProps as NextImageProps } from 'next/image';
 import React from 'react';
 
 import styles from './Image.module.scss';
 
-export type ImageProps = {
-  src: StaticImageData;
-  alt: string;
-  width?: number;
-  height?: number;
-  isPriority?: boolean;
+export type ImageProps = NextImageProps & {
   isBlurred?: boolean;
-  className?: string;
-  fill?: boolean;
 };
 
 export const Image: React.FC<ImageProps> = ({
-  src,
-  alt,
-  height,
-  width,
-  isPriority = false,
   isBlurred = false,
-  className,
-  fill,
+  ...props
 }) => {
   return (
     <NextImage
       className={cn(
-        !height && !width && styles.image,
         isBlurred && styles.blur,
-        className,
+        !props.height && !props.width && styles.image,
       )}
-      src={src}
-      alt={alt}
-      height={height}
-      width={width}
-      priority={isPriority}
-      fill={fill}
+      {...props}
     />
   );
 };

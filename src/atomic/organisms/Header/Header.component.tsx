@@ -12,7 +12,6 @@ type HeaderProps = {
 export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
   const { isTablet } = useMediaQuery();
   const [isNavOpen, setIsNavOpen] = useState(false);
-
   return (
     <Spacing top='md'>
       <header className={styles.header}>
@@ -50,7 +49,9 @@ export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
                 </li>
               </ul>
             </Spacing>
-            <Button icon={{ type: 'user', color: 'primary' }}>Sign Up</Button>
+            <Link href={urls.createAccount}>
+              <Button icon={{ type: 'user', color: 'primary' }}>Sign Up</Button>
+            </Link>
           </nav>
         )}
         {isTablet && (
@@ -80,9 +81,11 @@ export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
             </li>
           </ul>
           <Spacing top='xs'>
-            <Button isFullWidth icon={{ type: 'user', color: 'primary' }}>
-              Sign Up
-            </Button>
+            <Link href={urls.createAccount}>
+              <Button isFullWidth icon={{ type: 'user', color: 'primary' }}>
+                Sign Up
+              </Button>
+            </Link>
           </Spacing>
         </div>
       )}

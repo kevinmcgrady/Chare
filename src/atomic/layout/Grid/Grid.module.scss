@@ -6,6 +6,14 @@
   gap: $spacing-extra-small;
 }
 
+.small {
+  gap: $spacing-extra-small;
+}
+
+.large {
+  gap: $spacing-md;
+}
+
 .col {
   &-1 {
     grid-template-columns: 1fr;
