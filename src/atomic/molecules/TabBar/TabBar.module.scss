@@ -2,9 +2,18 @@
 @import '@styles/colors.scss';
 
 .isActive {
-  border-bottom: 2px solid $color-gray;
+  border-bottom: 2px solid $color-light-gray;
 }
 
 .heading {
   cursor: pointer;
+}
+
+.tabBar {
+  background-color: $color-gray;
+  padding: $spacing-extra-small $spacing-extra-small 0 $spacing-extra-small;
+
+  & h5 {
+    padding-bottom: $spacing-extra-small;
+  }
 }
