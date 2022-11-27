@@ -12,7 +12,7 @@
 .tabBar {
   background-color: $color-gray;
   padding: $spacing-extra-small $spacing-extra-small 0 $spacing-extra-small;
-
+  border-radius: $spacing-extra-small;
   & h5 {
     padding-bottom: $spacing-extra-small;
   }
