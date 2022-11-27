@@ -18,7 +18,7 @@ export const CTAPage: React.FC<CTAPageProps> = ({
   subHeading,
 }) => {
   return (
-    <Page title={pageTitle} isFullHeight hideHeader>
+    <Page title={pageTitle} isFullHeight hideHeader hideFooter>
       <div className={styles.container}>
         <Grid noOfColumns={2} gap='large' noOfMobileCols={1}>
           <div style={{ position: 'relative' }}>
@@ -30,8 +30,8 @@ export const CTAPage: React.FC<CTAPageProps> = ({
               priority
             />
           </div>
-          <div>
-            <Spacing top='lg'>
+          <div className={styles.content}>
+            <Spacing top='sm' bottom='md' right='lg'>
               <Text variant='h2'>{heading}</Text>
               <Spacing top='xs'>
                 <Text variant='subTitle'>{subHeading}</Text>

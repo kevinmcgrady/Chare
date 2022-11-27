@@ -13,6 +13,7 @@ type PageProps = {
   description?: string;
   isFullHeight?: boolean;
   hideHeader?: boolean;
+  hideFooter?: boolean;
 };
 
 export const Page: React.FC<PageProps> = ({
@@ -21,6 +22,7 @@ export const Page: React.FC<PageProps> = ({
   description = 'NFT',
   isFullHeight = false,
   hideHeader = false,
+  hideFooter = false,
 }) => {
   const { isTablet } = useMediaQuery();
   const { pathname } = useRouter();
@@ -41,7 +43,7 @@ export const Page: React.FC<PageProps> = ({
       )}
 
       <div className={cn(isFullHeight && styles.grow)}>{children}</div>
-      <Footer />
+      {!hideFooter && <Footer />}
     </div>
   );
 };

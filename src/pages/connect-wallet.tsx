@@ -9,13 +9,19 @@ export default function ConnectWallet() {
       subHeading='Choose a wallet you want to connect. There are several wallet providers.'
     >
       <Spacing bottom='xs' top='xs'>
-        <Button variant='wallet'>Metamask</Button>
+        <Button isFullWidth variant='wallet' icon={{ type: 'metamask' }}>
+          Metamask
+        </Button>
       </Spacing>
       <Spacing bottom='xs' top='xs'>
-        <Button variant='wallet'>Wallet Connect</Button>
+        <Button isFullWidth variant='wallet' icon={{ type: 'walletConnect' }}>
+          Wallet Connect
+        </Button>
       </Spacing>
       <Spacing bottom='xs' top='xs'>
-        <Button variant='wallet'>Coinbase</Button>
+        <Button isFullWidth variant='wallet' icon={{ type: 'coinbase' }}>
+          Coinbase
+        </Button>
       </Spacing>
     </CTAPage>
   );
