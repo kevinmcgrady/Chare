@@ -3,7 +3,7 @@
 
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -63,4 +63,12 @@
   left: 0;
   right: 0;
   padding: $spacing-extra-small;
+}
+
+.logo {
+  letter-spacing: 0.1em;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $color-white;
+  text-shadow: 5px 5px $color-primary, 5px 5px $color-gray;
 }

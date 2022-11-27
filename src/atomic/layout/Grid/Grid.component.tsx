@@ -9,6 +9,7 @@ type GridProps = {
   noOfTabletColumns?: number;
   noOfMobileCols?: number;
   className?: string;
+  gap?: 'small' | 'large';
 };
 
 export const Grid: React.FC<GridProps> = ({
@@ -17,6 +18,7 @@ export const Grid: React.FC<GridProps> = ({
   noOfTabletColumns,
   noOfMobileCols,
   className,
+  gap = 'small',
 }) => {
   return (
     <div
@@ -25,6 +27,7 @@ export const Grid: React.FC<GridProps> = ({
         styles[`col-${noOfColumns}`],
         styles[`col-tablet-${noOfTabletColumns}`],
         styles[`col-mobile-${noOfMobileCols}`],
+        styles[gap],
         className,
       )}
     >

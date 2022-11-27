@@ -3,4 +3,5 @@ export const urls: Record<string, string> = {
   marketplace: '/marketplace',
   rankings: '/rankings',
   connectWallet: '/connect-wallet',
+  createAccount: '/create-account',
 };
