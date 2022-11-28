@@ -5,7 +5,7 @@ import React, { ReactNode } from 'react';
 
 import styles from './Link.module.scss';
 
-type LinkProps = NextLinkProps & {
+export type LinkProps = NextLinkProps & {
   children: ReactNode;
   isActive?: boolean;
 };

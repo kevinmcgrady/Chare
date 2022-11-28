@@ -1,0 +1,25 @@
+@import '@styles/breakpoints.scss';
+
+.imageContainer {
+  position: relative;
+  height: 560px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.timerContainer {
+  justify-self: flex-end;
+
+  @include mobile {
+    justify-self: flex-start;
+    width: 100%;
+  }
+}
+
+.creator,
+.tagContainer {
+  display: flex;
+  align-items: center;
+}

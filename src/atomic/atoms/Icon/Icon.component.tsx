@@ -5,6 +5,7 @@ import { Image } from '@atomic';
 import React, { ReactElement } from 'react';
 import { AiOutlineEye, AiOutlineSearch } from 'react-icons/ai';
 import { HiOutlineUserCircle } from 'react-icons/hi';
+import { TbWorld } from 'react-icons/tb';
 import { VscRocket } from 'react-icons/vsc';
 
 type IconType =
@@ -14,7 +15,8 @@ type IconType =
   | 'search'
   | 'metamask'
   | 'coinbase'
-  | 'walletConnect';
+  | 'walletConnect'
+  | 'world';
 type IconColor = 'primary' | 'secondary';
 
 export enum Color {
@@ -64,6 +66,7 @@ const iconElement = (
         alt='Wallet Connect'
       />
     ),
+    world: <TbWorld size={20} color={color} className={className} />,
   };
 };
 

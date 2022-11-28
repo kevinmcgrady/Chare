@@ -5,6 +5,7 @@
   background-color: rgba(59, 59, 59, 0.5);
   border-radius: $spacing-extra-small;
   padding: $spacing-small;
+  width: fit-content;
 
   @include mobile {
     width: 100%;
