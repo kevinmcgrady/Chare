@@ -1,5 +1,6 @@
 import ConnectWalletImage from '@assets/images/connectWallet.svg';
 import { Grid, Image, Page, Spacing, Text } from '@atomic';
+import { useMediaQuery } from '@hooks';
 import React, { ReactNode } from 'react';
 
 import styles from './CTAPage.module.scss';
@@ -17,11 +18,12 @@ export const CTAPage: React.FC<CTAPageProps> = ({
   heading,
   subHeading,
 }) => {
+  const { isMobile } = useMediaQuery();
   return (
     <Page title={pageTitle} isFullHeight hideHeader hideFooter>
       <div className={styles.container}>
-        <Grid noOfColumns={2} gap='large' noOfMobileCols={1}>
-          <div style={{ position: 'relative' }}>
+        <Grid noOfColumns={2} noOfMobileCols={1}>
+          <div className={styles.imageContainer}>
             <Image
               fill
               src={ConnectWalletImage}
@@ -31,7 +33,12 @@ export const CTAPage: React.FC<CTAPageProps> = ({
             />
           </div>
           <div className={styles.content}>
-            <Spacing top='sm' bottom='md' right='lg'>
+            <Spacing
+              top='sm'
+              bottom='sm'
+              right={isMobile ? 'lg' : 'sm'}
+              left='sm'
+            >
               <Text variant='h2'>{heading}</Text>
               <Spacing top='xs'>
                 <Text variant='subTitle'>{subHeading}</Text>

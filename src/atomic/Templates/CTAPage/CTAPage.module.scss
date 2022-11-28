@@ -1,4 +1,5 @@
 @import '@styles/spacing.scss';
+@import '@styles/breakpoints.scss';
 
 .container {
   display: flex;
@@ -6,4 +7,12 @@
 
 .content {
   align-self: center;
+}
+
+.imageContainer {
+  position: relative;
+
+  @include mobile {
+    height: 30vh;
+  }
 }
