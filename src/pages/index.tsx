@@ -25,7 +25,7 @@ export default function Home() {
   ));
 
   const creatorEls = creators.map((creator, index) => (
-    <CreatorWidget {...creator} key={index} index={index + 1} />
+    <CreatorWidget {...creator} key={index} />
   ));
 
   const categoriesEls = categories.map((category, index) => (

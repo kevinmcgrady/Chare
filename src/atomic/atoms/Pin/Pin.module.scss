@@ -1,0 +1,12 @@
+@import '@styles/colors.scss';
+@import '@styles/spacing.scss';
+
+.pin {
+  border-radius: 100%;
+  background-color: $color-black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}

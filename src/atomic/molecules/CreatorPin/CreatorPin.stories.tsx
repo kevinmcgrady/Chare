@@ -1,3 +1,4 @@
+import Avatar from '@assets/images/Avatar.svg';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
@@ -9,13 +10,37 @@ export default {
 } as ComponentMeta<typeof CreatorPin>;
 
 const Template: ComponentStory<typeof CreatorPin> = (args) => {
-  return (
-    <div style={{ maxWidth: '350px', margin: '0 auto' }}>
-      <CreatorPin {...args} />
-    </div>
-  );
+  return <CreatorPin {...args} />;
 };
 
-export const Default = Template.bind({});
+export const Small = Template.bind({});
 
-Default.args = {};
+Small.args = {
+  artistName: 'Orbitian',
+  image: { src: Avatar, alt: 'Orbitian' },
+  variant: 'small',
+};
+
+export const Large = Template.bind({});
+
+Large.args = {
+  artistName: 'Orbitian',
+  image: { src: Avatar, alt: 'Orbitian' },
+  variant: 'large',
+};
+
+export const ExtraLarge = Template.bind({});
+
+ExtraLarge.args = {
+  artistName: 'Orbitian',
+  image: { src: Avatar, alt: 'Orbitian' },
+  variant: 'extraLarge',
+};
+
+export const WithBackground = Template.bind({});
+
+WithBackground.args = {
+  artistName: 'Orbitian',
+  image: { src: Avatar, alt: 'Orbitian' },
+  variant: 'withBackground',
+};

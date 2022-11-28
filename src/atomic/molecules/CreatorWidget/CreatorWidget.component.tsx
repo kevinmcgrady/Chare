@@ -1,4 +1,4 @@
-import { Image, ImageProps, Text } from '@atomic';
+import { Image, ImageProps, Pin,Text } from '@atomic';
 import React from 'react';
 
 import styles from './CreatorWidget.module.scss';
@@ -7,7 +7,7 @@ export type CreatorWidgetProps = {
   image: ImageProps;
   authorName: string;
   totalSavings: string;
-  index?: number;
+  index: number;
 };
 
 export const CreatorWidget: React.FC<CreatorWidgetProps> = ({
@@ -27,9 +27,7 @@ export const CreatorWidget: React.FC<CreatorWidgetProps> = ({
           Total Sales: {totalSavings}
         </Text>
       </div>
-      <div className={styles.pin}>
-        <Text color='gray'>{index}</Text>
-      </div>
+      <Pin className={styles.pin} number={index} />
     </div>
   );
 };

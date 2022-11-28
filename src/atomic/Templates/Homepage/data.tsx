@@ -85,6 +85,7 @@ export const collections: CollectionProps[] = [
 
 export const creators: CreatorWidgetProps[] = [
   {
+    index: 1,
     image: {
       src: Avatar,
       alt: 'animakid',
@@ -93,6 +94,7 @@ export const creators: CreatorWidgetProps[] = [
     totalSavings: '34.53 ETH',
   },
   {
+    index: 2,
     image: {
       src: Avatar2,
       alt: 'DigiLab',
@@ -101,6 +103,7 @@ export const creators: CreatorWidgetProps[] = [
     totalSavings: '34.53 ETH',
   },
   {
+    index: 3,
     image: {
       src: Avatar3,
       alt: 'GravityOne',
@@ -109,6 +112,7 @@ export const creators: CreatorWidgetProps[] = [
     totalSavings: '34.53 ETH',
   },
   {
+    index: 4,
     image: {
       src: Avatar4,
       alt: 'Juanie',
@@ -117,6 +121,7 @@ export const creators: CreatorWidgetProps[] = [
     totalSavings: '34.53 ETH',
   },
   {
+    index: 5,
     image: {
       src: Avatar5,
       alt: 'BlueWhale',
@@ -125,6 +130,7 @@ export const creators: CreatorWidgetProps[] = [
     totalSavings: '34.53 ETH',
   },
   {
+    index: 6,
     image: {
       src: Avatar6,
       alt: 'Mr fox',
@@ -133,6 +139,7 @@ export const creators: CreatorWidgetProps[] = [
     totalSavings: '34.53 ETH',
   },
   {
+    index: 7,
     image: {
       src: Avatar7,
       alt: 'Shroomie',
@@ -141,6 +148,7 @@ export const creators: CreatorWidgetProps[] = [
     totalSavings: '34.53 ETH',
   },
   {
+    index: 8,
     image: {
       src: Avatar1,
       alt: 'robotica',

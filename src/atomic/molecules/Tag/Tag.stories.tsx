@@ -9,11 +9,7 @@ export default {
 } as ComponentMeta<typeof Tag>;
 
 const Template: ComponentStory<typeof Tag> = (args) => {
-  return (
-    <div style={{ maxWidth: '350px', margin: '0 auto' }}>
-      <Tag {...args} />
-    </div>
-  );
+  return <Tag {...args} />;
 };
 
 export const Default = Template.bind({});
