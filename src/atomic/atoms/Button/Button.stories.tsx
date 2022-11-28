@@ -39,3 +39,12 @@ WithIcon.args = {
     color: 'primary',
   },
 };
+
+export const Wallet = Template.bind({});
+
+Wallet.args = {
+  variant: 'wallet',
+  icon: {
+    type: 'metamask',
+  },
+};

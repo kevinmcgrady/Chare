@@ -1,0 +1,9 @@
+@import '@styles/colors.scss';
+@import '@styles/spacing.scss';
+
+.tag {
+  background-color: $color-gray;
+  width: fit-content;
+  border-radius: $spacing-extra-small;
+  padding: $spacing-extra-small;
+}
