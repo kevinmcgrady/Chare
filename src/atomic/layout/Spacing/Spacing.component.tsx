@@ -6,7 +6,6 @@ import styles from './Spacing.module.scss';
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 
 type SpacingProps = {
-  style?: Object;
   children?: ReactNode;
   top?: Size;
   right?: Size;
@@ -15,7 +14,6 @@ type SpacingProps = {
 };
 
 export const Spacing: React.FC<SpacingProps> = ({
-  style,
   children,
   top,
   right,
@@ -24,7 +22,6 @@ export const Spacing: React.FC<SpacingProps> = ({
 }) => {
   return (
     <div
-      style={style}
       className={cn(
         top && styles[`top-${top}`],
         right && styles[`right-${right}`],

@@ -1,4 +1,4 @@
-import { Button, CTAPage, Spacing } from '@atomic';
+import { CreateAccountForm,CTAPage, Spacing } from '@atomic';
 import React from 'react';
 
 export default function CreateAccount() {
@@ -9,7 +9,7 @@ export default function CreateAccount() {
       subHeading='Welcome! enter your details and start creating, collecting and selling NFTs.'
     >
       <Spacing bottom='xs' top='xs'>
-        <Button>Create account</Button>
+        <CreateAccountForm />
       </Spacing>
     </CTAPage>
   );
