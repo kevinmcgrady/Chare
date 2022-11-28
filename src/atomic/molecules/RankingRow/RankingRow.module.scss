@@ -22,21 +22,3 @@
     grid-template-columns: 1fr 3fr 1fr;
   }
 }
-
-.avarar {
-  display: flex;
-  align-items: center;
-  gap: $spacing-extra-small;
-}
-
-.pin {
-  background-color: $color-black;
-  padding: $spacing-extra-small;
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  color: $color-light-gray;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}

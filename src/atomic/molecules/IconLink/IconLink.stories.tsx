@@ -9,11 +9,7 @@ export default {
 } as ComponentMeta<typeof IconLink>;
 
 const Template: ComponentStory<typeof IconLink> = (args) => {
-  return (
-    <div style={{ maxWidth: '350px', margin: '0 auto' }}>
-      <IconLink {...args} />
-    </div>
-  );
+  return <IconLink {...args} />;
 };
 
 export const Default = Template.bind({});
