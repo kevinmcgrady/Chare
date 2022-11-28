@@ -1,4 +1,4 @@
-import { Image, ImageProps,Spacing, Text } from '@atomic';
+import { CreatorPin, Grid,Image, ImageProps, Spacing, Text } from '@atomic';
 import React from 'react';
 
 import styles from './Collection.module.scss';
@@ -22,7 +22,7 @@ export const Collection: React.FC<CollectionProps> = ({
     <div>
       <Image src={mainImage.src} alt={mainImage.alt} />
       <Spacing top='xs'>
-        <div className={styles.additional}>
+        <Grid noOfColumns={3}>
           {additionalImages.map((image) => (
             <Image key={image.alt} src={image.src} alt={image.alt} />
           ))}
@@ -31,23 +31,16 @@ export const Collection: React.FC<CollectionProps> = ({
               {stat}
             </Text>
           </div>
-        </div>
+        </Grid>
       </Spacing>
       <Spacing top='xs'>
         <Text variant='h5'>{title}</Text>
         <Spacing top='xs'>
-          <div className={styles.author}>
-            <Spacing right='xs'>
-              <Image
-                src={author.image.src}
-                alt={author.image.alt}
-                width={24}
-                height={24}
-              />
-            </Spacing>
-
-            <Text>{author.name}</Text>
-          </div>
+          <CreatorPin
+            variant='small'
+            artistName={author.name}
+            image={{ src: author.image.src, alt: author.image.alt }}
+          />
         </Spacing>
       </Spacing>
     </div>

@@ -3,6 +3,7 @@ import NFTImage from '@assets/images/NFT.svg';
 import {
   Button,
   Container,
+  CreatorPin,
   Grid,
   IconLink,
   Image,
@@ -41,12 +42,11 @@ export const NFTTemplate: React.FC = () => {
                   Created By
                 </Text>
                 <Spacing top='xs'>
-                  <div className={styles.creator}>
-                    <Spacing right='xs'>
-                      <Image src={Avatar} alt='Avatar' width={24} height={24} />
-                    </Spacing>
-                    <Text variant='h5'>Orbitian</Text>
-                  </div>
+                  <CreatorPin
+                    artistName='Orbitian'
+                    image={{ src: Avatar, alt: 'Orbitian' }}
+                    variant='large'
+                  />
                 </Spacing>
               </Spacing>
               <Spacing top='xs'>

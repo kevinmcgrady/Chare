@@ -1,3 +1,4 @@
+import Avatar from '@assets/images/Avatar.svg';
 import MushroomImage from '@assets/images/mushroom.png';
 import { Button, Container, CreatorPin, Spacing, Text, Timer } from '@atomic';
 import { useMediaQuery } from '@hooks';
@@ -17,7 +18,11 @@ export const Featured: React.FC = () => {
           <div className={styles.details}>
             <div>
               <Spacing bottom='xs'>
-                <CreatorPin />
+                <CreatorPin
+                  artistName='Shroomie'
+                  image={{ src: Avatar, alt: 'Shroomie' }}
+                  variant='withBackground'
+                />
               </Spacing>
               <Spacing bottom='xs'>
                 <Text variant='h2'>Magic Mushrooms</Text>

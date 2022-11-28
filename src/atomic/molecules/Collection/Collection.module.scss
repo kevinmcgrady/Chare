@@ -1,20 +1,10 @@
 @import '@styles/spacing.scss';
 @import '@styles/colors.scss';
 
-.additional {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: $spacing-extra-small;
-}
-
 .stats {
   background-color: $color-primary;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: $spacing-extra-small;
-}
-
-.author {
-  display: flex;
 }
