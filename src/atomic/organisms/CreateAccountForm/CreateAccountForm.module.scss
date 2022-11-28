@@ -1,0 +1,24 @@
+@import '@styles/spacing.scss';
+@import '@styles/fonts.scss';
+@import '@styles/colors.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input {
+  border-radius: $spacing-extra-small;
+  border: none;
+  padding: 16px 20px 16px 20px;
+  font-family: $secondary-font-family;
+  outline: none;
+  margin-bottom: $spacing-extra-small;
+  width: 100%;
+
+  &::placeholder {
+    color: $color-black;
+    font-size: $font-size-default;
+  }
+}

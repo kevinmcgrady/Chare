@@ -62,12 +62,17 @@ export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
           </>
         )}
         {isTablet && (
-          <div
-            onClick={() => setIsNavOpen(!isNavOpen)}
-            className={styles.mobileNavIcon}
-          >
-            <span></span>
-          </div>
+          <>
+            <Text variant='h3' className={styles.logo}>
+              Chare
+            </Text>
+            <div
+              onClick={() => setIsNavOpen(!isNavOpen)}
+              className={styles.mobileNavIcon}
+            >
+              <span></span>
+            </div>
+          </>
         )}
       </header>
       {isNavOpen && isTablet && (
