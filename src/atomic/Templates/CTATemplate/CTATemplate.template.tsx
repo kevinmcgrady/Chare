@@ -3,7 +3,7 @@ import { Grid, Image, Page, Spacing, Text } from '@atomic';
 import { useMediaQuery } from '@hooks';
 import React, { ReactNode } from 'react';
 
-import styles from './CTAPage.module.scss';
+import styles from './CTATemplate.module.scss';
 
 type CTAPageProps = {
   pageTitle: string;
@@ -12,7 +12,7 @@ type CTAPageProps = {
   subHeading: string;
 };
 
-export const CTAPage: React.FC<CTAPageProps> = ({
+export const CTATemplate: React.FC<CTAPageProps> = ({
   pageTitle,
   children,
   heading,

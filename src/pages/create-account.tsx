@@ -1,9 +1,9 @@
-import { CreateAccountForm,CTAPage, Spacing } from '@atomic';
+import { CreateAccountForm, CTATemplate, Spacing } from '@atomic';
 import React from 'react';
 
 export default function CreateAccount() {
   return (
-    <CTAPage
+    <CTATemplate
       pageTitle='Create account'
       heading='Create account'
       subHeading='Welcome! enter your details and start creating, collecting and selling NFTs.'
@@ -11,6 +11,6 @@ export default function CreateAccount() {
       <Spacing bottom='xs' top='xs'>
         <CreateAccountForm />
       </Spacing>
-    </CTAPage>
+    </CTATemplate>
   );
 }

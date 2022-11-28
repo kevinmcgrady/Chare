@@ -1,9 +1,9 @@
-import { Button, CTAPage, Spacing } from '@atomic';
+import { Button, CTATemplate, Spacing } from '@atomic';
 import React from 'react';
 
 export default function ConnectWallet() {
   return (
-    <CTAPage
+    <CTATemplate
       pageTitle='Connect Wallet'
       heading='Connect wallet'
       subHeading='Choose a wallet you want to connect. There are several wallet providers.'
@@ -23,6 +23,6 @@ export default function ConnectWallet() {
           Coinbase
         </Button>
       </Spacing>
-    </CTAPage>
+    </CTATemplate>
   );
 }
