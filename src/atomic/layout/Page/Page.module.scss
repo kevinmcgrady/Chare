@@ -1,4 +1,5 @@
 @import '@styles/colors.scss';
+@import '@styles/spacing.scss';
 
 .stickyContainer {
   position: sticky;
@@ -16,4 +17,13 @@
 .grow {
   flex: 1;
   display: flex;
+}
+
+.absoluteHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding-top: $spacing-md;
 }

@@ -27,34 +27,34 @@ export default function Marketplace() {
           <Spacing bottom='md'>
             <SearchBar />
           </Spacing>
-          <Spacing bottom='md'>
-            <TabBar
-              headings={['NFTs', 'Collections']}
-              tabs={[
-                <Grid
-                  key='NFTs'
-                  noOfColumns={3}
-                  noOfTabletColumns={2}
-                  noOfMobileCols={1}
-                >
-                  {popularNFTs.map((nft) => (
-                    <Card {...nft} key={nft.title} />
-                  ))}
-                </Grid>,
-                <Grid
-                  key='Collections'
-                  noOfColumns={3}
-                  noOfTabletColumns={2}
-                  noOfMobileCols={1}
-                >
-                  {collections.map((collection) => (
-                    <Collection {...collection} key={collection.title} />
-                  ))}
-                </Grid>,
-              ]}
-            />
-          </Spacing>
         </Container>
+        <Spacing bottom='md'>
+          <TabBar
+            headings={['NFTs', 'Collections']}
+            tabs={[
+              <Grid
+                key='NFTs'
+                noOfColumns={3}
+                noOfTabletColumns={2}
+                noOfMobileCols={1}
+              >
+                {popularNFTs.map((nft) => (
+                  <Card {...nft} key={nft.title} />
+                ))}
+              </Grid>,
+              <Grid
+                key='Collections'
+                noOfColumns={3}
+                noOfTabletColumns={2}
+                noOfMobileCols={1}
+              >
+                {collections.map((collection) => (
+                  <Collection {...collection} key={collection.title} />
+                ))}
+              </Grid>,
+            ]}
+          />
+        </Spacing>
       </Spacing>
     </Page>
   );

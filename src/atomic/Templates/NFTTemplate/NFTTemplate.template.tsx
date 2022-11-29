@@ -19,8 +19,8 @@ import styles from './NFTTemplate.module.scss';
 
 export const NFTTemplate: React.FC = () => {
   return (
-    <Page title='Marketplace'>
-      <Spacing top='md' bottom='md'>
+    <Page title='NFT' absoluteHeader>
+      <Spacing bottom='md'>
         <div className={styles.imageContainer}>
           <Image
             priority

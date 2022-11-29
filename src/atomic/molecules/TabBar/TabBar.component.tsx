@@ -1,4 +1,4 @@
-import { Grid, Spacing, Text } from '@atomic';
+import { Container,Grid, Spacing, Text } from '@atomic';
 import { useMediaQuery } from '@hooks';
 import cn from 'classnames';
 import React, { ReactElement, useState } from 'react';
@@ -25,29 +25,33 @@ export const TabBar: React.FC<TabBarProps> = ({
   return (
     <>
       <div className={styles.tabBar}>
-        <Grid noOfColumns={headings.length}>
-          {displayHeadings.map((heading, index) => (
-            <div
-              key={heading}
-              role='link'
-              onClick={() => setActiveTabIndex(index)}
-            >
-              <Text
-                align='center'
-                className={cn(
-                  activeTabIndex === index && styles.isActive,
-                  styles.heading,
-                )}
-                variant='h5'
-                color={activeTabIndex === index ? 'default' : 'gray'}
+        <Container>
+          <Grid noOfColumns={headings.length}>
+            {displayHeadings.map((heading, index) => (
+              <div
+                key={heading}
+                role='link'
+                onClick={() => setActiveTabIndex(index)}
               >
-                {heading}
-              </Text>
-            </div>
-          ))}
-        </Grid>
+                <Text
+                  align='center'
+                  className={cn(
+                    activeTabIndex === index && styles.isActive,
+                    styles.heading,
+                  )}
+                  variant='h5'
+                  color={activeTabIndex === index ? 'default' : 'gray'}
+                >
+                  {heading}
+                </Text>
+              </div>
+            ))}
+          </Grid>
+        </Container>
       </div>
-      <Spacing top='md'>{tabs[activeTabIndex]}</Spacing>
+      <Spacing top='md'>
+        <Container>{tabs[activeTabIndex]}</Container>
+      </Spacing>
     </>
   );
 };

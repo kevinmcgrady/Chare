@@ -13,7 +13,7 @@ export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
   const { isTablet } = useMediaQuery();
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-    <Spacing top='md'>
+    <>
       <header className={styles.header}>
         {!isTablet && (
           <>
@@ -101,6 +101,6 @@ export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
           </Spacing>
         </div>
       )}
-    </Spacing>
+    </>
   );
 };
