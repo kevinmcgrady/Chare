@@ -1,3 +1,5 @@
+// Will remove when connected to a data source!
+
 import BasketBall from '@assets/icons/Basketball.svg';
 import Camera from '@assets/icons/Camera.svg';
 import MagicWand from '@assets/icons/MagicWand.svg';

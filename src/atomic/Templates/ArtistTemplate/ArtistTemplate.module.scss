@@ -1,0 +1,19 @@
+.imageContainer {
+  position: relative;
+  height: 530px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.avatarContainer {
+  position: relative;
+  margin-top: -70px;
+}
+
+.ctaContainer {
+  display: flex;
+  justify-self: flex-end;
+  align-items: flex-start;
+}

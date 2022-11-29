@@ -1,4 +1,4 @@
-import { Container, Footer, Header } from '@atomic';
+import { Container, Footer, Header, Spacing } from '@atomic';
 import { useMediaQuery } from '@hooks';
 import cn from 'classnames';
 import Head from 'next/head';
@@ -14,6 +14,7 @@ type PageProps = {
   isFullHeight?: boolean;
   hideHeader?: boolean;
   hideFooter?: boolean;
+  absoluteHeader?: boolean;
 };
 
 export const Page: React.FC<PageProps> = ({
@@ -23,6 +24,7 @@ export const Page: React.FC<PageProps> = ({
   isFullHeight = false,
   hideHeader = false,
   hideFooter = false,
+  absoluteHeader = false,
 }) => {
   const { isTablet } = useMediaQuery();
   const { pathname } = useRouter();
@@ -35,7 +37,13 @@ export const Page: React.FC<PageProps> = ({
         <link rel='icon' href='/favicon.ico' />
       </Head>
       {!hideHeader && (
-        <div className={cn(isTablet && styles.stickyContainer)}>
+        <div
+          className={cn(
+            isTablet && styles.stickyContainer,
+            absoluteHeader && !isTablet && styles.absoluteHeader,
+          )}
+        >
+          {!absoluteHeader && !isTablet && <Spacing top='md' />}
           <Container>
             <Header activeLink={pathname} />
           </Container>
