@@ -8,7 +8,11 @@ type MobileNavIconProps = {
 
 export const MobileNavIcon: React.FC<MobileNavIconProps> = ({ onClick }) => {
   return (
-    <div onClick={() => onClick()} className={styles.mobileNavIcon}>
+    <div
+      role='button'
+      onClick={() => onClick()}
+      className={styles.mobileNavIcon}
+    >
       <span></span>
     </div>
   );

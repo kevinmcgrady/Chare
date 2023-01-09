@@ -1,6 +1,8 @@
 import '@testing-library/jest-dom';
+
 import { render, screen } from '@testing-library/react';
 import { Button } from './Button.component';
+
 import styles from './Button.module.scss';
 
 test('loads component', async () => {

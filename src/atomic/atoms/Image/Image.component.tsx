@@ -14,6 +14,7 @@ export const Image: React.FC<ImageProps> = ({
 }) => {
   return (
     <NextImage
+      role='img'
       className={cn(
         isBlurred && styles.blur,
         !props.height && !props.width && styles.image,
