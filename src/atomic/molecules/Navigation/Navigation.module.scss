@@ -1,0 +1,23 @@
+@import '@styles/colors.scss';
+@import '@styles/spacing.scss';
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+
+  & li {
+    list-style: none;
+  }
+}
+
+.mobileNav {
+  background: $color-black;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: $spacing-extra-small;
+}

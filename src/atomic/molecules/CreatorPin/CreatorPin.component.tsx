@@ -1,4 +1,4 @@
-import { Image, ImageProps,Spacing, Text } from '@atomic';
+import { Image, ImageProps, Spacing, Text } from '@atomic';
 import cn from 'classnames';
 import React from 'react';
 
@@ -19,6 +19,7 @@ export const CreatorPin: React.FC<CreatorPinProps> = ({
 }) => {
   const hasLargeHeading = ['large', 'extraLarge'].includes(variant);
   const hasLargeImage = variant === 'extraLarge';
+
   return (
     <div
       className={cn(

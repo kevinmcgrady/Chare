@@ -1,6 +1,6 @@
-import { Button, Link, Logo, Spacing } from '@atomic';
+import { Logo, MobileNavIcon, Navigation } from '@atomic';
 import { useMediaQuery } from '@hooks';
-import { urls } from '@urls';
+import { authNavigationUrls, navigationUrls, urls } from '@urls';
 import React, { useState } from 'react';
 
 import styles from './Header.module.scss';
@@ -14,90 +14,33 @@ export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <>
+    <React.Fragment>
       <header className={styles.header}>
         {!isTablet && (
-          <>
-            <Logo />
-            <nav className={styles.nav}>
-              <Spacing right='sm'>
-                <ul className={styles.navList}>
-                  <Spacing right='sm'>
-                    <li>
-                      <Link
-                        isActive={activeLink === urls.nft.marketplace}
-                        href={urls.nft.marketplace}
-                      >
-                        Marketplace
-                      </Link>
-                    </li>
-                  </Spacing>
-                  <Spacing right='sm'>
-                    <li>
-                      <Link
-                        isActive={activeLink === urls.artist.rankings}
-                        href={urls.artist.rankings}
-                      >
-                        Rankings
-                      </Link>
-                    </li>
-                  </Spacing>
-                  <li>
-                    <Link
-                      isActive={activeLink === urls.auth.connectWallet}
-                      href={urls.auth.connectWallet}
-                    >
-                      Connect a wallet
-                    </Link>
-                  </li>
-                </ul>
-              </Spacing>
-              <Link href={urls.auth.createAccount}>
-                <Button icon={{ type: 'user', color: 'primary' }}>
-                  Sign Up
-                </Button>
-              </Link>
-            </nav>
-          </>
+          <React.Fragment>
+            <Logo url={urls.homepage} />
+            <Navigation
+              activeLink={activeLink as string}
+              navigationUrls={navigationUrls}
+              authNavigationUrls={authNavigationUrls}
+            />
+          </React.Fragment>
         )}
         {isTablet && (
-          <>
-            <Logo />
-            <div
-              onClick={() => setIsNavOpen(!isNavOpen)}
-              className={styles.mobileNavIcon}
-            >
-              <span></span>
-            </div>
-          </>
+          <React.Fragment>
+            <Logo url={urls.homepage} />
+            <MobileNavIcon onClick={() => setIsNavOpen(!isNavOpen)} />
+          </React.Fragment>
         )}
       </header>
       {isNavOpen && isTablet && (
-        <div className={styles.mobileNav}>
-          <ul>
-            <Spacing bottom='xs'>
-              <li>
-                <Link href={urls.nft.marketplace}>Marketplace</Link>
-              </li>
-            </Spacing>
-            <Spacing bottom='xs'>
-              <li>
-                <Link href={urls.artist.rankings}>Rankings</Link>
-              </li>
-            </Spacing>
-            <li>
-              <Link href={urls.auth.connectWallet}>Connect a wallet</Link>
-            </li>
-          </ul>
-          <Spacing top='xs'>
-            <Link href={urls.auth.createAccount}>
-              <Button isFullWidth icon={{ type: 'user', color: 'primary' }}>
-                Sign Up
-              </Button>
-            </Link>
-          </Spacing>
-        </div>
+        <Navigation
+          isMobile
+          activeLink={activeLink as string}
+          navigationUrls={navigationUrls}
+          authNavigationUrls={authNavigationUrls}
+        />
       )}
-    </>
+    </React.Fragment>
   );
 };
