@@ -1,13 +1,12 @@
 import { Logo, MobileNavIcon, Navigation } from '@atomic';
 import { useMediaQuery } from '@hooks';
-import { authNavigationUrls,navigationUrls, urls } from '@urls';
+import { authNavigationUrls, navigationUrls, urls } from '@urls';
 import React, { useState } from 'react';
 
 import styles from './Header.module.scss';
 
 type HeaderProps = {
   activeLink?: string;
-  navigationUrls: string[];
 };
 
 export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
