@@ -11,7 +11,7 @@ type PinProps = {
 
 export const Pin: React.FC<PinProps> = ({ number, className }) => {
   return (
-    <div className={cn(styles.pin, className)}>
+    <div role='status' className={cn(styles.pin, className)}>
       <Text color='gray'>{number}</Text>
     </div>
   );
