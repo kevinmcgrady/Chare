@@ -1,4 +1,4 @@
-import { Button, Link, Spacing, Text } from '@atomic';
+import { Button, Link, Logo, Spacing } from '@atomic';
 import { useMediaQuery } from '@hooks';
 import { urls } from '@urls';
 import React, { useState } from 'react';
@@ -12,22 +12,21 @@ type HeaderProps = {
 export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
   const { isTablet } = useMediaQuery();
   const [isNavOpen, setIsNavOpen] = useState(false);
+
   return (
     <>
       <header className={styles.header}>
         {!isTablet && (
           <>
-            <Text variant='h3' className={styles.logo}>
-              Chare
-            </Text>
+            <Logo />
             <nav className={styles.nav}>
               <Spacing right='sm'>
                 <ul className={styles.navList}>
                   <Spacing right='sm'>
                     <li>
                       <Link
-                        isActive={activeLink === urls.marketplace}
-                        href={urls.marketplace}
+                        isActive={activeLink === urls.nft.marketplace}
+                        href={urls.nft.marketplace}
                       >
                         Marketplace
                       </Link>
@@ -36,8 +35,8 @@ export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
                   <Spacing right='sm'>
                     <li>
                       <Link
-                        isActive={activeLink === urls.rankings}
-                        href={urls.rankings}
+                        isActive={activeLink === urls.artist.rankings}
+                        href={urls.artist.rankings}
                       >
                         Rankings
                       </Link>
@@ -45,15 +44,15 @@ export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
                   </Spacing>
                   <li>
                     <Link
-                      isActive={activeLink === urls.connectWallet}
-                      href={urls.connectWallet}
+                      isActive={activeLink === urls.auth.connectWallet}
+                      href={urls.auth.connectWallet}
                     >
                       Connect a wallet
                     </Link>
                   </li>
                 </ul>
               </Spacing>
-              <Link href={urls.createAccount}>
+              <Link href={urls.auth.createAccount}>
                 <Button icon={{ type: 'user', color: 'primary' }}>
                   Sign Up
                 </Button>
@@ -63,9 +62,7 @@ export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
         )}
         {isTablet && (
           <>
-            <Text variant='h3' className={styles.logo}>
-              Chare
-            </Text>
+            <Logo />
             <div
               onClick={() => setIsNavOpen(!isNavOpen)}
               className={styles.mobileNavIcon}
@@ -80,20 +77,20 @@ export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
           <ul>
             <Spacing bottom='xs'>
               <li>
-                <Link href={urls.marketplace}>Marketplace</Link>
+                <Link href={urls.nft.marketplace}>Marketplace</Link>
               </li>
             </Spacing>
             <Spacing bottom='xs'>
               <li>
-                <Link href={urls.rankings}>Rankings</Link>
+                <Link href={urls.artist.rankings}>Rankings</Link>
               </li>
             </Spacing>
             <li>
-              <Link href={urls.connectWallet}>Connect a wallet</Link>
+              <Link href={urls.auth.connectWallet}>Connect a wallet</Link>
             </li>
           </ul>
           <Spacing top='xs'>
-            <Link href={urls.createAccount}>
+            <Link href={urls.auth.createAccount}>
               <Button isFullWidth icon={{ type: 'user', color: 'primary' }}>
                 Sign Up
               </Button>

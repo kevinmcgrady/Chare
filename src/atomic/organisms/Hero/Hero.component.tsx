@@ -1,7 +1,8 @@
 import Avatar from '@assets/images/Avatar.svg';
 import SpaceWalking from '@assets/images/spaceWalking.png';
-import { Button, Card, Spacing, Stats, Text } from '@atomic';
+import { Button, Card, Link, Spacing, Stats, Text } from '@atomic';
 import { useMediaQuery } from '@hooks';
+import { urls } from '@urls';
 import React from 'react';
 
 import styles from './Hero.module.scss';
@@ -23,9 +24,11 @@ export const Hero: React.FC = () => {
           {!isMobile && (
             <>
               <Spacing top='sm' bottom='md'>
-                <Button icon={{ type: 'rocket', color: 'primary' }}>
-                  Get Started
-                </Button>
+                <Link href={urls.nft.marketplace}>
+                  <Button icon={{ type: 'rocket', color: 'primary' }}>
+                    Get Started
+                  </Button>
+                </Link>
               </Spacing>
               <Stats />
             </>

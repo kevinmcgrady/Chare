@@ -1,7 +1,7 @@
 import { CreateAccountForm, CTATemplate, Spacing } from '@atomic';
 import React from 'react';
 
-export default function CreateAccount() {
+export const CreateAccount: React.FC = () => {
   return (
     <CTATemplate
       pageTitle='Create account'
@@ -13,4 +13,4 @@ export default function CreateAccount() {
       </Spacing>
     </CTATemplate>
   );
-}
+};

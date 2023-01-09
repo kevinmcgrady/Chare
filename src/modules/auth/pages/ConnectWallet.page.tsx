@@ -1,7 +1,7 @@
 import { Button, CTATemplate, Spacing } from '@atomic';
 import React from 'react';
 
-export default function ConnectWallet() {
+export const ConnectWallet: React.FC = () => {
   return (
     <CTATemplate
       pageTitle='Connect Wallet'
@@ -25,4 +25,4 @@ export default function ConnectWallet() {
       </Spacing>
     </CTATemplate>
   );
-}
+};

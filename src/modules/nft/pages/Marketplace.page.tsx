@@ -11,9 +11,12 @@ import {
 } from '@atomic';
 import React from 'react';
 
-import { collections, popularNFTs } from '../atomic/Templates/Homepage/data';
+import {
+  collections,
+  popularNFTs,
+} from '../../../atomic/Templates/Homepage/data';
 
-export default function Marketplace() {
+export const Marketplace: React.FC = () => {
   return (
     <Page title='Marketplace'>
       <Spacing top='md' bottom='md'>
@@ -58,4 +61,4 @@ export default function Marketplace() {
       </Spacing>
     </Page>
   );
-}
+};

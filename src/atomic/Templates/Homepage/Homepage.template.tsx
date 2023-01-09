@@ -6,6 +6,7 @@ import {
   Spacing,
 } from '@atomic';
 import { useMediaQuery } from '@hooks';
+import { urls } from '@urls';
 import React, { ReactElement } from 'react';
 
 type HomepageTemplateProps = {
@@ -45,7 +46,7 @@ export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
           noOfColumns={4}
           noOfTabletCols={2}
           noOfMobileCols={1}
-          cta={{ text: 'View Rankings' }}
+          cta={{ text: 'View Rankings', href: urls.artist.rankings }}
         />
 
         <SectionWithTitleAndDescription
@@ -61,12 +62,12 @@ export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
           data={popularNFTs}
           noOfColumns={3}
           noOfMobileCols={1}
-          cta={{ text: 'See All' }}
+          cta={{ text: 'See All', href: urls.nft.marketplace }}
         />
       </Container>
 
       <Spacing top={isMobile ? 'sm' : 'lg'} bottom={isMobile ? 'sm' : 'lg'}>
-        <Featured />
+        <Featured url={urls.nft.landing('slug')} />
       </Spacing>
 
       <Container>
