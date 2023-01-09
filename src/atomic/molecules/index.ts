@@ -7,6 +7,7 @@ export * from './IconLink/IconLink.component';
 export * from './InfoCard/InfoCard.component';
 export * from './Link/Link.component';
 export * from './Logo/Logo.component';
+export * from './Navigation/Navigation.component';
 export * from './RankingRow/RankingRow.component';
 export * from './SearchBar/SearchBar.component';
 export * from './Stats/Stats.component';

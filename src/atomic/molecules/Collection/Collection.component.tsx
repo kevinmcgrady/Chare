@@ -33,7 +33,6 @@ export const Collection: React.FC<CollectionProps> = ({
       <Link href={url}>
         <Image src={mainImage.src} alt={mainImage.alt} />
       </Link>
-
       <Spacing top='xs'>
         <Grid noOfColumns={3}>
           {additionalImages.map((image) => (
