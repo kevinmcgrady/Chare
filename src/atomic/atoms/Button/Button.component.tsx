@@ -21,6 +21,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
+      role='button'
       className={cn(
         styles[variant],
         styles.button,
