@@ -1,13 +1,25 @@
 import Avatar from '@assets/images/Avatar.svg';
 import MushroomImage from '@assets/images/mushroom.png';
-import { Button, Container, CreatorPin, Spacing, Text, Timer } from '@atomic';
+import {
+  Button,
+  Container,
+  CreatorPin,
+  Link,
+  Spacing,
+  Text,
+  Timer,
+} from '@atomic';
 import { useMediaQuery } from '@hooks';
 import Image from 'next/image';
 import React from 'react';
 
 import styles from './Featured.module.scss';
 
-export const Featured: React.FC = () => {
+type FeaturedProps = {
+  url: string;
+};
+
+export const Featured: React.FC<FeaturedProps> = ({ url }) => {
   const { isMobile } = useMediaQuery();
 
   return (
@@ -28,24 +40,28 @@ export const Featured: React.FC = () => {
                 <Text variant='h2'>Magic Mushrooms</Text>
               </Spacing>
               {!isMobile && (
-                <Button
-                  icon={{ type: 'eye', color: 'secondary' }}
-                  variant='tertiary'
-                >
-                  See NFT
-                </Button>
+                <Link href={url}>
+                  <Button
+                    icon={{ type: 'eye', color: 'secondary' }}
+                    variant='tertiary'
+                  >
+                    See NFT
+                  </Button>
+                </Link>
               )}
             </div>
             <Timer />
             <Spacing bottom='xs' />
             {isMobile && (
-              <Button
-                variant='tertiary'
-                icon={{ type: 'eye', color: 'secondary' }}
-                isFullWidth
-              >
-                See NFT
-              </Button>
+              <Link href={url}>
+                <Button
+                  variant='tertiary'
+                  icon={{ type: 'eye', color: 'secondary' }}
+                  isFullWidth
+                >
+                  See NFT
+                </Button>
+              </Link>
             )}
           </div>
         </Container>

@@ -1,4 +1,12 @@
-import { CreatorPin, Grid,Image, ImageProps, Spacing, Text } from '@atomic';
+import {
+  CreatorPin,
+  Grid,
+  Image,
+  ImageProps,
+  Link,
+  Spacing,
+  Text,
+} from '@atomic';
 import React from 'react';
 
 import styles from './Collection.module.scss';
@@ -9,6 +17,7 @@ export type CollectionProps = {
   stat: string;
   title: string;
   author: { image: ImageProps; name: string };
+  url: string;
 };
 
 export const Collection: React.FC<CollectionProps> = ({
@@ -17,10 +26,14 @@ export const Collection: React.FC<CollectionProps> = ({
   stat,
   author,
   title,
+  url,
 }) => {
   return (
     <div>
-      <Image src={mainImage.src} alt={mainImage.alt} />
+      <Link href={url}>
+        <Image src={mainImage.src} alt={mainImage.alt} />
+      </Link>
+
       <Spacing top='xs'>
         <Grid noOfColumns={3}>
           {additionalImages.map((image) => (

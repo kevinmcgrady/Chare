@@ -1,6 +1,6 @@
 import { ArtistTemplate } from '@atomic';
 import React from 'react';
 
-export default function ArtishPage() {
+export const ArtistProfile: React.FC = () => {
   return <ArtistTemplate />;
-}
+};

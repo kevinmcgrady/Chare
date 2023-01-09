@@ -25,13 +25,13 @@ export const Footer: React.FC = () => {
               Explore
             </Text>
             <Spacing top='xs'>
-              <Link href={urls.marketplace}>Marketplace</Link>
+              <Link href={urls.nft.marketplace}>Marketplace</Link>
             </Spacing>
             <Spacing top='xs'>
-              <Link href={urls.rankings}>Rankings</Link>
+              <Link href={urls.artist.rankings}>Rankings</Link>
             </Spacing>
             <Spacing top='xs'>
-              <Link href={urls.connectWallet}>Connect a wallet</Link>
+              <Link href={urls.auth.connectWallet}>Connect a wallet</Link>
             </Spacing>
           </div>
           <div>

@@ -1,7 +1,7 @@
 import { Container, Page, RankingTable, Spacing, TabBar, Text } from '@atomic';
 import React from 'react';
 
-export default function Rankings() {
+export const RankingsPage: React.FC = () => {
   return (
     <Page title='Rankings'>
       <Spacing top='md' bottom='md'>
@@ -26,4 +26,4 @@ export default function Rankings() {
       </Spacing>
     </Page>
   );
-}
+};
