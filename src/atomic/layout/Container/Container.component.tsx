@@ -7,5 +7,9 @@ type ContainerProps = {
 };
 
 export const Container: React.FC<ContainerProps> = ({ children }) => {
-  return <div className={styles.container}>{children}</div>;
+  return (
+    <div role='main' className={styles.container}>
+      {children}
+    </div>
+  );
 };
