@@ -4,18 +4,17 @@ import { urls } from '@urls';
 import { Formik } from 'formik';
 import React, { useState } from 'react';
 
-import styles from './CreateAccountForm.module.scss';
+import styles from './LoginForm.module.scss';
 import { InitialFormValues, onValidate } from './utils';
 
-type CreateAccountFormProps = {
+type LoginFormProps = {
   onSubmit: (values: any) => void;
 };
 
-export const CreateAccountForm: React.FC<CreateAccountFormProps> = ({
-  onSubmit,
-}) => {
+export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
   const { isMobile } = useMediaQuery();
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
   return (
     <React.Fragment>
       <Formik
@@ -36,22 +35,6 @@ export const CreateAccountForm: React.FC<CreateAccountFormProps> = ({
           touched,
         }) => (
           <form onSubmit={handleSubmit} className={styles.form}>
-            <input
-              className={styles.input}
-              type='text'
-              name='username'
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.username}
-              placeholder='Username'
-            />
-            {errors.username && touched.username && (
-              <Spacing bottom='sm' left='xs'>
-                <Text variant='caption' font='spaceMono'>
-                  {errors.username}
-                </Text>
-              </Spacing>
-            )}
             <input
               className={styles.input}
               type='email'
@@ -84,28 +67,12 @@ export const CreateAccountForm: React.FC<CreateAccountFormProps> = ({
                 </Text>
               </Spacing>
             )}
-            <input
-              className={styles.input}
-              type='password'
-              name='confirmPassword'
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.confirmPassword}
-              placeholder='Confirm Password'
-            />
-            {errors.confirmPassword && touched.confirmPassword && (
-              <Spacing bottom='sm' left='xs'>
-                <Text variant='caption' font='spaceMono'>
-                  {errors.confirmPassword}
-                </Text>
-              </Spacing>
-            )}
             <Grid noOfColumns={2}>
               <Button isFullWidth={isMobile}>
-                {isSubmitting ? 'submitting...' : 'Create Account'}
+                {isSubmitting ? 'submitting...' : 'Log in'}
               </Button>
-              <Link href={urls.auth.login}>
-                <Button variant='secondary'>Log in</Button>
+              <Link href={urls.auth.createAccount}>
+                <Button variant='secondary'>Create account</Button>
               </Link>
             </Grid>
           </form>
