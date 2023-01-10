@@ -7,7 +7,8 @@
       "@assets/*": ["public/assets/*"],
       "@hooks": ["src/hooks/index"],
       "@urls": ["src/urls/index"],
-      "@modules/*": ["src/modules/*"]
+      "@modules/*": ["src/modules/*"],
+      "@services/*": ["src/services/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
