@@ -1,4 +1,4 @@
-import { Button, Grid, Link,Spacing, Text } from '@atomic';
+import { Button, Grid, Link, Spacing, Text } from '@atomic';
 import { useMediaQuery } from '@hooks';
 import React, { ReactElement } from 'react';
 
@@ -25,11 +25,10 @@ export const SectionWithTitleAndDescription: React.FC<SectionWithTitleAndDescrip
     data,
   }) => {
     const { isMobile } = useMediaQuery();
-
     return (
       <Spacing top={isMobile ? 'sm' : 'lg'} bottom={isMobile ? 'sm' : 'lg'}>
-        <section>
-          <div className={styles.header}>
+        <section role='main'>
+          <div data-testid='header' className={styles.header}>
             <div>
               <Text variant='h3'>{title}</Text>
               <Spacing bottom='md'>
