@@ -13,6 +13,7 @@ const customJestConfig = {
     '@atomic': '<rootDir>/src/atomic/index',
     '@hooks': '<rootDir>/src/hooks/index',
     '@urls': '<rootDir>/src/urls/index',
+    '@services/(.*)': '<rootDir>/src/services/$1',
   },
 };
 
