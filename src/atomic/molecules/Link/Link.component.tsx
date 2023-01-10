@@ -17,6 +17,7 @@ export const Link: React.FC<LinkProps> = ({
 }) => {
   return (
     <NextLink
+      role='link'
       className={cn(styles.link, isActive && styles.isActive)}
       {...props}
     >

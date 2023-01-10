@@ -21,7 +21,7 @@ export const CreatorWidget: React.FC<CreatorWidgetProps> = ({
 }) => {
   return (
     <NextLink href={url}>
-      <div className={styles.creatorWidget}>
+      <div data-testid='creatorWidget' className={styles.creatorWidget}>
         <Image src={image.src} alt={image.alt} width={120} height={120} />
         <div>
           <Text variant='h5' align='center'>

@@ -1,4 +1,4 @@
-import { CreatorPin,Image, Spacing, Text } from '@atomic';
+import { CreatorPin, Image, Spacing, Text } from '@atomic';
 import { StaticImageData } from 'next/image';
 import React from 'react';
 
@@ -22,7 +22,7 @@ export const Card: React.FC<CardProps> = ({
   highestBid,
 }) => {
   return (
-    <div className={styles.card}>
+    <div data-testid='card' className={styles.card}>
       <Image src={image} alt={title} priority={isImagePriority} />
       <div className={styles.bottom}>
         <Spacing bottom='xs'>

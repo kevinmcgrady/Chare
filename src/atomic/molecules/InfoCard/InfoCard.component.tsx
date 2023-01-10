@@ -19,7 +19,7 @@ export const InfoCard: React.FC<InfoCardProps> = ({
   description,
 }) => {
   return (
-    <div className={styles.infoCard}>
+    <div data-testid='infoCard' className={styles.infoCard}>
       <Image src={image.src} alt={image.alt} />
       <div>
         <Text variant='h5' align='center'>

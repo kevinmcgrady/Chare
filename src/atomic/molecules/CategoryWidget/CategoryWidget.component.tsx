@@ -16,7 +16,7 @@ export const CategoryWidget: React.FC<CategoryWidgetProps> = ({
 }) => {
   return (
     <div>
-      <div className={styles.image}>
+      <div data-testid='category' className={styles.image}>
         <div className={styles.overlay}></div>
         <Image src={image.src} alt={image.alt} />
         <Image
