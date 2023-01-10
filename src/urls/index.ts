@@ -3,6 +3,7 @@ export const urls = {
   auth: {
     connectWallet: '/auth/connect-wallet',
     createAccount: '/auth/create-account',
+    login: '/auth/login',
   },
   artist: {
     profile: (username: string) => `/artist/${username}`,
