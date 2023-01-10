@@ -29,7 +29,7 @@ export const Collection: React.FC<CollectionProps> = ({
   url,
 }) => {
   return (
-    <div>
+    <div data-testid='collection'>
       <Link href={url}>
         <Image src={mainImage.src} alt={mainImage.alt} />
       </Link>
