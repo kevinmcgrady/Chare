@@ -6,7 +6,8 @@
       "@atomic": ["src/atomic/index"],
       "@assets/*": ["public/assets/*"],
       "@hooks": ["src/hooks/index"],
-      "@urls": ["src/urls/index"]
+      "@urls": ["src/urls/index"],
+      "@modules/*": ["src/modules/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

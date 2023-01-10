@@ -1,4 +1,4 @@
-import { Button, Grid, Spacing, Text } from '@atomic';
+import { Button, Grid, Link, Spacing, Text } from '@atomic';
 import { useMediaQuery } from '@hooks';
 import React, { ReactElement } from 'react';
 
@@ -9,7 +9,7 @@ type SectionWithTitleAndDescriptionProps = {
   description?: string;
   data: ReactElement[];
   noOfColumns: number;
-  cta?: { text: string };
+  cta?: { text: string; href: string };
   noOfTabletCols?: number;
   noOfMobileCols?: number;
 };
@@ -25,11 +25,10 @@ export const SectionWithTitleAndDescription: React.FC<SectionWithTitleAndDescrip
     data,
   }) => {
     const { isMobile } = useMediaQuery();
-
     return (
       <Spacing top={isMobile ? 'sm' : 'lg'} bottom={isMobile ? 'sm' : 'lg'}>
-        <section>
-          <div className={styles.header}>
+        <section role='main'>
+          <div data-testid='header' className={styles.header}>
             <div>
               <Text variant='h3'>{title}</Text>
               <Spacing bottom='md'>
@@ -38,12 +37,14 @@ export const SectionWithTitleAndDescription: React.FC<SectionWithTitleAndDescrip
             </div>
             {cta && !isMobile && (
               <div>
-                <Button
-                  icon={{ type: 'eye', color: 'secondary' }}
-                  variant='secondary'
-                >
-                  {cta?.text}
-                </Button>
+                <Link href={cta.href}>
+                  <Button
+                    icon={{ type: 'eye', color: 'secondary' }}
+                    variant='secondary'
+                  >
+                    {cta?.text}
+                  </Button>
+                </Link>
               </div>
             )}
           </div>
@@ -56,13 +57,15 @@ export const SectionWithTitleAndDescription: React.FC<SectionWithTitleAndDescrip
           </Grid>
           {cta && isMobile && (
             <Spacing top='xs'>
-              <Button
-                icon={{ type: 'eye', color: 'secondary' }}
-                variant='secondary'
-                isFullWidth
-              >
-                {cta?.text}
-              </Button>
+              <Link href={cta.href}>
+                <Button
+                  icon={{ type: 'eye', color: 'secondary' }}
+                  variant='secondary'
+                  isFullWidth
+                >
+                  {cta?.text}
+                </Button>
+              </Link>
             </Spacing>
           )}
         </section>

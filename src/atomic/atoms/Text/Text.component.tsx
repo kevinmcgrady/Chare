@@ -41,6 +41,8 @@ export const Text: React.FC<TextProps> = ({
     case 'h1':
       return (
         <h1
+          role='heading'
+          aria-level={1}
           className={cn(
             styles.h1,
             styles[align],
@@ -56,6 +58,8 @@ export const Text: React.FC<TextProps> = ({
     case 'h2':
       return (
         <h2
+          role='heading'
+          aria-level={2}
           className={cn(
             styles.h2,
             styles[align],
@@ -71,6 +75,8 @@ export const Text: React.FC<TextProps> = ({
     case 'subTitle':
       return (
         <h2
+          role='heading'
+          aria-level={2}
           className={cn(
             styles.subTitle,
             styles[align],
@@ -85,6 +91,8 @@ export const Text: React.FC<TextProps> = ({
     case 'h3':
       return (
         <h3
+          role='heading'
+          aria-level={3}
           className={cn(
             styles.h3,
             styles[align],
@@ -100,6 +108,8 @@ export const Text: React.FC<TextProps> = ({
     case 'h4':
       return (
         <h4
+          aria-level={4}
+          role='heading'
           className={cn(
             styles.h4,
             styles[align],
@@ -115,6 +125,8 @@ export const Text: React.FC<TextProps> = ({
     case 'h5':
       return (
         <h5
+          role='heading'
+          aria-level={5}
           className={cn(
             styles.h5,
             styles[align],

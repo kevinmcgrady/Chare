@@ -22,6 +22,7 @@ export const Spacing: React.FC<SpacingProps> = ({
 }) => {
   return (
     <div
+      role='presentation'
       className={cn(
         top && styles[`top-${top}`],
         right && styles[`right-${right}`],

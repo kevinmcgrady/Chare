@@ -1,5 +1,5 @@
 import Avarar from '@assets/images/Avatar-1.svg';
-import { CreatorPin, Pin,Spacing, Text } from '@atomic';
+import { CreatorPin, Pin, Spacing, Text } from '@atomic';
 import { useMediaQuery } from '@hooks';
 import React from 'react';
 

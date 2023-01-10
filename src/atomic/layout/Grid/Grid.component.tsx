@@ -22,6 +22,7 @@ export const Grid: React.FC<GridProps> = ({
 }) => {
   return (
     <div
+      role='grid'
       className={cn(
         styles.grid,
         styles[`col-${noOfColumns}`],

@@ -35,12 +35,31 @@ const iconElement = (
   className: string | undefined,
 ): Record<IconType, ReactElement> => {
   return {
-    rocket: <VscRocket size={20} color={color} className={className} />,
-    eye: <AiOutlineEye size={20} color={color} className={className} />,
-    user: <HiOutlineUserCircle size={20} color={color} className={className} />,
-    search: <AiOutlineSearch size={20} color={color} className={className} />,
+    rocket: (
+      <VscRocket role='img' size={20} color={color} className={className} />
+    ),
+    eye: (
+      <AiOutlineEye role='img' size={20} color={color} className={className} />
+    ),
+    user: (
+      <HiOutlineUserCircle
+        role='img'
+        size={20}
+        color={color}
+        className={className}
+      />
+    ),
+    search: (
+      <AiOutlineSearch
+        role='img'
+        size={20}
+        color={color}
+        className={className}
+      />
+    ),
     metamask: (
       <Image
+        role='img'
         width={32}
         height={32}
         className={className}
@@ -50,6 +69,7 @@ const iconElement = (
     ),
     coinbase: (
       <Image
+        role='img'
         width={32}
         height={32}
         className={className}
@@ -59,6 +79,7 @@ const iconElement = (
     ),
     walletConnect: (
       <Image
+        role='img'
         width={32}
         height={32}
         className={className}
@@ -66,7 +87,7 @@ const iconElement = (
         alt='Wallet Connect'
       />
     ),
-    world: <TbWorld size={20} color={color} className={className} />,
+    world: <TbWorld role='img' size={20} color={color} className={className} />,
   };
 };
 

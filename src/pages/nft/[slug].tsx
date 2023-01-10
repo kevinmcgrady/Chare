@@ -1,6 +1,3 @@
-import { NFTTemplate } from '@atomic';
-import React from 'react';
+import { NFT } from '@modules/nft';
 
-export default function NFTPage() {
-  return <NFTTemplate />;
-}
+export default NFT;

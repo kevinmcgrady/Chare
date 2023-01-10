@@ -1,3 +1,5 @@
+// Will remove when connected to a data source!
+
 import BasketBall from '@assets/icons/Basketball.svg';
 import Camera from '@assets/icons/Camera.svg';
 import MagicWand from '@assets/icons/MagicWand.svg';
@@ -40,6 +42,7 @@ import {
   CollectionProps,
   CreatorWidgetProps,
 } from '@atomic';
+import { urls } from '@urls';
 
 export const collections: CollectionProps[] = [
   {
@@ -54,6 +57,7 @@ export const collections: CollectionProps[] = [
       image: { src: Avatar3, alt: 'GravityOne' },
       name: 'GravityOne',
     },
+    url: urls.nft.landing('slug'),
   },
   {
     mainImage: { src: MushroomImage, alt: 'mushroom' },
@@ -67,6 +71,7 @@ export const collections: CollectionProps[] = [
       image: { src: Avatar6, alt: 'Mr Fox' },
       name: 'Mr Fox',
     },
+    url: urls.nft.landing('slug'),
   },
   {
     mainImage: { src: RobotImage, alt: 'robot' },
@@ -80,6 +85,7 @@ export const collections: CollectionProps[] = [
       image: { src: Avatar1, alt: 'robotica' },
       name: 'robotica',
     },
+    url: urls.nft.landing('slug'),
   },
 ];
 
@@ -92,6 +98,7 @@ export const creators: CreatorWidgetProps[] = [
     },
     authorName: 'animakid',
     totalSavings: '34.53 ETH',
+    url: urls.artist.profile('slug'),
   },
   {
     index: 2,
@@ -101,6 +108,7 @@ export const creators: CreatorWidgetProps[] = [
     },
     authorName: 'DigiLab',
     totalSavings: '34.53 ETH',
+    url: urls.artist.profile('slug'),
   },
   {
     index: 3,
@@ -110,6 +118,7 @@ export const creators: CreatorWidgetProps[] = [
     },
     authorName: 'GravityOne',
     totalSavings: '34.53 ETH',
+    url: urls.artist.profile('slug'),
   },
   {
     index: 4,
@@ -119,6 +128,7 @@ export const creators: CreatorWidgetProps[] = [
     },
     authorName: 'Juanie',
     totalSavings: '34.53 ETH',
+    url: urls.artist.profile('slug'),
   },
   {
     index: 5,
@@ -128,6 +138,7 @@ export const creators: CreatorWidgetProps[] = [
     },
     authorName: 'BlueWhale',
     totalSavings: '34.53 ETH',
+    url: urls.artist.profile('slug'),
   },
   {
     index: 6,
@@ -137,6 +148,7 @@ export const creators: CreatorWidgetProps[] = [
     },
     authorName: 'Mr fox',
     totalSavings: '34.53 ETH',
+    url: urls.artist.profile('slug'),
   },
   {
     index: 7,
@@ -146,6 +158,7 @@ export const creators: CreatorWidgetProps[] = [
     },
     authorName: 'Shroomie',
     totalSavings: '34.53 ETH',
+    url: urls.artist.profile('slug'),
   },
   {
     index: 8,
@@ -155,6 +168,7 @@ export const creators: CreatorWidgetProps[] = [
     },
     authorName: 'robotica',
     totalSavings: '34.53 ETH',
+    url: urls.artist.profile('slug'),
   },
 ];
 

@@ -1,6 +1,6 @@
-import { Button, Link, Spacing, Text } from '@atomic';
+import { Logo, MobileNavIcon, Navigation } from '@atomic';
 import { useMediaQuery } from '@hooks';
-import { urls } from '@urls';
+import { authNavigationUrls, navigationUrls, urls } from '@urls';
 import React, { useState } from 'react';
 
 import styles from './Header.module.scss';
@@ -12,95 +12,35 @@ type HeaderProps = {
 export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
   const { isTablet } = useMediaQuery();
   const [isNavOpen, setIsNavOpen] = useState(false);
+
   return (
-    <Spacing top='md'>
+    <React.Fragment>
       <header className={styles.header}>
         {!isTablet && (
-          <>
-            <Text variant='h3' className={styles.logo}>
-              Chare
-            </Text>
-            <nav className={styles.nav}>
-              <Spacing right='sm'>
-                <ul className={styles.navList}>
-                  <Spacing right='sm'>
-                    <li>
-                      <Link
-                        isActive={activeLink === urls.marketplace}
-                        href={urls.marketplace}
-                      >
-                        Marketplace
-                      </Link>
-                    </li>
-                  </Spacing>
-                  <Spacing right='sm'>
-                    <li>
-                      <Link
-                        isActive={activeLink === urls.rankings}
-                        href={urls.rankings}
-                      >
-                        Rankings
-                      </Link>
-                    </li>
-                  </Spacing>
-                  <li>
-                    <Link
-                      isActive={activeLink === urls.connectWallet}
-                      href={urls.connectWallet}
-                    >
-                      Connect a wallet
-                    </Link>
-                  </li>
-                </ul>
-              </Spacing>
-              <Link href={urls.createAccount}>
-                <Button icon={{ type: 'user', color: 'primary' }}>
-                  Sign Up
-                </Button>
-              </Link>
-            </nav>
-          </>
+          <React.Fragment>
+            <Logo url={urls.homepage} />
+            <Navigation
+              activeLink={activeLink as string}
+              navigationUrls={navigationUrls}
+              authNavigationUrls={authNavigationUrls}
+            />
+          </React.Fragment>
         )}
         {isTablet && (
-          <>
-            <Text variant='h3' className={styles.logo}>
-              Chare
-            </Text>
-            <div
-              onClick={() => setIsNavOpen(!isNavOpen)}
-              className={styles.mobileNavIcon}
-            >
-              <span></span>
-            </div>
-          </>
+          <React.Fragment>
+            <Logo url={urls.homepage} />
+            <MobileNavIcon onClick={() => setIsNavOpen(!isNavOpen)} />
+          </React.Fragment>
         )}
       </header>
       {isNavOpen && isTablet && (
-        <div className={styles.mobileNav}>
-          <ul>
-            <Spacing bottom='xs'>
-              <li>
-                <Link href={urls.marketplace}>Marketplace</Link>
-              </li>
-            </Spacing>
-            <Spacing bottom='xs'>
-              <li>
-                <Link href={urls.rankings}>Rankings</Link>
-              </li>
-            </Spacing>
-            <li>
-              <Link href={urls.connectWallet}>Connect a wallet</Link>
-            </li>
-          </ul>
-          <Spacing top='xs'>
-            <Link href={urls.createAccount}>
-              <Button isFullWidth icon={{ type: 'user', color: 'primary' }}>
-                Sign Up
-              </Button>
-            </Link>
-          </Spacing>
-        </div>
+        <Navigation
+          isMobile
+          activeLink={activeLink as string}
+          navigationUrls={navigationUrls}
+          authNavigationUrls={authNavigationUrls}
+        />
       )}
-    </Spacing>
+    </React.Fragment>
   );
 };

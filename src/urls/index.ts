@@ -1,7 +1,25 @@
-export const urls: Record<string, string> = {
+export const urls = {
   homepage: '/',
-  marketplace: '/marketplace',
-  rankings: '/rankings',
-  connectWallet: '/connect-wallet',
-  createAccount: '/create-account',
+  auth: {
+    connectWallet: '/auth/connect-wallet',
+    createAccount: '/auth/create-account',
+  },
+  artist: {
+    profile: (username: string) => `/artist/${username}`,
+    rankings: '/artist/rankings',
+  },
+  nft: {
+    landing: (slug: string) => `/nft/${slug}`,
+    marketplace: '/nft/marketplace',
+  },
 };
+
+export const navigationUrls = [
+  { text: 'Marketplace', href: urls.nft.marketplace },
+  { text: 'Rankings', href: urls.artist.rankings },
+  { text: 'Connect a wallet', href: urls.auth.connectWallet },
+];
+
+export const authNavigationUrls = [
+  { text: 'Sign Up', href: urls.auth.createAccount },
+];
