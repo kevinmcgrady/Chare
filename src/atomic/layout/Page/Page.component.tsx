@@ -44,7 +44,11 @@ export const Page: React.FC<PageProps> = ({
         >
           {!absoluteHeader && !isTablet && <Spacing top='md' />}
           <Container>
-            <Header activeLink={pathname} />
+            <Header
+              activeLink={pathname}
+              isLoggedIn={false}
+              logout={() => null}
+            />
           </Container>
         </div>
       )}

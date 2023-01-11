@@ -1,4 +1,5 @@
 import { Button, Link, Spacing } from '@atomic';
+import { urls } from '@urls';
 import cn from 'classnames';
 import React from 'react';
 
@@ -26,6 +27,7 @@ export const Navigation: React.FC<NavigationProps> = ({
   isLoggedIn = false,
   logout,
 }) => {
+  console.log(activeLink);
   return (
     <nav className={cn(isMobile ? styles.mobileNav : styles.nav)}>
       <Spacing right='sm'>
@@ -43,6 +45,21 @@ export const Navigation: React.FC<NavigationProps> = ({
               </li>
             </Spacing>
           ))}
+          {isLoggedIn && (
+            <Spacing
+              right={isMobile ? undefined : 'sm'}
+              bottom={isMobile ? 'sm' : undefined}
+            >
+              <li>
+                <Link
+                  isActive={activeLink === urls.artist.profile('fred')}
+                  href={urls.artist.profile('fred')}
+                >
+                  Profile
+                </Link>
+              </li>
+            </Spacing>
+          )}
         </ul>
       </Spacing>
       {!isLoggedIn &&
