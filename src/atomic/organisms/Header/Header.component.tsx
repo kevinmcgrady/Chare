@@ -7,11 +7,25 @@ import styles from './Header.module.scss';
 
 type HeaderProps = {
   activeLink?: string;
+  isLoggedIn?: boolean;
+  logout?: () => void;
 };
 
-export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
+export const Header: React.FC<HeaderProps> = ({
+  activeLink,
+  isLoggedIn,
+  logout,
+}) => {
   const { isTablet } = useMediaQuery();
   const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const navigationProps = {
+    isLoggedIn: isLoggedIn,
+    logout: logout,
+    activeLink: activeLink as string,
+    navigationUrls: navigationUrls,
+    authNavigationUrls: authNavigationUrls,
+  };
 
   return (
     <React.Fragment>
@@ -19,11 +33,7 @@ export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
         {!isTablet && (
           <React.Fragment>
             <Logo url={urls.homepage} />
-            <Navigation
-              activeLink={activeLink as string}
-              navigationUrls={navigationUrls}
-              authNavigationUrls={authNavigationUrls}
-            />
+            <Navigation {...navigationProps} />
           </React.Fragment>
         )}
         {isTablet && (
@@ -33,14 +43,7 @@ export const Header: React.FC<HeaderProps> = ({ activeLink }) => {
           </React.Fragment>
         )}
       </header>
-      {isNavOpen && isTablet && (
-        <Navigation
-          isMobile
-          activeLink={activeLink as string}
-          navigationUrls={navigationUrls}
-          authNavigationUrls={authNavigationUrls}
-        />
-      )}
+      {isNavOpen && isTablet && <Navigation isMobile {...navigationProps} />}
     </React.Fragment>
   );
 };

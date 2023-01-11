@@ -1,5 +1,6 @@
 import CreateCollection from '@assets/images/CreateCollection.svg';
 import SetUpWallet from '@assets/images/SetUpWallet.svg';
+import SpaceShip from '@assets/images/Spaceship.png';
 import StartEarning from '@assets/images/StartEarning.svg';
 import {
   Card,
@@ -16,10 +17,13 @@ import {
   categories,
   collections,
   creators,
-  popularNFTs,
 } from '../../../atomic/Templates/Homepage/data';
 
-export const Homepage: React.FC = () => {
+type HomepageProps = {
+  nfts: any[];
+};
+
+export const Homepage: React.FC<HomepageProps> = ({ nfts = [] }) => {
   const collectionsEls = collections.map((collection, index) => (
     <Collection {...collection} key={index} />
   ));
@@ -32,8 +36,8 @@ export const Homepage: React.FC = () => {
     <CategoryWidget {...category} key={index} />
   ));
 
-  const popularNFTsEls = popularNFTs.map((item) => (
-    <Card {...item} author={item.author} key={item.title} />
+  const popularNFTsEls = nfts.map((item) => (
+    <Card {...item} image={SpaceShip} author={'kevin'} key={item.title} />
   ));
 
   const howItWorksEls = [

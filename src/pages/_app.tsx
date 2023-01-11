@@ -1,6 +1,5 @@
 import '@styles/globals.scss';
 
-import { FirebaseAuthContext } from '@modules/auth';
 import { loadPrgressBar } from '@modules/core';
 import { GlobalStyles } from '@modules/core/globalStyles';
 import type { AppProps } from 'next/app';
@@ -15,9 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div style={{ height: '100vh' }}>
       <GlobalStyles />
-      <FirebaseAuthContext.Provider value={loading ? null : user}>
-        <Component {...pageProps} />
-      </FirebaseAuthContext.Provider>
+      <Component {...pageProps} user={loading ? null : user} />
     </div>
   );
 }
