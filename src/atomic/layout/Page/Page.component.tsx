@@ -28,7 +28,6 @@ export const Page: React.FC<PageProps> = ({
 }) => {
   const { isTablet } = useMediaQuery();
   const { pathname } = useRouter();
-
   return (
     <div className={cn(isFullHeight && styles.pageFullHeight)}>
       <Head>

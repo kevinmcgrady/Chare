@@ -11,6 +11,7 @@ type ButtonProps = {
   variant?: ButtonVariant;
   isFullWidth?: boolean;
   icon?: IconProps;
+  onClick?: () => void;
 };
 
 export const Button: React.FC<ButtonProps> = ({
@@ -18,9 +19,11 @@ export const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   isFullWidth = false,
   icon,
+  onClick,
 }) => {
   return (
     <button
+      onClick={onClick}
       role='button'
       className={cn(
         styles[variant],

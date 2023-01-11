@@ -3,8 +3,9 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
+import { addDoc, collection } from 'firebase/firestore';
 
-import { auth } from '../../lib/firebase/client';
+import { auth, database } from '../../lib/firebase/client';
 
 interface IRegisterRequest {
   username: string;
@@ -46,6 +47,10 @@ export class AuthService {
         request.email,
         request.password,
       );
+      await this._createUser({
+        email: request.email,
+        username: request.username,
+      });
       return {
         status: ResponseStatus.Success,
       };
@@ -59,5 +64,11 @@ export class AuthService {
 
   static logout() {
     return auth.signOut();
+  }
+
+  static async _createUser(
+    user: Omit<IRegisterRequest, 'password' | 'confirmPassword'>,
+  ) {
+    return await addDoc(collection(database, 'users'), user);
   }
 }
