@@ -14,7 +14,7 @@ export const Login: React.FC = () => {
     if (response.status === ResponseStatus.Error) {
       setErrorMessage(response.errorMessage as string);
     } else {
-      push(urls.auth.connectWallet);
+      push(urls.artist.profile('fred'));
     }
   };
   return (

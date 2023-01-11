@@ -14,6 +14,8 @@ type NavigationProps = {
   navigationUrls: NavigationUrl[];
   authNavigationUrls: NavigationUrl[];
   activeLink: string;
+  isLoggedIn?: boolean;
+  logout?: () => void;
 };
 
 export const Navigation: React.FC<NavigationProps> = ({
@@ -21,6 +23,8 @@ export const Navigation: React.FC<NavigationProps> = ({
   navigationUrls = [],
   authNavigationUrls = [],
   activeLink,
+  isLoggedIn = false,
+  logout,
 }) => {
   return (
     <nav className={cn(isMobile ? styles.mobileNav : styles.nav)}>
@@ -41,11 +45,19 @@ export const Navigation: React.FC<NavigationProps> = ({
           ))}
         </ul>
       </Spacing>
-      {authNavigationUrls.map((url) => (
-        <Link href={url.href} key={url.text}>
-          <Button icon={{ type: 'user', color: 'primary' }}>{url.text}</Button>
-        </Link>
-      ))}
+      {!isLoggedIn &&
+        authNavigationUrls.map((url) => (
+          <Link href={url.href} key={url.text}>
+            <Button icon={{ type: 'user', color: 'primary' }}>
+              {url.text}
+            </Button>
+          </Link>
+        ))}
+      {isLoggedIn && (
+        <Button onClick={logout} icon={{ type: 'user', color: 'primary' }}>
+          Log out
+        </Button>
+      )}
     </nav>
   );
 };
