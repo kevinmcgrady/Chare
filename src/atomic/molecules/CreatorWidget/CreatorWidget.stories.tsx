@@ -20,6 +20,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   creator: {
+    _id: '1',
     emailAddress: 'kev@gmail.com',
     image: 'http://www.example.com',
     username: 'kev',

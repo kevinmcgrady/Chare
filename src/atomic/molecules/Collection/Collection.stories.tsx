@@ -22,6 +22,7 @@ Default.args = {
   collection: {
     additionalImages: [],
     creator: {
+      _id: '1',
       emailAddress: 'kev@gmail.com',
       image: 'http://www.example.com',
       username: 'kev',
