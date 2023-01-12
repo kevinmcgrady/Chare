@@ -7,4 +7,11 @@ export class CreatorService {
 
     return creators;
   }
+
+  static async getOneCreator(username: string): Promise<CreatorDTO> {
+    const response = await fetch(`http://localhost:3001/creator/${username}`);
+    const creator = await response.json();
+
+    return creator;
+  }
 }

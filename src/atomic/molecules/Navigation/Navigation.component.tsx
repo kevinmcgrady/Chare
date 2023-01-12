@@ -27,7 +27,6 @@ export const Navigation: React.FC<NavigationProps> = ({
   isLoggedIn = false,
   logout,
 }) => {
-  console.log(activeLink);
   return (
     <nav className={cn(isMobile ? styles.mobileNav : styles.nav)}>
       <Spacing right='sm'>

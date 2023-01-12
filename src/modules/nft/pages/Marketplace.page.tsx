@@ -1,4 +1,6 @@
 import {
+  Card,
+  Collection,
   Container,
   Grid,
   Page,
@@ -7,9 +9,20 @@ import {
   TabBar,
   Text,
 } from '@atomic';
+import { CollectionDTO } from '@modules/collection';
 import React from 'react';
 
-export const Marketplace: React.FC = () => {
+import { NftDTO } from '../models';
+
+type MarketplaceProps = {
+  nfts: NftDTO[];
+  collections: CollectionDTO[];
+};
+
+export const Marketplace: React.FC<MarketplaceProps> = ({
+  nfts = [],
+  collections = [],
+}) => {
   return (
     <Page title='Marketplace'>
       <Spacing top='md' bottom='md'>
@@ -34,9 +47,16 @@ export const Marketplace: React.FC = () => {
                 noOfTabletColumns={2}
                 noOfMobileCols={1}
               >
-                {/* {popularNFTs.map((nft) => (
-                  <Card {...nft} key={nft.title} />
-                ))} */}
+                {nfts.map((nft) => (
+                  <Card
+                    creator={nft.creator}
+                    image={nft.image}
+                    title={nft.title}
+                    key={nft.title}
+                    highestBid={nft.highestBid}
+                    price={nft.price}
+                  />
+                ))}
               </Grid>,
               <Grid
                 key='Collections'
@@ -44,9 +64,13 @@ export const Marketplace: React.FC = () => {
                 noOfTabletColumns={2}
                 noOfMobileCols={1}
               >
-                {/* {collections.map((collection) => (
-                  <Collection {...collection} key={collection.title} />
-                ))} */}
+                {collections.map((collection) => (
+                  <Collection
+                    collection={collection}
+                    key={collection.title}
+                    url='http://www.example'
+                  />
+                ))}
               </Grid>,
             ]}
           />

@@ -13,6 +13,7 @@ type HomepageProps = {
   collections: CollectionDTO[];
   categories: CategoryDTO[];
   creators: CreatorDTO[];
+  headlineNft: NftDTO;
 };
 
 export const Homepage: React.FC<HomepageProps> = ({
@@ -20,6 +21,7 @@ export const Homepage: React.FC<HomepageProps> = ({
   collections = [],
   categories = [],
   creators = [],
+  headlineNft,
 }) => {
   const howItWorksEls = [
     <InfoCard
@@ -48,6 +50,7 @@ export const Homepage: React.FC<HomepageProps> = ({
   return (
     <Page>
       <HomepageTemplate
+        headlineNft={headlineNft}
         collections={collections}
         creators={creators}
         categories={categories}

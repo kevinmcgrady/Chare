@@ -1,5 +1,3 @@
-import Avatar from '@assets/images/Avatar.svg';
-import SpaceShip from '@assets/images/Spaceship.png';
 import {
   Card,
   CategoryWidget,
@@ -25,6 +23,7 @@ type HomepageTemplateProps = {
   categories: CategoryDTO[];
   popularNFTs: NftDTO[];
   howItWorks: ReactElement[];
+  headlineNft: NftDTO;
 };
 
 export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
@@ -33,13 +32,14 @@ export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
   categories = [],
   popularNFTs = [],
   howItWorks = [],
+  headlineNft,
 }) => {
   const { isMobile } = useMediaQuery();
 
   return (
     <React.Fragment>
       <Container>
-        <Hero />
+        <Hero headlineNft={headlineNft} />
         <SectionWithTitleAndDescription
           title='Trending Collection'
           description='Checkout our weekly updated trending collection.'
@@ -86,8 +86,11 @@ export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
           description='Explore new trending NFTs'
           data={popularNFTs.map((nft) => (
             <Card
-              creator={{ image: Avatar, username: nft.creator.username }}
-              image={SpaceShip}
+              creator={{
+                image: nft.creator.image,
+                username: nft.creator.username,
+              }}
+              image={nft.image}
               title={nft.title}
               highestBid={nft.highestBid}
               price={nft.price}
