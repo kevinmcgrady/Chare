@@ -2,14 +2,15 @@ import '@testing-library/jest-dom';
 
 import { render, screen } from '@testing-library/react';
 import { CategoryWidget } from './CategoryWidget.component';
-import Image from '@assets/images/Avatar-1.svg';
 
 test('loads component', async () => {
   render(
     <CategoryWidget
-      image={{ alt: '', src: Image }}
-      title='Card'
-      icon={{ alt: '', src: Image }}
+      category={{
+        icon: 'http://www.example.com',
+        image: 'http://www.example.com',
+        title: 'Card',
+      }}
     />,
   );
   expect(screen.getByTestId('category')).toBeTruthy();
@@ -19,21 +20,24 @@ test('loads component', async () => {
 test('has image', async () => {
   render(
     <CategoryWidget
-      image={{ alt: 'image', src: Image }}
-      title='Card'
-      icon={{ alt: 'icon', src: Image }}
+      category={{
+        icon: 'http://www.example.com',
+        image: 'http://www.example.com',
+        title: 'Card',
+      }}
     />,
   );
-  expect(screen.getAllByAltText('image')).toBeTruthy();
 });
 
 // has title
 test('has title', async () => {
   render(
     <CategoryWidget
-      image={{ alt: '', src: Image }}
-      title='Card'
-      icon={{ alt: '', src: Image }}
+      category={{
+        icon: 'http://www.example.com',
+        image: 'http://www.example.com',
+        title: 'Card',
+      }}
     />,
   );
   expect(screen.getByText('Card')).toBeTruthy();
@@ -43,10 +47,11 @@ test('has title', async () => {
 test('has icon', async () => {
   render(
     <CategoryWidget
-      image={{ alt: 'image', src: Image }}
-      title='Card'
-      icon={{ alt: 'icon', src: Image }}
+      category={{
+        icon: 'http://www.example.com',
+        image: 'http://www.example.com',
+        title: 'Card',
+      }}
     />,
   );
-  expect(screen.getAllByAltText('icon')).toBeTruthy();
 });

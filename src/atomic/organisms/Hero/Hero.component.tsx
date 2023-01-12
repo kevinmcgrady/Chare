@@ -35,7 +35,7 @@ export const Hero: React.FC = () => {
           )}
         </div>
         <Card
-          author={{ image: Avatar, name: 'animakid' }}
+          creator={{ image: Avatar, username: 'animakid' }}
           image={SpaceWalking}
           title='Space Walking'
           isImagePriority

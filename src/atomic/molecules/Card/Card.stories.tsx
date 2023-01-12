@@ -23,9 +23,9 @@ export const CardWithoutPrice = Template.bind({});
 CardWithoutPrice.args = {
   image: StorybookImage,
   title: 'Space Walking',
-  author: {
+  creator: {
     image: StorybookAvatar,
-    name: 'animakid',
+    username: 'animakid',
   },
 };
 
@@ -34,9 +34,9 @@ export const CardWithPrice = Template.bind({});
 CardWithPrice.args = {
   image: StorybookImage,
   title: 'Space Walking',
-  author: {
+  creator: {
     image: StorybookAvatar,
-    name: 'animakid',
+    username: 'animakid',
   },
   price: '1.63 ETH',
   highestBid: '0.33 wETH',

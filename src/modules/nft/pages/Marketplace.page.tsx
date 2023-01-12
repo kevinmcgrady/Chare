@@ -1,6 +1,4 @@
 import {
-  Card,
-  Collection,
   Container,
   Grid,
   Page,
@@ -10,11 +8,6 @@ import {
   Text,
 } from '@atomic';
 import React from 'react';
-
-import {
-  collections,
-  popularNFTs,
-} from '../../../atomic/Templates/Homepage/data';
 
 export const Marketplace: React.FC = () => {
   return (
@@ -41,9 +34,9 @@ export const Marketplace: React.FC = () => {
                 noOfTabletColumns={2}
                 noOfMobileCols={1}
               >
-                {popularNFTs.map((nft) => (
+                {/* {popularNFTs.map((nft) => (
                   <Card {...nft} key={nft.title} />
-                ))}
+                ))} */}
               </Grid>,
               <Grid
                 key='Collections'
@@ -51,9 +44,9 @@ export const Marketplace: React.FC = () => {
                 noOfTabletColumns={2}
                 noOfMobileCols={1}
               >
-                {collections.map((collection) => (
+                {/* {collections.map((collection) => (
                   <Collection {...collection} key={collection.title} />
-                ))}
+                ))} */}
               </Grid>,
             ]}
           />

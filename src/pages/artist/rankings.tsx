@@ -1,4 +1,4 @@
-import { RankingsPage } from '@modules/artist';
+import { RankingsPage } from '@modules/creator';
 
 export async function getServerSideProps() {
   return {
