@@ -7,7 +7,11 @@ import styles from './Card.module.scss';
 
 test('loads component', async () => {
   render(
-    <Card image={Image} title='Card' author={{ image: Image, name: 'Kev' }} />,
+    <Card
+      image={Image}
+      title='Card'
+      creator={{ image: Image, username: 'Kev' }}
+    />,
   );
   expect(screen.getByTestId('card')).toBeTruthy();
   expect(screen.getByTestId('card')).toHaveClass(styles.card);
@@ -16,7 +20,11 @@ test('loads component', async () => {
 // title
 test('displays title', async () => {
   render(
-    <Card image={Image} title='Card' author={{ image: Image, name: 'Kev' }} />,
+    <Card
+      image={Image}
+      title='Card'
+      creator={{ image: Image, username: 'Kev' }}
+    />,
   );
   expect(screen.getByText('Card')).toBeTruthy();
 });
@@ -27,7 +35,7 @@ test('displays price and highest bid', async () => {
     <Card
       image={Image}
       title='Card'
-      author={{ image: Image, name: 'Kev' }}
+      creator={{ image: Image, username: 'Kev' }}
       price='10'
       highestBid='100'
     />,

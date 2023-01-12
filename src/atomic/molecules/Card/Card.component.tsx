@@ -7,7 +7,7 @@ import styles from './Card.module.scss';
 export type CardProps = {
   image: StaticImageData;
   title: string;
-  author: { image: StaticImageData; name: string };
+  creator: { image: StaticImageData; username: string };
   isImagePriority?: boolean;
   price?: string;
   highestBid?: string;
@@ -17,7 +17,7 @@ export const Card: React.FC<CardProps> = ({
   image,
   title,
   isImagePriority = false,
-  author,
+  creator,
   price,
   highestBid,
 }) => {
@@ -30,8 +30,8 @@ export const Card: React.FC<CardProps> = ({
         </Spacing>
         <CreatorPin
           variant='small'
-          artistName={author.name}
-          image={{ src: author.image, alt: author.name }}
+          artistName={creator?.username}
+          image={{ src: creator?.image, alt: creator?.username }}
         />
         {price && highestBid && (
           <Spacing top='xs'>

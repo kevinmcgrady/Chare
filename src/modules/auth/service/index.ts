@@ -1,10 +1,19 @@
-import { IServiceResponse, ResponseStatus } from '@services/types';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 
-import { auth } from '../../lib/firebase/client';
+import { auth } from '../../../lib/firebase/client';
+
+export enum ResponseStatus {
+  Success = 'success',
+  Error = 'error',
+}
+
+export interface IServiceResponse {
+  status: ResponseStatus;
+  errorMessage?: string;
+}
 
 interface IRegisterRequest {
   username: string;

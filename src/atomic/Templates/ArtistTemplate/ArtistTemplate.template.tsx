@@ -2,8 +2,6 @@ import Avatar from '@assets/images/Avatar-1.svg';
 import ArtistHeaderImage from '@assets/images/connectWallet.svg';
 import {
   Button,
-  Card,
-  Collection,
   Container,
   Grid,
   Image,
@@ -15,7 +13,6 @@ import {
 } from '@atomic';
 import React from 'react';
 
-import { collections,popularNFTs } from '../Homepage/data';
 import styles from './ArtistTemplate.module.scss';
 
 export const ArtistTemplate: React.FC = () => {
@@ -76,9 +73,9 @@ export const ArtistTemplate: React.FC = () => {
                     noOfTabletColumns={2}
                     noOfMobileCols={1}
                   >
-                    {popularNFTs.map((nft) => (
+                    {/* {popularNFTs.map((nft) => (
                       <Card {...nft} key={nft.title} />
-                    ))}
+                    ))} */}
                   </Grid>,
                   <Grid
                     key='Owned'
@@ -86,9 +83,9 @@ export const ArtistTemplate: React.FC = () => {
                     noOfTabletColumns={2}
                     noOfMobileCols={1}
                   >
-                    {popularNFTs.map((nft) => (
+                    {/* {popularNFTs.map((nft) => (
                       <Card {...nft} key={nft.title} />
-                    ))}
+                    ))} */}
                   </Grid>,
                   <Grid
                     key='Collections'
@@ -96,9 +93,9 @@ export const ArtistTemplate: React.FC = () => {
                     noOfTabletColumns={2}
                     noOfMobileCols={1}
                   >
-                    {collections.map((collection) => (
+                    {/* {collections.map((collection) => (
                       <Collection {...collection} key={collection.title} />
-                    ))}
+                    ))} */}
                   </Grid>,
                 ]}
               />

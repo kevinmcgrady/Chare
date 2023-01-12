@@ -1,6 +1,5 @@
 import { CreateAccountForm, CTATemplate, Spacing, Text } from '@atomic';
-import { AuthService } from '@services/auth';
-import { ResponseStatus } from '@services/types';
+import { AuthService , ResponseStatus } from '@modules/auth/service';
 import { urls } from '@urls';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';

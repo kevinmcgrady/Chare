@@ -9,10 +9,12 @@ import styles from './CreatorWidget.module.scss';
 test('loads component', async () => {
   render(
     <CreatorWidget
-      authorName=''
-      image={{ alt: 'alt', src: Image }}
+      creator={{
+        emailAddress: 'kev@gmail.com',
+        image: 'http://www.example.com',
+        username: 'kev',
+      }}
       index={1}
-      totalSavings='10'
       url='http://www.example.com'
     />,
   );
@@ -23,15 +25,16 @@ test('loads component', async () => {
 test('displays correct props', async () => {
   render(
     <CreatorWidget
-      authorName='kev'
-      image={{ alt: 'alt', src: Image }}
+      creator={{
+        emailAddress: 'kev@gmail.com',
+        image: 'http://www.example.com',
+        username: 'kev',
+      }}
       index={1}
-      totalSavings='10'
       url='http://www.example.com'
     />,
   );
   expect(screen.getByText('kev')).toBeInTheDocument();
   expect(screen.getByAltText('alt')).toBeInTheDocument();
   expect(screen.getByText('1')).toBeInTheDocument();
-  expect(screen.getByText('Total Sales: 10')).toBeInTheDocument();
 });

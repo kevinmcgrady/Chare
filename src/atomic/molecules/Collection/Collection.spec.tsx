@@ -2,17 +2,21 @@ import '@testing-library/jest-dom';
 
 import { render, screen } from '@testing-library/react';
 import { Collection } from './Collection.component';
-import Image from '@assets/images/Avatar-1.svg';
 
 test('loads component', async () => {
   render(
     <Collection
-      additionalImages={[]}
-      author={{ image: { alt: 'author', src: Image }, name: 'Kev' }}
-      mainImage={{ alt: 'image', src: Image }}
-      stat=''
-      title=''
-      url=''
+      collection={{
+        additionalImages: ['http://www.example.com'],
+        creator: {
+          emailAddress: 'kevin',
+          image: 'http://www.example.com',
+          username: 'kev',
+        },
+        mainImage: 'http://www.example.com',
+        title: 'title',
+      }}
+      url='http://www.example.com'
     />,
   );
   expect(screen.getByTestId('collection')).toBeTruthy();
@@ -21,18 +25,19 @@ test('loads component', async () => {
 test('loads all props correctly', async () => {
   render(
     <Collection
-      additionalImages={[{ alt: 'image1', src: Image }]}
-      author={{ image: { alt: 'author', src: Image }, name: 'Kev' }}
-      mainImage={{ alt: 'image', src: Image }}
-      stat='stat'
-      title='title'
-      url='url'
+      collection={{
+        additionalImages: ['http://www.example.com'],
+        creator: {
+          emailAddress: 'kevin',
+          image: 'http://www.example.com',
+          username: 'kev',
+        },
+        mainImage: 'http://www.example.com',
+        title: 'title',
+      }}
+      url='http://www.example.com'
     />,
   );
-  expect(screen.getByAltText('image1')).toBeTruthy();
-  expect(screen.getByAltText('author')).toBeTruthy();
-  expect(screen.getByText('Kev')).toBeTruthy();
-  expect(screen.getByAltText('image')).toBeTruthy();
-  expect(screen.getByText('stat')).toBeTruthy();
+  expect(screen.getByText('kev')).toBeTruthy();
   expect(screen.getByText('title')).toBeTruthy();
 });

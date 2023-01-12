@@ -1,4 +1,4 @@
-import { ArtistProfile } from '@modules/artist';
+import { ArtistProfile } from '@modules/creator';
 
 export async function getServerSideProps() {
   return {
