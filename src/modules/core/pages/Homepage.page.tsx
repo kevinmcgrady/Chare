@@ -1,41 +1,28 @@
 import CreateCollection from '@assets/images/CreateCollection.svg';
 import SetUpWallet from '@assets/images/SetUpWallet.svg';
 import StartEarning from '@assets/images/StartEarning.svg';
-import {
-  Card,
-  CategoryWidget,
-  Collection,
-  CreatorWidget,
-  HomepageTemplate,
-  InfoCard,
-  Page,
-} from '@atomic';
+import { HomepageTemplate, InfoCard, Page } from '@atomic';
+import { CategoryDTO } from '@modules/category';
+import { CollectionDTO } from '@modules/collection';
+import { CreatorDTO } from '@modules/creator';
+import { NftDTO } from '@modules/nft';
 import React from 'react';
 
-import {
-  categories,
-  collections,
-  creators,
-  popularNFTs,
-} from '../../../atomic/Templates/Homepage/data';
+type HomepageProps = {
+  nfts: NftDTO[];
+  collections: CollectionDTO[];
+  categories: CategoryDTO[];
+  creators: CreatorDTO[];
+  headlineNft: NftDTO;
+};
 
-export const Homepage: React.FC = () => {
-  const collectionsEls = collections.map((collection, index) => (
-    <Collection {...collection} key={index} />
-  ));
-
-  const creatorEls = creators.map((creator, index) => (
-    <CreatorWidget {...creator} key={index} />
-  ));
-
-  const categoriesEls = categories.map((category, index) => (
-    <CategoryWidget {...category} key={index} />
-  ));
-
-  const popularNFTsEls = popularNFTs.map((item) => (
-    <Card {...item} author={item.author} key={item.title} />
-  ));
-
+export const Homepage: React.FC<HomepageProps> = ({
+  nfts = [],
+  collections = [],
+  categories = [],
+  creators = [],
+  headlineNft,
+}) => {
   const howItWorksEls = [
     <InfoCard
       key={'Setup Your wallet'}
@@ -63,10 +50,11 @@ export const Homepage: React.FC = () => {
   return (
     <Page>
       <HomepageTemplate
-        collections={collectionsEls}
-        creators={creatorEls}
-        categories={categoriesEls}
-        popularNFTs={popularNFTsEls}
+        headlineNft={headlineNft}
+        collections={collections}
+        creators={creators}
+        categories={categories}
+        popularNFTs={nfts}
         howItWorks={howItWorksEls}
       />
     </Page>

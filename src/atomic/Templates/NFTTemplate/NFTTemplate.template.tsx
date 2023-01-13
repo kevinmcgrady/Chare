@@ -1,5 +1,3 @@
-import Avatar from '@assets/images/Avatar-1.svg';
-import NFTImage from '@assets/images/NFT.svg';
 import {
   Button,
   Container,
@@ -13,18 +11,23 @@ import {
   Text,
   Timer,
 } from '@atomic';
+import { NftDTO } from '@modules/nft';
 import React from 'react';
 
 import styles from './NFTTemplate.module.scss';
 
-export const NFTTemplate: React.FC = () => {
+type NftTemplateProps = {
+  nft: NftDTO;
+};
+
+export const NFTTemplate: React.FC<NftTemplateProps> = ({ nft }) => {
   return (
     <Page title='NFT' absoluteHeader>
       <Spacing bottom='md'>
         <div className={styles.imageContainer}>
           <Image
             priority
-            src={NFTImage}
+            src={nft.image}
             alt='NFT'
             fill
             className={styles.image}
@@ -34,17 +37,17 @@ export const NFTTemplate: React.FC = () => {
           <Grid noOfColumns={2} noOfMobileCols={1}>
             <div>
               <Spacing top='md' bottom='xs'>
-                <Text variant='h2'>The Orbitians</Text>
+                <Text variant='h2'>{nft.title}</Text>
               </Spacing>
-              <Text color='gray'>Minted on Sep 30, 2022</Text>
+              <Text color='gray'>{`Minted on ${nft.mintedOn}`}</Text>
               <Spacing top='xs'>
                 <Text variant='h5' font='spaceMono' color='gray'>
                   Created By
                 </Text>
                 <Spacing top='xs'>
                   <CreatorPin
-                    artistName='Orbitian'
-                    image={{ src: Avatar, alt: 'Orbitian' }}
+                    artistName={nft.creator.username}
+                    image={{ src: nft.creator.image, alt: 'alt' }}
                     variant='large'
                   />
                 </Spacing>
@@ -105,13 +108,11 @@ export const NFTTemplate: React.FC = () => {
                 </Text>
                 <Spacing top='xs'>
                   <div className={styles.tagContainer}>
-                    <Spacing right='xs'>
-                      <Tag title='Animation' />
-                    </Spacing>
-                    <Spacing right='xs'>
-                      <Tag title='Illustration' />
-                    </Spacing>
-                    <Tag title='Moon' />
+                    {nft.tags.map((tag) => (
+                      <Spacing key={tag} right='xs'>
+                        <Tag title={tag} />
+                      </Spacing>
+                    ))}
                   </div>
                 </Spacing>
               </Spacing>

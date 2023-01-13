@@ -1,7 +1,3 @@
-import StorybookIcon from '@assets/images/Avatar.svg';
-import Bear from '@assets/images/bear.png';
-import Dog from '@assets/images/dog.png';
-import Rabit from '@assets/images/rabit.png';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
@@ -23,21 +19,15 @@ const Template: ComponentStory<typeof Collection> = (args) => {
 export const Default = Template.bind({});
 
 Default.args = {
-  mainImage: {
-    src: Dog,
-    alt: 'dog',
+  collection: {
+    additionalImages: [],
+    creator: {
+      _id: '1',
+      emailAddress: 'kev@gmail.com',
+      image: 'http://www.example.com',
+      username: 'kev',
+    },
+    mainImage: 'http://www.example.com',
+    title: 'DSGN Animals',
   },
-  additionalImages: [
-    {
-      src: Rabit,
-      alt: 'rabit',
-    },
-    {
-      src: Bear,
-      alt: 'bear',
-    },
-  ],
-  title: 'DSGN Animals',
-  author: { image: { src: StorybookIcon, alt: 'Avatar' }, name: 'GravityOne' },
-  stat: '1020+',
 };

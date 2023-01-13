@@ -1,13 +1,16 @@
-import Avatar from '@assets/images/Avatar.svg';
-import SpaceWalking from '@assets/images/spaceWalking.png';
 import { Button, Card, Link, Spacing, Stats, Text } from '@atomic';
 import { useMediaQuery } from '@hooks';
+import { NftDTO } from '@modules/nft';
 import { urls } from '@urls';
 import React from 'react';
 
 import styles from './Hero.module.scss';
 
-export const Hero: React.FC = () => {
+type HeroProps = {
+  headlineNft: NftDTO;
+};
+
+export const Hero: React.FC<HeroProps> = ({ headlineNft }) => {
   const { isMobile } = useMediaQuery();
 
   return (
@@ -35,9 +38,13 @@ export const Hero: React.FC = () => {
           )}
         </div>
         <Card
-          author={{ image: Avatar, name: 'animakid' }}
-          image={SpaceWalking}
-          title='Space Walking'
+          url={urls.nft.landing(headlineNft.slug)}
+          creator={{
+            image: headlineNft.creator.image,
+            username: headlineNft.creator.username,
+          }}
+          image={headlineNft.image}
+          title={headlineNft.title}
           isImagePriority
         />
         {isMobile && (

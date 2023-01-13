@@ -28,7 +28,6 @@ export const Page: React.FC<PageProps> = ({
 }) => {
   const { isTablet } = useMediaQuery();
   const { pathname } = useRouter();
-
   return (
     <div className={cn(isFullHeight && styles.pageFullHeight)}>
       <Head>
@@ -45,7 +44,11 @@ export const Page: React.FC<PageProps> = ({
         >
           {!absoluteHeader && !isTablet && <Spacing top='md' />}
           <Container>
-            <Header activeLink={pathname} />
+            <Header
+              activeLink={pathname}
+              isLoggedIn={false}
+              logout={() => null}
+            />
           </Container>
         </div>
       )}

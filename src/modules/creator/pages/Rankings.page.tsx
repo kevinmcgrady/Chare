@@ -1,7 +1,15 @@
 import { Container, Page, RankingTable, Spacing, TabBar, Text } from '@atomic';
 import React from 'react';
 
-export const RankingsPage: React.FC = () => {
+import { CreatorDTO } from '../models';
+
+type RankingsPageProps = {
+  creators: CreatorDTO[];
+};
+
+export const RankingsPage: React.FC<RankingsPageProps> = ({
+  creators = [],
+}) => {
   return (
     <Page title='Rankings'>
       <Spacing top='md' bottom='md'>
@@ -17,10 +25,10 @@ export const RankingsPage: React.FC = () => {
           headings={['Today', 'This Week', 'This Month', 'All Time']}
           mobileHeadings={['1d', '7d', '30d', 'All Time']}
           tabs={[
-            <RankingTable key='Today' />,
-            <RankingTable key='This Week' />,
-            <RankingTable key='This Month' />,
-            <RankingTable key='All Time' />,
+            <RankingTable creators={creators} key='Today' />,
+            <RankingTable creators={creators} key='This Week' />,
+            <RankingTable creators={creators} key='This Month' />,
+            <RankingTable creators={creators} key='All Time' />,
           ]}
         />
       </Spacing>

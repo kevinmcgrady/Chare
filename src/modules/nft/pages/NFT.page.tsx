@@ -1,6 +1,12 @@
 import { NFTTemplate } from '@atomic';
 import React from 'react';
 
-export const NFT: React.FC = () => {
-  return <NFTTemplate />;
+import { NftDTO } from '../models';
+
+type NftProps = {
+  nft: NftDTO;
+};
+
+export const NFT: React.FC<NftProps> = ({ nft }) => {
+  return <NFTTemplate nft={nft} />;
 };

@@ -1,4 +1,5 @@
 import { Button, Link, Spacing } from '@atomic';
+import { urls } from '@urls';
 import cn from 'classnames';
 import React from 'react';
 
@@ -14,6 +15,8 @@ type NavigationProps = {
   navigationUrls: NavigationUrl[];
   authNavigationUrls: NavigationUrl[];
   activeLink: string;
+  isLoggedIn?: boolean;
+  logout?: () => void;
 };
 
 export const Navigation: React.FC<NavigationProps> = ({
@@ -21,6 +24,8 @@ export const Navigation: React.FC<NavigationProps> = ({
   navigationUrls = [],
   authNavigationUrls = [],
   activeLink,
+  isLoggedIn = false,
+  logout,
 }) => {
   return (
     <nav className={cn(isMobile ? styles.mobileNav : styles.nav)}>
@@ -39,13 +44,36 @@ export const Navigation: React.FC<NavigationProps> = ({
               </li>
             </Spacing>
           ))}
+          {isLoggedIn && (
+            <Spacing
+              right={isMobile ? undefined : 'sm'}
+              bottom={isMobile ? 'sm' : undefined}
+            >
+              <li>
+                <Link
+                  isActive={activeLink === urls.artist.profile('fred')}
+                  href={urls.artist.profile('fred')}
+                >
+                  Profile
+                </Link>
+              </li>
+            </Spacing>
+          )}
         </ul>
       </Spacing>
-      {authNavigationUrls.map((url) => (
-        <Link href={url.href} key={url.text}>
-          <Button icon={{ type: 'user', color: 'primary' }}>{url.text}</Button>
-        </Link>
-      ))}
+      {!isLoggedIn &&
+        authNavigationUrls.map((url) => (
+          <Link href={url.href} key={url.text}>
+            <Button icon={{ type: 'user', color: 'primary' }}>
+              {url.text}
+            </Button>
+          </Link>
+        ))}
+      {isLoggedIn && (
+        <Button onClick={logout} icon={{ type: 'user', color: 'primary' }}>
+          Log out
+        </Button>
+      )}
     </nav>
   );
 };

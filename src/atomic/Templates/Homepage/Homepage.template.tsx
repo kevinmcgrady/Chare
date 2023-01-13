@@ -1,20 +1,29 @@
 import {
+  Card,
+  CategoryWidget,
+  Collection,
   Container,
+  CreatorWidget,
   Featured,
   Hero,
   SectionWithTitleAndDescription,
   Spacing,
 } from '@atomic';
 import { useMediaQuery } from '@hooks';
+import { CategoryDTO } from '@modules/category';
+import { CollectionDTO } from '@modules/collection';
+import { CreatorDTO } from '@modules/creator';
+import { NftDTO } from '@modules/nft';
 import { urls } from '@urls';
 import React, { ReactElement } from 'react';
 
 type HomepageTemplateProps = {
-  collections: ReactElement[];
-  creators: ReactElement[];
-  categories: ReactElement[];
-  popularNFTs: ReactElement[];
+  collections: CollectionDTO[];
+  creators: CreatorDTO[];
+  categories: CategoryDTO[];
+  popularNFTs: NftDTO[];
   howItWorks: ReactElement[];
+  headlineNft: NftDTO;
 };
 
 export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
@@ -23,17 +32,20 @@ export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
   categories = [],
   popularNFTs = [],
   howItWorks = [],
+  headlineNft,
 }) => {
   const { isMobile } = useMediaQuery();
 
   return (
     <React.Fragment>
       <Container>
-        <Hero />
+        <Hero headlineNft={headlineNft} />
         <SectionWithTitleAndDescription
           title='Trending Collection'
           description='Checkout our weekly updated trending collection.'
-          data={collections}
+          data={collections.map((collection) => (
+            <Collection collection={collection} key={collection.title} />
+          ))}
           noOfColumns={3}
           noOfTabletCols={2}
           noOfMobileCols={1}
@@ -42,7 +54,13 @@ export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
         <SectionWithTitleAndDescription
           title='Top creators'
           description='Checkout Top Rated Creators on the NFT Marketplace'
-          data={creators}
+          data={creators.map((creator, index) => (
+            <CreatorWidget
+              creator={creator}
+              index={index}
+              key={creator.username}
+            />
+          ))}
           noOfColumns={4}
           noOfTabletCols={2}
           noOfMobileCols={1}
@@ -51,7 +69,9 @@ export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
 
         <SectionWithTitleAndDescription
           title='Browse Categories'
-          data={categories}
+          data={categories.map((category) => (
+            <CategoryWidget category={category} key={category.title} />
+          ))}
           noOfColumns={4}
           noOfTabletCols={3}
           noOfMobileCols={2}
@@ -59,7 +79,20 @@ export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
         <SectionWithTitleAndDescription
           title='Discover More NFTs'
           description='Explore new trending NFTs'
-          data={popularNFTs}
+          data={popularNFTs.map((nft) => (
+            <Card
+              creator={{
+                image: nft.creator.image,
+                username: nft.creator.username,
+              }}
+              image={nft.image}
+              title={nft.title}
+              highestBid={nft.highestBid}
+              price={nft.price}
+              key={nft.title}
+              url={urls.nft.landing(nft.slug)}
+            />
+          ))}
           noOfColumns={3}
           noOfMobileCols={1}
           cta={{ text: 'See All', href: urls.nft.marketplace }}

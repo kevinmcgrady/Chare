@@ -22,6 +22,7 @@ export const CreatorPin: React.FC<CreatorPinProps> = ({
 
   return (
     <div
+      data-testid='creatorPin'
       className={cn(
         styles.creator,
         variant === 'withBackground' && styles.withBackground,

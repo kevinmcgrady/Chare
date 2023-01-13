@@ -1,7 +1,21 @@
-import { CreateAccountForm, CTATemplate, Spacing } from '@atomic';
-import React from 'react';
+import { CreateAccountForm, CTATemplate, Spacing, Text } from '@atomic';
+import { AuthService , ResponseStatus } from '@modules/auth/service';
+import { urls } from '@urls';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 
 export const CreateAccount: React.FC = () => {
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const { push } = useRouter();
+
+  const onSubmit = async (values: any) => {
+    const response = await AuthService.register(values);
+    if (response.status === ResponseStatus.Error) {
+      setErrorMessage(response.errorMessage as string);
+    } else {
+      push(urls.auth.login);
+    }
+  };
   return (
     <CTATemplate
       pageTitle='Create account'
@@ -9,7 +23,12 @@ export const CreateAccount: React.FC = () => {
       subHeading='Welcome! enter your details and start creating, collecting and selling NFTs.'
     >
       <Spacing bottom='xs' top='xs'>
-        <CreateAccountForm />
+        {errorMessage && (
+          <Spacing bottom='sm'>
+            <Text>{errorMessage}</Text>
+          </Spacing>
+        )}
+        <CreateAccountForm onSubmit={(values) => onSubmit(values)} />
       </Spacing>
     </CTATemplate>
   );

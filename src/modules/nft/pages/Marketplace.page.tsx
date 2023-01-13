@@ -9,14 +9,20 @@ import {
   TabBar,
   Text,
 } from '@atomic';
+import { CollectionDTO } from '@modules/collection';
 import React from 'react';
 
-import {
-  collections,
-  popularNFTs,
-} from '../../../atomic/Templates/Homepage/data';
+import { NftDTO } from '../models';
 
-export const Marketplace: React.FC = () => {
+type MarketplaceProps = {
+  nfts: NftDTO[];
+  collections: CollectionDTO[];
+};
+
+export const Marketplace: React.FC<MarketplaceProps> = ({
+  nfts = [],
+  collections = [],
+}) => {
   return (
     <Page title='Marketplace'>
       <Spacing top='md' bottom='md'>
@@ -41,8 +47,16 @@ export const Marketplace: React.FC = () => {
                 noOfTabletColumns={2}
                 noOfMobileCols={1}
               >
-                {popularNFTs.map((nft) => (
-                  <Card {...nft} key={nft.title} />
+                {nfts.map((nft) => (
+                  <Card
+                    url={nft.slug}
+                    creator={nft.creator}
+                    image={nft.image}
+                    title={nft.title}
+                    key={nft.title}
+                    highestBid={nft.highestBid}
+                    price={nft.price}
+                  />
                 ))}
               </Grid>,
               <Grid
@@ -52,7 +66,7 @@ export const Marketplace: React.FC = () => {
                 noOfMobileCols={1}
               >
                 {collections.map((collection) => (
-                  <Collection {...collection} key={collection.title} />
+                  <Collection collection={collection} key={collection.title} />
                 ))}
               </Grid>,
             ]}

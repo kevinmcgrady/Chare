@@ -1,4 +1,3 @@
-import Avatar from '@assets/images/Avatar-1.svg';
 import ArtistHeaderImage from '@assets/images/connectWallet.svg';
 import {
   Button,
@@ -13,12 +12,24 @@ import {
   TabBar,
   Text,
 } from '@atomic';
+import { CollectionDTO } from '@modules/collection';
+import { CreatorDTO } from '@modules/creator';
+import { NftDTO } from '@modules/nft';
 import React from 'react';
 
-import { collections,popularNFTs } from '../Homepage/data';
 import styles from './ArtistTemplate.module.scss';
 
-export const ArtistTemplate: React.FC = () => {
+type ArtistTemplateProps = {
+  creator: CreatorDTO;
+  nfts: NftDTO[];
+  collections: CollectionDTO[];
+};
+
+export const ArtistTemplate: React.FC<ArtistTemplateProps> = ({
+  creator,
+  collections = [],
+  nfts = [],
+}) => {
   return (
     <Page title='Artist' absoluteHeader>
       <Spacing bottom='md'>
@@ -33,11 +44,16 @@ export const ArtistTemplate: React.FC = () => {
           </div>
           <div className={styles.avatarContainer}>
             <Container>
-              <Image src={Avatar} alt='Avatar' width={120} height={120} />
+              <Image
+                src={creator.image}
+                alt='Avatar'
+                width={120}
+                height={120}
+              />
               <Spacing top='md'>
                 <Grid noOfColumns={2} noOfMobileCols={1}>
                   <div>
-                    <Text variant='h2'>Animakid</Text>
+                    <Text variant='h2'>{creator.username}</Text>
                     <Spacing top='xs' bottom='xs'>
                       <Stats />
                     </Spacing>
@@ -76,8 +92,14 @@ export const ArtistTemplate: React.FC = () => {
                     noOfTabletColumns={2}
                     noOfMobileCols={1}
                   >
-                    {popularNFTs.map((nft) => (
-                      <Card {...nft} key={nft.title} />
+                    {nfts.map((nft) => (
+                      <Card
+                        url={nft.slug}
+                        creator={nft.creator}
+                        image={nft.image}
+                        title={nft.title}
+                        key={nft.title}
+                      />
                     ))}
                   </Grid>,
                   <Grid
@@ -86,8 +108,14 @@ export const ArtistTemplate: React.FC = () => {
                     noOfTabletColumns={2}
                     noOfMobileCols={1}
                   >
-                    {popularNFTs.map((nft) => (
-                      <Card {...nft} key={nft.title} />
+                    {nfts.map((nft) => (
+                      <Card
+                        url={nft.slug}
+                        creator={nft.creator}
+                        image={nft.image}
+                        title={nft.title}
+                        key={nft.title}
+                      />
                     ))}
                   </Grid>,
                   <Grid
@@ -97,7 +125,10 @@ export const ArtistTemplate: React.FC = () => {
                     noOfMobileCols={1}
                   >
                     {collections.map((collection) => (
-                      <Collection {...collection} key={collection.title} />
+                      <Collection
+                        collection={collection}
+                        key={collection.title}
+                      />
                     ))}
                   </Grid>,
                 ]}

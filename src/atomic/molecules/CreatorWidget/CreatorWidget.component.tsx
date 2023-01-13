@@ -1,34 +1,30 @@
-import { Image, ImageProps, Pin, Text } from '@atomic';
+import { Image, Pin, Text } from '@atomic';
+import { CreatorDTO } from '@modules/creator';
+import { urls } from '@urls';
 import { default as NextLink } from 'next/link';
 import React from 'react';
 
 import styles from './CreatorWidget.module.scss';
 
 export type CreatorWidgetProps = {
-  image: ImageProps;
-  authorName: string;
-  totalSavings: string;
+  creator: CreatorDTO;
   index: number;
-  url: string;
 };
 
 export const CreatorWidget: React.FC<CreatorWidgetProps> = ({
-  image,
-  authorName,
-  totalSavings,
+  creator: { image, username },
   index,
-  url,
 }) => {
   return (
-    <NextLink href={url}>
-      <div className={styles.creatorWidget}>
-        <Image src={image.src} alt={image.alt} width={120} height={120} />
+    <NextLink href={urls.artist.profile(username)}>
+      <div data-testid='creatorWidget' className={styles.creatorWidget}>
+        <Image src={image} alt='alt' width={120} height={120} />
         <div>
           <Text variant='h5' align='center'>
-            {authorName}
+            {username}
           </Text>
           <Text align='center' color='gray'>
-            Total Sales: {totalSavings}
+            Total Sales: 100 EHT
           </Text>
         </div>
         <Pin className={styles.pin} number={index} />

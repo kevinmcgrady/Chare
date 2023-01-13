@@ -1,5 +1,4 @@
 import StorybookIcon from '@assets/icons/Swatches.svg';
-import StorybookImage from '@assets/images/Monkey.png';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
@@ -21,13 +20,9 @@ const Template: ComponentStory<typeof CategoryWidget> = (args) => {
 export const Default = Template.bind({});
 
 Default.args = {
-  icon: {
-    src: StorybookIcon,
-    alt: 'Swatches',
+  category: {
+    icon: StorybookIcon,
+    image: 'http://www.example.com',
+    title: 'Collectibles',
   },
-  image: {
-    src: StorybookImage,
-    alt: 'Monkey',
-  },
-  title: 'Collectibles',
 };
