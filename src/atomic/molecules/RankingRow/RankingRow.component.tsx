@@ -1,11 +1,15 @@
-import Avarar from '@assets/images/Avatar-1.svg';
 import { CreatorPin, Pin, Spacing, Text } from '@atomic';
 import { useMediaQuery } from '@hooks';
+import { CreatorDTO } from '@modules/creator';
 import React from 'react';
 
 import styles from './RankingRow.module.scss';
 
-export const RankingRow: React.FC = () => {
+type RankingRowProps = {
+  creator: CreatorDTO;
+};
+
+export const RankingRow: React.FC<RankingRowProps> = ({ creator }) => {
   const { isTablet, isMobile } = useMediaQuery();
 
   return (
@@ -14,8 +18,8 @@ export const RankingRow: React.FC = () => {
         <div className={styles.grid}>
           <Pin number={1} />
           <CreatorPin
-            artistName='Jaydon Ekstrom Bothman'
-            image={{ src: Avarar, alt: 'Jaydon Ekstrom Bothman' }}
+            artistName={creator.username}
+            image={{ src: creator.image, alt: creator.username }}
             variant='extraLarge'
           />
           {!isMobile && (

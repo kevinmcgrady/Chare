@@ -1,8 +1,9 @@
-import { RankingsPage } from '@modules/creator';
+import { CreatorService, RankingsPage } from '@modules/creator';
 
 export async function getServerSideProps() {
+  const creators = await CreatorService.getAllCreators();
   return {
-    props: {},
+    props: { creators },
   };
 }
 

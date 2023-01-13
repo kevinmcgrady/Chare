@@ -1,21 +1,20 @@
 import { CreatorPin, Grid, Image, Link, Spacing, Text } from '@atomic';
 import { CollectionDTO } from '@modules/collection';
+import { urls } from '@urls';
 import React from 'react';
 
 import styles from './Collection.module.scss';
 
 type CollectionProps = {
   collection: CollectionDTO;
-  url: string;
 };
 
 export const Collection: React.FC<CollectionProps> = ({
   collection: { additionalImages = [], creator, mainImage, title },
-  url,
 }) => {
   return (
     <div data-testid='collection'>
-      <Link href={url}>
+      <Link href={urls.nft.marketplace}>
         <Image
           className={styles.image}
           width={330}
@@ -38,7 +37,7 @@ export const Collection: React.FC<CollectionProps> = ({
           ))}
           <div className={styles.stats}>
             <Text variant='h5' font='spaceMono'>
-              12
+              1020+
             </Text>
           </div>
         </Grid>

@@ -1,5 +1,6 @@
 import { Image, Pin, Text } from '@atomic';
 import { CreatorDTO } from '@modules/creator';
+import { urls } from '@urls';
 import { default as NextLink } from 'next/link';
 import React from 'react';
 
@@ -7,17 +8,15 @@ import styles from './CreatorWidget.module.scss';
 
 export type CreatorWidgetProps = {
   creator: CreatorDTO;
-  url: string;
   index: number;
 };
 
 export const CreatorWidget: React.FC<CreatorWidgetProps> = ({
   creator: { image, username },
-  url,
   index,
 }) => {
   return (
-    <NextLink href={url}>
+    <NextLink href={urls.artist.profile(username)}>
       <div data-testid='creatorWidget' className={styles.creatorWidget}>
         <Image src={image} alt='alt' width={120} height={120} />
         <div>
@@ -25,7 +24,7 @@ export const CreatorWidget: React.FC<CreatorWidgetProps> = ({
             {username}
           </Text>
           <Text align='center' color='gray'>
-            Total Sales: 100
+            Total Sales: 100 EHT
           </Text>
         </div>
         <Pin className={styles.pin} number={index} />

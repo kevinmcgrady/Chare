@@ -9,7 +9,7 @@ export async function getServerSideProps() {
   const collections = await CollectionService.getAllCollections();
   const creators = await CreatorService.getAllCreators();
   const categories = await CategoryService.getAllCategories();
-  const headlineNft = await NftService.getOneNft('the-orbitians');
+  const headlineNft = await NftService.getOneNft('space-walking');
 
   return {
     props: {

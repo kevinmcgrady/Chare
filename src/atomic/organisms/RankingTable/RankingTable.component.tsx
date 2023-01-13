@@ -1,10 +1,17 @@
-import { RankingRow, Spacing,Text } from '@atomic';
+import { RankingRow, Spacing, Text } from '@atomic';
 import { useMediaQuery } from '@hooks';
+import { CreatorDTO } from '@modules/creator';
 import React from 'react';
 
 import styles from './RankingTable.module.scss';
 
-export const RankingTable: React.FC = () => {
+type RankingTableProps = {
+  creators: CreatorDTO[];
+};
+
+export const RankingTable: React.FC<RankingTableProps> = ({
+  creators = [],
+}) => {
   const { isTablet, isMobile } = useMediaQuery();
 
   return (
@@ -34,10 +41,9 @@ export const RankingTable: React.FC = () => {
           </div>
         </div>
       </Spacing>
-      <RankingRow />
-      <RankingRow />
-      <RankingRow />
-      <RankingRow />
+      {creators.map((creator) => (
+        <RankingRow creator={creator} key={creator.username} />
+      ))}
     </div>
   );
 };

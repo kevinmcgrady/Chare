@@ -44,11 +44,7 @@ export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
           title='Trending Collection'
           description='Checkout our weekly updated trending collection.'
           data={collections.map((collection) => (
-            <Collection
-              collection={collection}
-              key={collection.title}
-              url='test'
-            />
+            <Collection collection={collection} key={collection.title} />
           ))}
           noOfColumns={3}
           noOfTabletCols={2}
@@ -63,7 +59,6 @@ export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
               creator={creator}
               index={index}
               key={creator.username}
-              url='test'
             />
           ))}
           noOfColumns={4}
@@ -95,6 +90,7 @@ export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
               highestBid={nft.highestBid}
               price={nft.price}
               key={nft.title}
+              url={urls.nft.landing(nft.slug)}
             />
           ))}
           noOfColumns={3}
