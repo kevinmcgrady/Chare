@@ -31,7 +31,11 @@ enum Env {
 }
 
 export const getEnviroment = () => {
-  return process.env.ENV === Env.dev
-    ? 'http://localhost:3001'
-    : 'https://chare-services.herokuapp.com';
+  if (process.env.NEXT_PUBLIC_ENV === Env.dev) {
+    return 'http://localhost:3001';
+  }
+
+  if (process.env.NEXT_PUBLIC_ENV === Env.prod) {
+    return 'https://chare-services.herokuapp.com';
+  }
 };
