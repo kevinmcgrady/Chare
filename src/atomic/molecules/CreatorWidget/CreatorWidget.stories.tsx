@@ -25,5 +25,4 @@ Default.args = {
     image: 'http://www.example.com',
     username: 'kev',
   },
-  url: 'http://www.example.com',
 };

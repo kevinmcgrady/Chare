@@ -8,6 +8,7 @@ import styles from './Card.module.scss';
 test('loads component', async () => {
   render(
     <Card
+      url=''
       image={Image}
       title='Card'
       creator={{ image: Image, username: 'Kev' }}
@@ -21,6 +22,7 @@ test('loads component', async () => {
 test('displays title', async () => {
   render(
     <Card
+      url=''
       image={Image}
       title='Card'
       creator={{ image: Image, username: 'Kev' }}
@@ -33,6 +35,7 @@ test('displays title', async () => {
 test('displays price and highest bid', async () => {
   render(
     <Card
+      url={''}
       image={Image}
       title='Card'
       creator={{ image: Image, username: 'Kev' }}
@@ -40,6 +43,6 @@ test('displays price and highest bid', async () => {
       highestBid='100'
     />,
   );
-  expect(screen.getByText('10')).toBeTruthy();
-  expect(screen.getByText('100')).toBeTruthy();
+  expect(screen.getByText('10 EHT')).toBeTruthy();
+  expect(screen.getByText('100 EHT')).toBeTruthy();
 });

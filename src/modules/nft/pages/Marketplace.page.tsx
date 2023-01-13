@@ -49,6 +49,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({
               >
                 {nfts.map((nft) => (
                   <Card
+                    url={nft.slug}
                     creator={nft.creator}
                     image={nft.image}
                     title={nft.title}
@@ -65,11 +66,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({
                 noOfMobileCols={1}
               >
                 {collections.map((collection) => (
-                  <Collection
-                    collection={collection}
-                    key={collection.title}
-                    url='http://www.example'
-                  />
+                  <Collection collection={collection} key={collection.title} />
                 ))}
               </Grid>,
             ]}

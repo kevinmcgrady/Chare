@@ -94,6 +94,7 @@ export const ArtistTemplate: React.FC<ArtistTemplateProps> = ({
                   >
                     {nfts.map((nft) => (
                       <Card
+                        url={nft.slug}
                         creator={nft.creator}
                         image={nft.image}
                         title={nft.title}
@@ -109,6 +110,7 @@ export const ArtistTemplate: React.FC<ArtistTemplateProps> = ({
                   >
                     {nfts.map((nft) => (
                       <Card
+                        url={nft.slug}
                         creator={nft.creator}
                         image={nft.image}
                         title={nft.title}
@@ -125,7 +127,6 @@ export const ArtistTemplate: React.FC<ArtistTemplateProps> = ({
                     {collections.map((collection) => (
                       <Collection
                         collection={collection}
-                        url='http://example.com'
                         key={collection.title}
                       />
                     ))}
