@@ -25,17 +25,6 @@ export const authNavigationUrls = [
   { text: 'Sign Up', href: urls.auth.createAccount },
 ];
 
-enum Env {
-  dev = 'development',
-  prod = 'production',
-}
-
 export const getEnviroment = () => {
-  if (process.env.NEXT_PUBLIC_ENV === Env.dev) {
-    return 'http://localhost:3001';
-  }
-
-  if (process.env.NEXT_PUBLIC_ENV === Env.prod) {
-    return 'https://chare-services.herokuapp.com';
-  }
+  return process.env.NEXT_PUBLIC_SERVICE_URL;
 };
