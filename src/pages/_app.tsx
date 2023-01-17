@@ -1,8 +1,8 @@
 import '@styles/globals.scss';
 
+import { loadPrgressBar } from '@atomic';
 import { FirebaseAuthContext } from '@modules/auth';
 import { AuthService } from '@modules/auth/service';
-import { loadPrgressBar } from '@modules/core';
 import { GlobalStyles } from '@modules/core/globalStyles';
 import type { AppProps } from 'next/app';
 import React, { useEffect } from 'react';

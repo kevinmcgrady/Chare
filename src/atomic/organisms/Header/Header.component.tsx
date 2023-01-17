@@ -7,8 +7,8 @@ import styles from './Header.module.scss';
 
 type HeaderProps = {
   activeLink?: string;
-  isLoggedIn?: boolean;
-  logout?: () => void;
+  isLoggedIn: boolean;
+  logout: () => void;
 };
 
 export const Header: React.FC<HeaderProps> = ({
@@ -20,8 +20,8 @@ export const Header: React.FC<HeaderProps> = ({
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const navigationProps = {
-    isLoggedIn: isLoggedIn,
-    logout: logout,
+    isLoggedIn,
+    logout,
     activeLink: activeLink as string,
     navigationUrls: navigationUrls,
     authNavigationUrls: authNavigationUrls,

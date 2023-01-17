@@ -3,14 +3,20 @@ import { getEnviroment } from '@urls';
 import { CreatorDTO } from '../models';
 
 export class CreatorService {
-  static async getAllCreators(): Promise<CreatorDTO[]> {
+  protected context: any;
+
+  constructor(context: any) {
+    this.context = context;
+  }
+
+  async getAllCreators(): Promise<CreatorDTO[]> {
     const response = await fetch(getEnviroment() + '/creator');
     const creators = await response.json();
 
     return creators;
   }
 
-  static async getOneCreator(username: string): Promise<CreatorDTO> {
+  async getOneCreator(username: string): Promise<CreatorDTO> {
     const response = await fetch(getEnviroment() + `/creator/${username}`);
     const creator = await response.json();
 
