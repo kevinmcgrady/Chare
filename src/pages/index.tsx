@@ -4,12 +4,17 @@ import { Homepage } from '@modules/core';
 import { CreatorService } from '@modules/creator';
 import { NftService } from '@modules/nft';
 
-export async function getServerSideProps() {
-  const nfts = await NftService.getAllNfts();
-  const collections = await CollectionService.getAllCollections();
-  const creators = await CreatorService.getAllCreators();
-  const categories = await CategoryService.getAllCategories();
-  const headlineNft = await NftService.getOneNft('space-walking');
+export async function getServerSideProps(context: any) {
+  const nftService = new NftService(context);
+  const collectionService = new CollectionService(context);
+  const categoryService = new CategoryService(context);
+  const creatorService = new CreatorService(context);
+
+  const nfts = await nftService.getAllNfts();
+  const collections = await collectionService.getAllCollections();
+  const creators = await creatorService.getAllCreators();
+  const categories = await categoryService.getAllCategories();
+  const headlineNft = await nftService.getOneNft('space-walking');
 
   return {
     props: {
