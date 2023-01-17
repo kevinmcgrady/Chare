@@ -22,7 +22,9 @@ Default.args = {
   creator: {
     _id: '1',
     emailAddress: 'kev@gmail.com',
-    image: 'http://www.example.com',
+    image:
+      'https://storage.googleapis.com/chare-5cc75.appspot.com/users/Avatar.svg',
     username: 'kev',
   },
+  index: 1,
 };

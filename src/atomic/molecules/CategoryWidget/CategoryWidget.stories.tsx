@@ -1,4 +1,3 @@
-import StorybookIcon from '@assets/icons/Swatches.svg';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
@@ -21,8 +20,9 @@ export const Default = Template.bind({});
 
 Default.args = {
   category: {
-    icon: StorybookIcon,
-    image: 'http://www.example.com',
+    icon: 'https://storage.googleapis.com/chare-5cc75.appspot.com/categories/PaintBrush.svg',
+    image:
+      'https://storage.googleapis.com/chare-5cc75.appspot.com/categories/purpleBackground.png',
     title: 'Collectibles',
   },
 };

@@ -14,4 +14,12 @@ const Template: ComponentStory<typeof RankingRow> = (args) => {
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  creator: {
+    _id: '1',
+    emailAddress: 'kev@gmail.com',
+    image:
+      'https://storage.googleapis.com/chare-5cc75.appspot.com/users/Avatar.svg',
+    username: 'Kev',
+  },
+};
