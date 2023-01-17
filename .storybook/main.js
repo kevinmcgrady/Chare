@@ -23,6 +23,7 @@ module.exports = {
       '@assets': path.resolve(__dirname, '../public/assets'),
       '@hooks': path.resolve(__dirname, '../src/hooks'),
       '@urls': path.resolve(__dirname, '../src/urls'),
+      '@modules': path.resolve(__dirname, '../src/modules'),
     };
 
     return config;

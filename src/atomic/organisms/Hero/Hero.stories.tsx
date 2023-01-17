@@ -19,4 +19,24 @@ const Template: ComponentStory<typeof Hero> = (args) => {
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  headlineNft: {
+    creator: {
+      _id: '1',
+      emailAddress: 'kev@gmail.com',
+      image:
+        'https://storage.googleapis.com/chare-5cc75.appspot.com/users/Avatar.svg',
+      username: 'Kev',
+    },
+    description: 'description',
+    endDate: new Date(),
+    highestBid: '12',
+    image:
+      'https://storage.googleapis.com/chare-5cc75.appspot.com/nfts/spaceWalking.png',
+    mintedOn: new Date(),
+    price: '12',
+    slug: 'slug',
+    tags: ['tag', 'tag', 'tag'],
+    title: 'Space Walking',
+  },
+};
