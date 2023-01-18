@@ -22,3 +22,11 @@
   top: $spacing-extra-small;
   left: $spacing-extra-small;
 }
+
+.link {
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

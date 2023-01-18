@@ -1,5 +1,3 @@
-import Avatar from '@assets/images/Avatar.svg';
-import MushroomImage from '@assets/images/mushroom.png';
 import {
   Button,
   Container,
@@ -10,37 +8,38 @@ import {
   Timer,
 } from '@atomic';
 import { useMediaQuery } from '@hooks';
+import { NftDTO } from '@modules/nft';
+import { urls } from '@urls';
 import Image from 'next/image';
 import React from 'react';
 
 import styles from './Featured.module.scss';
 
 type FeaturedProps = {
-  url: string;
+  nft: NftDTO;
 };
 
-export const Featured: React.FC<FeaturedProps> = ({ url }) => {
+export const Featured: React.FC<FeaturedProps> = ({ nft }) => {
   const { isMobile } = useMediaQuery();
-
   return (
     <div className={styles.container}>
-      <Image src={MushroomImage} alt='Mushroom' fill objectFit='cover' />
+      <Image src={nft.image} alt={nft.title} fill className={styles.image} />
       <div className={styles.overlay}>
         <Container>
           <div className={styles.details}>
             <div>
               <Spacing bottom='xs'>
                 <CreatorPin
-                  artistName='Shroomie'
-                  image={{ src: Avatar, alt: 'Shroomie' }}
+                  artistName={nft.creator.username}
+                  image={{ src: nft.creator.image, alt: nft.creator.username }}
                   variant='withBackground'
                 />
               </Spacing>
               <Spacing bottom='xs'>
-                <Text variant='h2'>Magic Mushrooms</Text>
+                <Text variant='h2'>{nft.title}</Text>
               </Spacing>
               {!isMobile && (
-                <Link href={url}>
+                <Link href={urls.nft.landing(nft.slug)}>
                   <Button
                     icon={{ type: 'eye', color: 'secondary' }}
                     variant='tertiary'
@@ -50,10 +49,10 @@ export const Featured: React.FC<FeaturedProps> = ({ url }) => {
                 </Link>
               )}
             </div>
-            <Timer />
+            <Timer date={new Date()} />
             <Spacing bottom='xs' />
             {isMobile && (
-              <Link href={url}>
+              <Link href={urls.nft.landing(nft.slug)}>
                 <Button
                   variant='tertiary'
                   icon={{ type: 'eye', color: 'secondary' }}

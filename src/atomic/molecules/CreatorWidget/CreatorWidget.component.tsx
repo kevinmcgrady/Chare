@@ -16,7 +16,7 @@ export const CreatorWidget: React.FC<CreatorWidgetProps> = ({
   index,
 }) => {
   return (
-    <NextLink href={urls.artist.profile(username)}>
+    <NextLink className={styles.link} href={urls.artist.profile(username)}>
       <div data-testid='creatorWidget' className={styles.creatorWidget}>
         <Image src={image} alt='alt' width={120} height={120} />
         <div>

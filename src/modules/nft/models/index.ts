@@ -5,7 +5,7 @@ export interface NftDTO {
   title: string;
   image: string;
   mintedOn: Date;
-  description: string;
+  description: string[];
   tags: string[];
   endDate: Date;
   price: string;
