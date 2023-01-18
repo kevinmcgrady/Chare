@@ -15,6 +15,7 @@ import {
 import { CollectionDTO } from '@modules/collection';
 import { CreatorDTO } from '@modules/creator';
 import { NftDTO } from '@modules/nft';
+import { urls } from '@urls';
 import React from 'react';
 
 import styles from './ArtistTemplate.module.scss';
@@ -94,7 +95,7 @@ export const ArtistTemplate: React.FC<ArtistTemplateProps> = ({
                   >
                     {nfts.map((nft) => (
                       <Card
-                        url={nft.slug}
+                        url={urls.nft.landing(nft.slug)}
                         creator={nft.creator}
                         image={nft.image}
                         title={nft.title}
@@ -110,7 +111,7 @@ export const ArtistTemplate: React.FC<ArtistTemplateProps> = ({
                   >
                     {nfts.map((nft) => (
                       <Card
-                        url={nft.slug}
+                        url={urls.nft.landing(nft.slug)}
                         creator={nft.creator}
                         image={nft.image}
                         title={nft.title}

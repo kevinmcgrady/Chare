@@ -15,6 +15,7 @@ export async function getServerSideProps(context: any) {
   const creators = await creatorService.getAllCreators();
   const categories = await categoryService.getAllCategories();
   const headlineNft = await nftService.getOneNft('space-walking');
+  const featuredNft = await nftService.getOneNft('space-walking');
 
   return {
     props: {
@@ -23,6 +24,7 @@ export async function getServerSideProps(context: any) {
       creators,
       categories,
       headlineNft,
+      featuredNft,
     },
   };
 }

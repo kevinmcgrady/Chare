@@ -24,6 +24,7 @@ type HomepageTemplateProps = {
   popularNFTs: NftDTO[];
   howItWorks: ReactElement[];
   headlineNft: NftDTO;
+  featuredNft: NftDTO;
 };
 
 export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
@@ -33,6 +34,7 @@ export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
   popularNFTs = [],
   howItWorks = [],
   headlineNft,
+  featuredNft,
 }) => {
   const { isMobile } = useMediaQuery();
 
@@ -100,7 +102,7 @@ export const HomepageTemplate: React.FC<HomepageTemplateProps> = ({
       </Container>
 
       <Spacing top={isMobile ? 'sm' : 'lg'} bottom={isMobile ? 'sm' : 'lg'}>
-        <Featured url={urls.nft.landing('slug')} />
+        <Featured nft={featuredNft} />
       </Spacing>
 
       <Container>

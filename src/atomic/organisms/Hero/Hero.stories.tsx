@@ -28,7 +28,7 @@ Default.args = {
         'https://storage.googleapis.com/chare-5cc75.appspot.com/users/Avatar.svg',
       username: 'Kev',
     },
-    description: 'description',
+    description: ['description'],
     endDate: new Date(),
     highestBid: '12',
     image:
