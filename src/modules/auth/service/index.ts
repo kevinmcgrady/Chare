@@ -2,6 +2,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
+import { setCookie } from 'nookies';
 
 import { auth } from '../../../lib/firebase/client';
 
@@ -64,6 +65,17 @@ export class AuthService {
         errorMessage: error.message,
       };
     }
+  }
+
+  static storeAuthCookie() {
+    return auth.onIdTokenChanged(async (user) => {
+      if (!user) {
+        setCookie(null, 'token', '', { path: '/' });
+      } else {
+        const token = await user.getIdToken();
+        setCookie(null, 'token', token, { path: '/' });
+      }
+    });
   }
 
   static logout() {

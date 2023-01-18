@@ -19,5 +19,12 @@
 .image {
   width: 100%;
   height: auto;
-  min-height: 310px;
+}
+
+.link {
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }

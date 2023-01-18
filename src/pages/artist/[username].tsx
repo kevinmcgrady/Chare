@@ -3,10 +3,14 @@ import { ArtistProfile, CreatorService } from '@modules/creator';
 import { NftService } from '@modules/nft';
 
 export async function getServerSideProps(context: any) {
+  const creatorService = new CreatorService(context);
+  const nftService = new NftService(context);
+  const collectionService = new CollectionService(context);
+
   const username = context.params.username;
-  const creator = await CreatorService.getOneCreator(username);
-  const nfts = await NftService.getAllNftsForCreator(creator._id);
-  const collections = await CollectionService.getAllCollectionsForCreator(
+  const creator = await creatorService.getOneCreator(username);
+  const nfts = await nftService.getAllNftsForCreator(creator._id);
+  const collections = await collectionService.getAllCollectionsForCreator(
     creator._id,
   );
 

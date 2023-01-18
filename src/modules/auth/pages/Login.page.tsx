@@ -1,5 +1,5 @@
 import { CTATemplate, LoginForm, Spacing, Text } from '@atomic';
-import { AuthService , ResponseStatus } from '@modules/auth/service';
+import { AuthService, ResponseStatus } from '@modules/auth/service';
 import { urls } from '@urls';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
@@ -10,10 +10,11 @@ export const Login: React.FC = () => {
 
   const onSubmit = async (values: any) => {
     const response = await AuthService.login(values);
+
     if (response.status === ResponseStatus.Error) {
       setErrorMessage(response.errorMessage as string);
     } else {
-      push(urls.artist.profile('fred'));
+      push(urls.homepage);
     }
   };
   return (

@@ -1,9 +1,11 @@
 import { Container, Footer, Header, Spacing } from '@atomic';
 import { useMediaQuery } from '@hooks';
+import { FirebaseAuthContext } from '@modules/auth';
+import { AuthService } from '@modules/auth/service';
 import cn from 'classnames';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useContext } from 'react';
 
 import styles from './Page.module.scss';
 
@@ -28,6 +30,9 @@ export const Page: React.FC<PageProps> = ({
 }) => {
   const { isTablet } = useMediaQuery();
   const { pathname } = useRouter();
+  const user = useContext(FirebaseAuthContext);
+  const isLoggedIn = !!user;
+
   return (
     <div className={cn(isFullHeight && styles.pageFullHeight)}>
       <Head>
@@ -46,8 +51,8 @@ export const Page: React.FC<PageProps> = ({
           <Container>
             <Header
               activeLink={pathname}
-              isLoggedIn={false}
-              logout={() => null}
+              isLoggedIn={isLoggedIn}
+              logout={AuthService.logout}
             />
           </Container>
         </div>

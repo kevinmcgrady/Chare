@@ -38,6 +38,7 @@ export const Hero: React.FC<HeroProps> = ({ headlineNft }) => {
           )}
         </div>
         <Card
+          className={styles.card}
           url={urls.nft.landing(headlineNft.slug)}
           creator={{
             image: headlineNft.creator.image,

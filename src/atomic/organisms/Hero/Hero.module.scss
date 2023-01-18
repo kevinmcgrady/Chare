@@ -12,3 +12,10 @@
     column-gap: $spacing-small;
   }
 }
+
+.card {
+  max-width: 447px;
+  margin-left: auto;
+  border-top-left-radius: 2.25rem;
+  border-top-right-radius: 2.25rem;
+}

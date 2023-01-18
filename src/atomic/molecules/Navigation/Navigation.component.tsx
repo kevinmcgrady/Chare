@@ -1,5 +1,4 @@
 import { Button, Link, Spacing } from '@atomic';
-import { urls } from '@urls';
 import cn from 'classnames';
 import React from 'react';
 
@@ -15,8 +14,8 @@ type NavigationProps = {
   navigationUrls: NavigationUrl[];
   authNavigationUrls: NavigationUrl[];
   activeLink: string;
-  isLoggedIn?: boolean;
-  logout?: () => void;
+  isLoggedIn: boolean;
+  logout: () => void;
 };
 
 export const Navigation: React.FC<NavigationProps> = ({
@@ -24,7 +23,7 @@ export const Navigation: React.FC<NavigationProps> = ({
   navigationUrls = [],
   authNavigationUrls = [],
   activeLink,
-  isLoggedIn = false,
+  isLoggedIn,
   logout,
 }) => {
   return (
@@ -44,21 +43,6 @@ export const Navigation: React.FC<NavigationProps> = ({
               </li>
             </Spacing>
           ))}
-          {isLoggedIn && (
-            <Spacing
-              right={isMobile ? undefined : 'sm'}
-              bottom={isMobile ? 'sm' : undefined}
-            >
-              <li>
-                <Link
-                  isActive={activeLink === urls.artist.profile('fred')}
-                  href={urls.artist.profile('fred')}
-                >
-                  Profile
-                </Link>
-              </li>
-            </Spacing>
-          )}
         </ul>
       </Spacing>
       {!isLoggedIn &&

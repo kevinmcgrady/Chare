@@ -1,4 +1,5 @@
 import { CreatorPin, Image, Spacing, Text } from '@atomic';
+import cn from 'classnames';
 import { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -13,6 +14,7 @@ export type CardProps = {
   price?: string;
   highestBid?: string;
   url: string;
+  className?: string;
 };
 
 export const Card: React.FC<CardProps> = ({
@@ -23,10 +25,11 @@ export const Card: React.FC<CardProps> = ({
   price,
   highestBid,
   url,
+  className,
 }) => {
   return (
-    <Link href={url}>
-      <div data-testid='card' className={styles.card}>
+    <Link className={styles.link} href={url}>
+      <div data-testid='card' className={cn(styles.card, className)}>
         <Image
           className={styles.image}
           width={300}
