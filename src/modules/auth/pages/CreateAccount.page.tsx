@@ -1,5 +1,5 @@
 import { CreateAccountForm, CTATemplate, Spacing, Text } from '@atomic';
-import { AuthService , ResponseStatus } from '@modules/auth/service';
+import { AuthService } from '@modules/auth/service';
 import { urls } from '@urls';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
@@ -9,11 +9,11 @@ export const CreateAccount: React.FC = () => {
   const { push } = useRouter();
 
   const onSubmit = async (values: any) => {
-    const response = await AuthService.register(values);
-    if (response.status === ResponseStatus.Error) {
-      setErrorMessage(response.errorMessage as string);
-    } else {
+    try {
+      await AuthService.register(values);
       push(urls.auth.login);
+    } catch (error: any) {
+      setErrorMessage(error.message);
     }
   };
   return (

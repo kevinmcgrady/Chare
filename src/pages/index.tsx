@@ -4,7 +4,7 @@ import { Homepage } from '@modules/core';
 import { CreatorService } from '@modules/creator';
 import { NftService } from '@modules/nft';
 
-export async function getStaticProps(context: any) {
+export async function getServerSideProps(context: any) {
   const nftService = new NftService(context);
   const collectionService = new CollectionService(context);
   const categoryService = new CategoryService(context);
