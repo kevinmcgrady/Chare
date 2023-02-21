@@ -1,6 +1,6 @@
 import { Spacing, Text } from '@atomic';
 import dayjs from 'dayjs';
-import React, { useCallback,useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import styles from './Timer.module.scss';
 
@@ -40,7 +40,7 @@ export const Timer: React.FC<TimerProps> = ({ date }) => {
       </Spacing>
 
       <div className={styles.time}>
-        <Text variant='h3' font='spaceMono'>
+        <Text aria='hours' variant='h3' font='spaceMono'>
           {hours}:
           <Spacing top='xs'>
             <Text variant='caption' font='spaceMono'>
@@ -48,7 +48,7 @@ export const Timer: React.FC<TimerProps> = ({ date }) => {
             </Text>
           </Spacing>
         </Text>
-        <Text variant='h3' font='spaceMono'>
+        <Text aria='minutes' variant='h3' font='spaceMono'>
           {minutes}:
           <Spacing top='xs'>
             <Text variant='caption' font='spaceMono'>
@@ -56,7 +56,7 @@ export const Timer: React.FC<TimerProps> = ({ date }) => {
             </Text>
           </Spacing>
         </Text>
-        <Text variant='h3' font='spaceMono'>
+        <Text aria='seconds' variant='h3' font='spaceMono'>
           {seconds}
           <Spacing top='xs'>
             <Text variant='caption' font='spaceMono'>
