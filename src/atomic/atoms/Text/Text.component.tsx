@@ -25,6 +25,7 @@ type TextProps = {
   font?: Font;
   className?: string;
   color?: Color;
+  aria?: string;
 };
 
 export const Text: React.FC<TextProps> = ({
@@ -34,6 +35,7 @@ export const Text: React.FC<TextProps> = ({
   font = 'primary',
   className,
   color = 'default',
+  aria,
 }) => {
   const isSecondaryFont = font === 'spaceMono';
 
@@ -41,6 +43,7 @@ export const Text: React.FC<TextProps> = ({
     case 'h1':
       return (
         <h1
+          aria-label={aria}
           role='heading'
           aria-level={1}
           className={cn(
@@ -58,6 +61,7 @@ export const Text: React.FC<TextProps> = ({
     case 'h2':
       return (
         <h2
+          aria-label={aria}
           role='heading'
           aria-level={2}
           className={cn(
@@ -75,6 +79,7 @@ export const Text: React.FC<TextProps> = ({
     case 'subTitle':
       return (
         <h2
+          aria-label={aria}
           role='heading'
           aria-level={2}
           className={cn(
@@ -91,6 +96,7 @@ export const Text: React.FC<TextProps> = ({
     case 'h3':
       return (
         <h3
+          aria-label={aria}
           role='heading'
           aria-level={3}
           className={cn(
@@ -108,6 +114,7 @@ export const Text: React.FC<TextProps> = ({
     case 'h4':
       return (
         <h4
+          aria-label={aria}
           aria-level={4}
           role='heading'
           className={cn(
@@ -125,6 +132,7 @@ export const Text: React.FC<TextProps> = ({
     case 'h5':
       return (
         <h5
+          aria-label={aria}
           role='heading'
           aria-level={5}
           className={cn(
@@ -142,6 +150,7 @@ export const Text: React.FC<TextProps> = ({
     case 'body':
       return (
         <p
+          aria-label={aria}
           className={cn(
             styles.body,
             styles[align],
@@ -156,6 +165,7 @@ export const Text: React.FC<TextProps> = ({
     case 'caption':
       return (
         <p
+          aria-label={aria}
           className={cn(
             styles.caption,
             styles[align],

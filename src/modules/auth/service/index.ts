@@ -1,3 +1,4 @@
+import { getEnviroment } from '@urls';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -5,16 +6,6 @@ import {
 import { setCookie } from 'nookies';
 
 import { auth } from '../../../lib/firebase/client';
-
-export enum ResponseStatus {
-  Success = 'success',
-  Error = 'error',
-}
-
-export interface IServiceResponse {
-  status: ResponseStatus;
-  errorMessage?: string;
-}
 
 interface IRegisterRequest {
   username: string;
@@ -29,41 +20,28 @@ interface ILoginRequest {
 }
 
 export class AuthService {
-  static async login(request: ILoginRequest): Promise<IServiceResponse> {
+  static async login(request: ILoginRequest) {
     try {
       await signInWithEmailAndPassword(auth, request.email, request.password);
-      return {
-        status: ResponseStatus.Success,
-      };
     } catch (error: any) {
-      return {
-        status: ResponseStatus.Error,
-        errorMessage: error.message,
-      };
+      throw new Error(error.message);
     }
   }
 
-  static async register(request: IRegisterRequest): Promise<IServiceResponse> {
+  static async register(request: IRegisterRequest) {
     if (request.password !== request.confirmPassword) {
-      return {
-        status: ResponseStatus.Error,
-        errorMessage: 'Your passwords do not match.',
-      };
+      throw new Error('Passwords do not match');
     }
+
     try {
       await createUserWithEmailAndPassword(
         auth,
         request.email,
         request.password,
       );
-      return {
-        status: ResponseStatus.Success,
-      };
+      await this.createCreator(request.email, request.username);
     } catch (error: any) {
-      return {
-        status: ResponseStatus.Error,
-        errorMessage: error.message,
-      };
+      throw new Error(error.message);
     }
   }
 
@@ -80,5 +58,19 @@ export class AuthService {
 
   static logout() {
     return auth.signOut();
+  }
+
+  static async createCreator(emailAddress: string, username: string) {
+    const response = await fetch(getEnviroment() + '/creator/create', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ emailAddress, username }),
+    });
+    const createdUser = await response.json();
+
+    return createdUser;
   }
 }
