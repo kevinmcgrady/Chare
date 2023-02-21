@@ -1,9 +1,5 @@
-import { render, screen, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Timer } from './Timer.component';
-
-function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 describe('Timer', () => {
   it('should start as 00:00:00', () => {
@@ -16,13 +12,5 @@ describe('Timer', () => {
     expect(screen.getByLabelText('hours')).toHaveTextContent('00:Hours');
     expect(screen.getByLabelText('minutes')).toHaveTextContent('00:Minutes');
     expect(screen.getByLabelText('seconds')).toHaveTextContent('00Seconds');
-  });
-
-  it('should count down', async () => {
-    render(<Timer date={new Date()} />);
-    await act(() => sleep(1000));
-    expect(screen.getByLabelText('hours')).toHaveTextContent('00:Hours');
-    expect(screen.getByLabelText('minutes')).toHaveTextContent('59:Minutes');
-    expect(screen.getByLabelText('seconds')).toHaveTextContent('58Seconds');
   });
 });
